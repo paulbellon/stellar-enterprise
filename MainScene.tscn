@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="SceneManager" type="Node"]
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+
+[node name="MainScene" type="Spatial" parent="."]
+
+[node name="Background" type="Spatial" parent="MainScene"]
