@@ -14,15 +14,25 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
 }, {
+"base": "Resource",
+"class": "LocationModel",
+"language": "GDScript",
+"path": "res://NavigationTable/Locations/Models/LocationModel.gd"
+}, {
 "base": "State",
 "class": "PlayerState",
 "language": "GDScript",
-"path": "res://Entities/PlayerState.gd"
+"path": "res://Player/Script/PlayerState.gd"
 }, {
 "base": "Resource",
-"class": "SectorData",
+"class": "SectorList",
 "language": "GDScript",
-"path": "res://SceneManager/SectorData.gd"
+"path": "res://NavigationTable/Sectors/Models/SectorListModel.gd"
+}, {
+"base": "Resource",
+"class": "SectorModel",
+"language": "GDScript",
+"path": "res://NavigationTable/Sectors/Models/SectorModel.gd"
 }, {
 "base": "Reference",
 "class": "State",
@@ -36,8 +46,10 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "GitAPI": "",
+"LocationModel": "",
 "PlayerState": "",
-"SectorData": "",
+"SectorList": "",
+"SectorModel": "",
 "State": "",
 "StateMachine": ""
 }

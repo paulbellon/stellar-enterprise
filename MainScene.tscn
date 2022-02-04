@@ -1,9 +1,14 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SceneManager/SceneManager.gd" type="Script" id=1]
+[ext_resource path="res://NavigationTable/Sectors/Models/SectorListModel.gd" type="Script" id=2]
+[ext_resource path="res://Spaceship/Spaceship.tscn" type="PackedScene" id=3]
 
 [node name="SceneManager" type="Node"]
+script = ExtResource( 1 )
+sector_data = ExtResource( 2 )
+default_scene = ExtResource( 3 )
 
 [node name="TransitionLayer" type="CanvasLayer" parent="."]
 
 [node name="MainScene" type="Spatial" parent="."]
-
-[node name="Background" type="Spatial" parent="MainScene"]

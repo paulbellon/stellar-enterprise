@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://StateMachine/StateMachine.gd" type="Script" id=1]
-[ext_resource path="res://Entities/FPSController.gd" type="Script" id=2]
-[ext_resource path="res://Entities/Idle.gd" type="Script" id=3]
-[ext_resource path="res://Entities/Run.gd" type="Script" id=4]
-[ext_resource path="res://Entities/VisionCheck.gd" type="Script" id=5]
+[ext_resource path="res://Player/Script/FPSController.gd" type="Script" id=2]
+[ext_resource path="res://Player/Script/Idle.gd" type="Script" id=3]
+[ext_resource path="res://Player/Script/Run.gd" type="Script" id=4]
+[ext_resource path="res://Player/Script/VisionCheck.gd" type="Script" id=5]
 [ext_resource path="res://crosshair.png" type="Texture" id=6]
-[ext_resource path="res://Entities/Freeze.gd" type="Script" id=7]
+[ext_resource path="res://Player/Script/Freeze.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
