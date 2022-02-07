@@ -39,5 +39,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.988217, 0.10861, 0.412538 )
 radius = 0.03
 
 [node name="Area" parent="Pan" instance=ExtResource( 1 )]
-
-[connection signal="ray_click" from="Iapetus/Area" to="." method="_on_Area_ray_click"]

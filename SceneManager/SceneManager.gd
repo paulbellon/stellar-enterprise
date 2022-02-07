@@ -8,7 +8,6 @@ func _ready():
 	# We are in the ship by default
 	switch_scene(default_scene)
 	
-
 func switch_scene(next_scene):
 	# Removes everything inside
 	for child in $MainScene.get_children():
@@ -17,8 +16,12 @@ func switch_scene(next_scene):
 	var current_scene = next_scene.instance()
 	$MainScene.add_child(current_scene)
 	
-func change_sector():
+func change_sector(next_sector):
 	switch_scene(default_scene)
+	for child in $MainScene/Spaceship/Background.get_children():
+		child.queue_free()
+	var current_sector = next_sector.instance()
+	$MainScene/Spaceship/Background.add_child(current_sector)
 	
 func change_location():
 	if sector_data.current_location:

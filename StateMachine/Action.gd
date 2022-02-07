@@ -5,8 +5,6 @@ signal ray_hover
 signal ray_exit
 signal ray_click
 
-export var story_index: String = ""
-
 func enter() -> void:
 	emit_signal("ray_enter")
 	

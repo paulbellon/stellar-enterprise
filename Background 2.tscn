@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="PanBackground" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 0.531761, 0.410413, 0.740805, -0.610988, 0.79164, 0, -0.58645, -0.452623, 0.671721, 0, 6.50059, 52.1943 )
+width = 10.0
+height = 10.0
+depth = 10.0

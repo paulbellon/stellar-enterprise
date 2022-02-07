@@ -13,6 +13,7 @@ signal location_changed
 func change_sector(new_sector_id):
 	current_sector_id = new_sector_id
 	emit_signal("sector_changed")
+	print("coucou")
 	
 func change_location(new_location):
 	current_location = new_location

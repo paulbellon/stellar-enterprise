@@ -80,4 +80,6 @@ stream = ExtResource( 1 )
 [node name="NavigationTable" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19587, 0.555139, -4.57048 )
 
+[node name="Background" type="Spatial" parent="."]
+
 [connection signal="ray_click" from="Radio/Area" to="Radio" method="_on_Area_ray_click"]
