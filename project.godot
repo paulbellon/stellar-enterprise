@@ -9,6 +9,21 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "DayModel",
+"language": "GDScript",
+"path": "res://NarrativeTree/Chapters/Models/ChapterModel.gd"
+}, {
+"base": "Resource",
+"class": "DialogueModel",
+"language": "GDScript",
+"path": "res://NarrativeTree/Dialogues/Models/DialogueModel.gd"
+}, {
+"base": "Resource",
+"class": "DialogueSystemModel",
+"language": "GDScript",
+"path": "res://NarrativeTree/Dialogues/Models/DialogueSystemModel.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
@@ -18,6 +33,11 @@ _global_script_classes=[ {
 "class": "LocationModel",
 "language": "GDScript",
 "path": "res://NavigationTable/Locations/Models/LocationModel.gd"
+}, {
+"base": "Resource",
+"class": "NewSector",
+"language": "GDScript",
+"path": "res://NarrativeTree/NarrativeAction/NewSector.gd"
 }, {
 "base": "State",
 "class": "PlayerState",
@@ -34,19 +54,23 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://NavigationTable/Sectors/Models/SectorModel.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://StateMachine/State.gd"
+"path": "res://Player/StateMachine/State.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://StateMachine/StateMachine.gd"
+"path": "res://Player/StateMachine/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"DayModel": "",
+"DialogueModel": "",
+"DialogueSystemModel": "",
 "GitAPI": "",
 "LocationModel": "",
+"NewSector": "",
 "PlayerState": "",
 "SectorList": "",
 "SectorModel": "",

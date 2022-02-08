@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://StateMachine/Action.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/StateMachine/Action.tscn" type="PackedScene" id=1]
 
 [node name="GlobalMap" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
