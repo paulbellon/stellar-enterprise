@@ -245,12 +245,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19587, 0.555139, -4.57048 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6.772 )
 
 [node name="Model1" type="CSGBox" parent="Door"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
 height = 4.0
 depth = 0.3
 
 [node name="Model2" type="CSGBox" parent="Door"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
 height = 4.0
 depth = 0.3
 

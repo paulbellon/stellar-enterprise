@@ -9,7 +9,7 @@ func _ready():
 	sector_data.current_sector = sector_data.sectors[0]
 	switch_scene(default_scene)
 	
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit() 
 	

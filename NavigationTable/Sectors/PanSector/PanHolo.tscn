@@ -1,8 +1,4 @@
-[gd_scene load_steps=2 format=2]
-
-[sub_resource type="CapsuleShape" id=1]
-radius = 0.312617
-height = 0.667322
+[gd_scene format=2]
 
 [node name="Map" type="Spatial"]
 
@@ -32,16 +28,12 @@ width = 0.1
 height = 0.1
 depth = 0.1
 
-[node name="Shipwreck" type="Area" parent="."]
-transform = Transform( 0.948771, -0.235139, 0.211052, 0, 0.667962, 0.744195, -0.315964, -0.706071, 0.633744, 0, 0.522773, -0.905506 )
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 0.66414, 0.147736, 0.117569, 0, 0.520936, -0.333981, -0.221175, 0.443621, 0.353036, -0.0576091, 0.686424, -1.07849 )
 
-[node name="Model" type="CSGPolygon" parent="Shipwreck"]
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
+[node name="Model" type="CSGPolygon" parent="Spatial"]
+transform = Transform( 0.571429, 0, 7.45058e-09, 0, 0, 0.571429, 0, -0.8, -2.98023e-08, 2.98023e-08, -5.96046e-08, 0.49 )
 polygon = PoolVector2Array( 0, 0, 0.0186896, 1.10412, 0.311053, 0.83791, 0.152912, 0.312677 )
 mode = 1
 spin_degrees = 360.0
 spin_sides = 8
-
-[node name="CollisionShape" type="CollisionShape" parent="Shipwreck"]
-transform = Transform( 0.7, 0, 0, 0, -3.0598e-08, -0.5, 0, 0.7, -2.18557e-08, 0, 0.245, 0 )
-shape = SubResource( 1 )
