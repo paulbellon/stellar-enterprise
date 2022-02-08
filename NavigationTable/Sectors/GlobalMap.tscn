@@ -1,17 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Player/StateMachine/Action.tscn" type="PackedScene" id=1]
+[ext_resource path="res://NavigationTable/Sectors/IapetusSector/IapetusSectorData.tres" type="Resource" id=1]
+[ext_resource path="res://NavigationTable/Sectors/SelectSector.gd" type="Script" id=2]
+[ext_resource path="res://NavigationTable/Sectors/GlobalSectorSelector.gd" type="Script" id=3]
+[ext_resource path="res://NavigationTable/Sectors/PanSector/PanSectorData.tres" type="Resource" id=4]
 
 [node name="GlobalMap" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+script = ExtResource( 3 )
 
 [node name="Iapetus" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.398, -0.553148, 0 )
+script = ExtResource( 2 )
+sector_data = ExtResource( 1 )
 
 [node name="Model" type="CSGSphere" parent="Iapetus"]
 radius = 0.1
-
-[node name="Area" parent="Iapetus" instance=ExtResource( 1 )]
 
 [node name="Titan" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77518, 0.757624, -1.31354 )
@@ -33,9 +37,9 @@ sides = 16
 ring_sides = 12
 
 [node name="Pan" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.988217, 0.10861, 0.412538 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30911, 0.329627, 0.778747 )
+script = ExtResource( 2 )
+sector_data = ExtResource( 4 )
 
 [node name="Model" type="CSGSphere" parent="Pan"]
 radius = 0.03
-
-[node name="Area" parent="Pan" instance=ExtResource( 1 )]

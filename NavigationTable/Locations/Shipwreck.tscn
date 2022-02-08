@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Talks/incoming_message_01.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Spaceship/Radio.gd" type="Script" id=2]
-[ext_resource path="res://Player/StateMachine/Action.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/RayTarget/RayTarget.tscn" type="PackedScene" id=3]
 [ext_resource path="res://NavigationTable/NavigationTable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 

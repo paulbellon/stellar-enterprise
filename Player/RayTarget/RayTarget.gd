@@ -1,5 +1,7 @@
 extends Area
 
+class_name RayTarget
+
 signal ray_enter
 signal ray_hover
 signal ray_exit

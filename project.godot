@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Script/PlayerState.gd"
 }, {
+"base": "Area",
+"class": "RayTarget",
+"language": "GDScript",
+"path": "res://Player/RayTarget/RayTarget.gd"
+}, {
 "base": "Resource",
 "class": "SectorList",
 "language": "GDScript",
@@ -72,6 +77,7 @@ _global_script_class_icons={
 "LocationModel": "",
 "NewSector": "",
 "PlayerState": "",
+"RayTarget": "",
 "SectorList": "",
 "SectorModel": "",
 "State": "",
@@ -81,6 +87,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Stellar Enterprise (proto)"
+run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
 
 [gdnative]

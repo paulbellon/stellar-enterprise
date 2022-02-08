@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://NavigationTable/Sectors/IapetusSector.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Player/StateMachine/Action.tscn" type="PackedScene" id=2]
+[ext_resource path="res://NavigationTable/Sectors/GlobalMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/RayTarget/RayTarget.tscn" type="PackedScene" id=2]
 [ext_resource path="res://NavigationTable/NavigationTable.gd" type="Script" id=3]
 [ext_resource path="res://NavigationTable/Sectors/main_sector_list.tres" type="Resource" id=4]
 
@@ -14,19 +14,19 @@ width = 3.0
 height = 1.0
 depth = 1.5
 
-[node name="MapLocation" type="Spatial" parent="."]
+[node name="HologramHolder" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.612966, 0 )
 
-[node name="Map" parent="MapLocation" instance=ExtResource( 1 )]
+[node name="GlobalMap" parent="HologramHolder" instance=ExtResource( 1 )]
 
-[node name="Button" type="Spatial" parent="."]
+[node name="SwitchButton" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0149205, 0.352083, -0.908225 )
 
-[node name="Model" type="CSGBox" parent="Button"]
+[node name="Model" type="CSGBox" parent="SwitchButton"]
 width = 0.3
 height = 0.3
 depth = 0.3
 
-[node name="Area" parent="Button" instance=ExtResource( 2 )]
+[node name="RayTarget" parent="SwitchButton" instance=ExtResource( 2 )]
 
-[connection signal="ray_click" from="Button/Area" to="." method="_on_Area_ray_click"]
+[connection signal="ray_click" from="SwitchButton/RayTarget" to="." method="toggle"]

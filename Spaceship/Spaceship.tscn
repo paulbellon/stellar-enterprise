@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://DoorButton.gd" type="Script" id=1]
 [ext_resource path="res://Spaceship/Radio.gd" type="Script" id=2]
-[ext_resource path="res://Player/StateMachine/Action.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/RayTarget/RayTarget.tscn" type="PackedScene" id=3]
 [ext_resource path="res://NavigationTable/NavigationTable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://NarrativeTree/Dialogues/dialogue_system_data.tres" type="Resource" id=6]
 [ext_resource path="res://NarrativeTree/Chapters/introduction.tres" type="Resource" id=7]
+[ext_resource path="res://Spaceship/Spaceship.gd" type="Script" id=8]
 
 [sub_resource type="VisualShaderNodeColorConstant" id=1]
 output_port_for_preview = 0
@@ -209,6 +210,7 @@ tracks/7/keys = {
 }
 
 [node name="Spaceship" type="Spatial"]
+script = ExtResource( 8 )
 
 [node name="Floor" type="CSGBox" parent="."]
 use_collision = true

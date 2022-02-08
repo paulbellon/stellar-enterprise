@@ -31,4 +31,4 @@ depth = 0.1
 [node name="Iapetus" type="Spatial" parent="."]
 
 [node name="CSGSphere" type="CSGSphere" parent="Iapetus"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36836, -4.27025 )
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.06061, -0.474371 )

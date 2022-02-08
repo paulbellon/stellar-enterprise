@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Player/StateMachine/Action.gd" type="Script" id=1]
+[ext_resource path="res://Player/RayTarget/RayTarget.gd" type="Script" id=1]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.2, 0.2, 0.2 )
 
-[node name="Area" type="Area" groups=["actions"]]
+[node name="RayTarget" type="Area" groups=["RayTarget"]]
 collision_mask = 0
 monitorable = false
 script = ExtResource( 1 )
