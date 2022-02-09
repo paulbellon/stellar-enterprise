@@ -3,22 +3,22 @@ export (Resource) var sector_data
 
 var is_local = true
 var sector_hologram = null
-onready var global_hologram = $HologramHolder/GlobalMap 
+export(PackedScene) var global_hologram
 
 func _ready():
 	sector_hologram = sector_data.current_sector.hologram.instance()
-	$HologramHolder.add_child(sector_hologram)
+	global_hologram = global_hologram.instance()
 	update_display()
-
+	
 func toggle():
 	is_local = !is_local
 	update_display()
 	
 func update_display():
+	for child in $HologramHolder.get_children():
+		$HologramHolder.remove_child(child)
 	if is_local:
 		# Display Local
-		global_hologram.hide()
-		sector_hologram.show()
+		$HologramHolder.add_child(sector_hologram)
 	else:
-		global_hologram.show()
-		sector_hologram.hide()
+		$HologramHolder.add_child(global_hologram)
