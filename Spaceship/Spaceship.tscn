@@ -220,9 +220,6 @@ width = 15.0
 height = 0.2
 depth = 15.0
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50678, 0 )
-
 [node name="Radio" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98622, 1.5967, 0 )
 script = ExtResource( 2 )
@@ -271,6 +268,9 @@ anims/close_door = SubResource( 5 )
 anims/open_door = SubResource( 6 )
 
 [node name="Background" type="Spatial" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 
 [connection signal="ray_click" from="Radio/Area" to="Radio" method="_on_Area_ray_click"]
 [connection signal="ray_click" from="Door/DoorButton/Area" to="Door/DoorButton" method="_on_Area_ray_click"]

@@ -1,37 +1,71 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://NavigationTable/Sectors/SelectLocation.gd" type="Script" id=1]
+[ext_resource path="res://NavigationTable/Sectors/spin_effect.gd" type="Script" id=2]
+[ext_resource path="res://NavigationTable/Locations/shipwreck_location.tres" type="Resource" id=3]
+[ext_resource path="res://NavigationTable/Sectors/LocationSelector.gd" type="Script" id=4]
 
 [node name="Map" type="Spatial"]
+script = ExtResource( 4 )
 
 [node name="Asteroids" type="Spatial" parent="."]
 
 [node name="Asteroid1" type="CSGBox" parent="Asteroids"]
-transform = Transform( 0.638644, 0.233394, -0.733253, -0.15329, 0.972382, 0.175998, 0.754079, 0, 0.656783, 1.20158, 0.159901, 0.512467 )
+transform = Transform( 0.638644, 0.233394, -0.733253, -0.15329, 0.972382, 0.175998, 0.754079, 0, 0.656783, 1.20158, 0.199626, -0.36494 )
 width = 0.1
 height = 0.1
 depth = 0.1
+script = ExtResource( 2 )
+rotation_axis = Vector3( 1, 0, 0 )
 
 [node name="Asteroid2" type="CSGBox" parent="Asteroids"]
-transform = Transform( 0.807424, -0.326314, -0.491514, 0, 0.833114, -0.553101, 0.589972, 0.446587, 0.672677, 0, 0.201947, 0.556021 )
+transform = Transform( 0.807424, -0.326314, -0.491514, 0, 0.833114, -0.553101, 0.589972, 0.446587, 0.672677, 0, 0.591943, 0.556021 )
 width = 0.1
 height = 0.1
 depth = 0.1
+script = ExtResource( 2 )
 
 [node name="Asteroid3" type="CSGBox" parent="Asteroids"]
-transform = Transform( 0.841535, -0.365142, 0.398109, 0.398045, 0.917366, 0, -0.365211, 0.158465, 0.917338, -0.469, -0.128706, 0.241222 )
+transform = Transform( 0.841535, -0.365142, 0.398109, 0.398045, 0.917366, 0, -0.365211, 0.158465, 0.917338, -0.469, 1.51029, 0.241222 )
 width = 0.1
 height = 0.1
 depth = 0.1
+script = ExtResource( 2 )
+
+[node name="Asteroid5" type="CSGBox" parent="Asteroids"]
+transform = Transform( 0.638644, 0.233394, -0.733253, -0.15329, 0.972382, 0.175998, 0.754079, 0, 0.656783, 1.20158, 0.844777, -1.25346 )
+width = 0.1
+height = 0.1
+depth = 0.1
+script = ExtResource( 2 )
+
+[node name="Asteroid6" type="CSGBox" parent="Asteroids"]
+transform = Transform( 0.807424, -0.326314, -0.491514, 0, 0.833114, -0.553101, 0.589972, 0.446587, 0.672677, 0.385133, 1.22573, -1.20991 )
+width = 0.1
+height = 0.1
+depth = 0.1
+script = ExtResource( 2 )
+
+[node name="Asteroid7" type="CSGBox" parent="Asteroids"]
+transform = Transform( 0.841535, -0.365142, 0.398109, 0.398045, 0.917366, 0, -0.365211, 0.158465, 0.917338, -0.469, 1.01265, -1.52471 )
+width = 0.1
+height = 0.1
+depth = 0.1
+script = ExtResource( 2 )
 
 [node name="Asteroid4" type="CSGBox" parent="Asteroids"]
-transform = Transform( 0.918391, 0.395674, 0, -0.241572, 0.560707, 0.791991, 0.31337, -0.727358, 0.610532, 0.50775, 0, 0 )
+transform = Transform( 0.918391, 0.395674, 0, -0.241572, 0.560707, 0.791991, 0.31337, -0.727358, 0.610532, 0.50775, 0.833853, -0.190993 )
 width = 0.1
 height = 0.1
 depth = 0.1
+script = ExtResource( 2 )
 
-[node name="Spatial" type="Spatial" parent="."]
+[node name="ShipWreck" type="Spatial" parent="."]
 transform = Transform( 0.66414, 0.147736, 0.117569, 0, 0.520936, -0.333981, -0.221175, 0.443621, 0.353036, -0.0576091, 0.686424, -1.07849 )
+script = ExtResource( 1 )
+location_data = ExtResource( 3 )
 
-[node name="Model" type="CSGPolygon" parent="Spatial"]
+[node name="Model" type="CSGPolygon" parent="ShipWreck"]
 transform = Transform( 0.571429, 0, 7.45058e-09, 0, 0, 0.571429, 0, -0.8, -2.98023e-08, 2.98023e-08, -5.96046e-08, 0.49 )
 polygon = PoolVector2Array( 0, 0, 0.0186896, 1.10412, 0.311053, 0.83791, 0.152912, 0.312677 )
 mode = 1

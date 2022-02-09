@@ -6,7 +6,7 @@ func _ready():
 	sector_data.connect("sector_changed", self, "change_sector")
 	sector_data.connect("location_changed", self, "change_location")
 	# We are in the ship by default
-	sector_data.current_sector = sector_data.sectors[0]
+	sector_data.current_sector = sector_data.sectors[1]
 	switch_scene(default_scene)
 	
 func _input(_event):
@@ -32,7 +32,7 @@ func change_sector():
 	switch_scene(default_scene)
 	
 func change_location():
-	if sector_data.current_location:
+	if sector_data.current_location != null:
 		switch_scene(sector_data.current_location.scene)
 	else:
 		switch_scene(default_scene)

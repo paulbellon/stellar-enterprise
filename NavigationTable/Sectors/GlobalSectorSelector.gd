@@ -1,6 +1,6 @@
 extends Spatial
 
-var main_sector_data : SectorList= load("res://NavigationTable/Sectors/main_sector_list.tres")
+var main_sector_data : SectorList = load("res://NavigationTable/Sectors/main_sector_list.tres")
 
 func _ready():
 	for child in get_children():
