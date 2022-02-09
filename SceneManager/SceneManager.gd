@@ -2,6 +2,8 @@ extends Node
 export (Resource) var sector_data
 export (PackedScene) var default_scene
 
+signal scene_loaded
+
 func _ready():
 	sector_data.connect("sector_changed", self, "change_sector")
 	sector_data.connect("location_changed", self, "change_location")
@@ -27,6 +29,8 @@ func switch_scene(next_scene):
 	$MainScene.add_child(current_scene)
 	$OverlayLayer/LoadingScreen.hide()
 	$OverlayLayer/LoadingScreen/AnimationPlayer.stop()
+	
+	emit_signal("scene_loaded")
 	
 func change_sector():
 	switch_scene(default_scene)

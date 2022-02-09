@@ -12,5 +12,6 @@ height = 0.550308
 depth = 0.452911
 
 [node name="RayTarget" parent="." instance=ExtResource( 1 )]
+display_name = "Exit"
 
 [connection signal="ray_click" from="RayTarget" to="." method="exit_location"]

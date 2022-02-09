@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://SceneManager/SceneManager.gd" type="Script" id=1]
 [ext_resource path="res://NavigationTable/Sectors/main_sector_list.tres" type="Resource" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://loading_placeholder.png" type="Texture" id=4]
 [ext_resource path="res://DialogueDisplay.gd" type="Script" id=5]
 [ext_resource path="res://NarrativeTree/DialogueSystem/dialogue_system_data.tres" type="Resource" id=6]
+[ext_resource path="res://LocationNotifier.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -44,6 +45,36 @@ expand_margin_left = 4.0
 expand_margin_right = 4.0
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
+
+[sub_resource type="Animation" id=4]
+resource_name = "Appear"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="SceneManager" type="Node"]
 script = ExtResource( 1 )
@@ -144,4 +175,52 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LocationNotifier" type="Control" parent="OverlayLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+sector_data = ExtResource( 2 )
+
+[node name="Container2" type="MarginContainer" parent="OverlayLayer/LocationNotifier"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -69.0
+margin_right = 165.0
+margin_bottom = -24.0
+grow_horizontal = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="OverlayLayer/LocationNotifier/Container2"]
+margin_right = 149.0
+margin_bottom = 45.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="OverlayLayer/LocationNotifier/Container2"]
+margin_top = 15.0
+margin_right = 149.0
+margin_bottom = 29.0
+grow_horizontal = 2
+text = "Location name"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OverlayLayer/LocationNotifier"]
+anims/Appear = SubResource( 4 )
+anims/RESET = SubResource( 5 )
+
 [node name="MainScene" type="Spatial" parent="."]
+
+[connection signal="scene_loaded" from="." to="OverlayLayer/LocationNotifier" method="notify_change"]

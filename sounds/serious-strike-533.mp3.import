@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/serious-strike-533.mp3-71353cba2093335b59e9d49165bba951.mp3str"
+
+[deps]
+
+source_file="res://sounds/serious-strike-533.mp3"
+dest_files=[ "res://.import/serious-strike-533.mp3-71353cba2093335b59e9d49165bba951.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
