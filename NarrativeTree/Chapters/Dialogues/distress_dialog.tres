@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://NarrativeTree/Chapters/Dialogues/Lines/AlloOui.tres" type="Resource" id=1]
-[ext_resource path="res://NarrativeTree/Dialogues/Models/DialogueModel.gd" type="Script" id=2]
+[ext_resource path="res://NarrativeTree/DialogueSystem/Models/DialogueModel.gd" type="Script" id=2]
 [ext_resource path="res://NarrativeTree/Chapters/Dialogues/Lines/OnaUnSouci.tres" type="Resource" id=3]
 
 [resource]

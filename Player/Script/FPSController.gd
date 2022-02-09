@@ -7,12 +7,15 @@ var direction = Vector3()
 var velocity = Vector3()
 var snap_vec = Vector3.DOWN
 
+onready var dialogue_system_data = load("res://NarrativeTree/DialogueSystem/dialogue_system_data.tres")
+
 onready var head = $Head
 onready var ray = $Head/Camera/RayCast
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ray.enabled = true
+	dialogue_system_data.speaker_reference["Vilm"] = $Speaker
 
 func _input(event):
 	if event is InputEventMouseMotion:

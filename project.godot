@@ -17,12 +17,12 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "DialogueModel",
 "language": "GDScript",
-"path": "res://NarrativeTree/Dialogues/Models/DialogueModel.gd"
+"path": "res://NarrativeTree/DialogueSystem/Models/DialogueModel.gd"
 }, {
 "base": "Resource",
 "class": "DialogueSystemModel",
 "language": "GDScript",
-"path": "res://NarrativeTree/Dialogues/Models/DialogueSystemModel.gd"
+"path": "res://NarrativeTree/DialogueSystem/Models/DialogueSystemModel.gd"
 }, {
 "base": "",
 "class": "GitAPI",
@@ -32,7 +32,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "LineModel",
 "language": "GDScript",
-"path": "res://NarrativeTree/Dialogues/Models/LineModel.gd"
+"path": "res://NarrativeTree/DialogueSystem/Models/LineModel.gd"
 }, {
 "base": "Resource",
 "class": "LocationModel",

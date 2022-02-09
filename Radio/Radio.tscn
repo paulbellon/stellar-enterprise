@@ -3,7 +3,7 @@
 [ext_resource path="res://Radio/Radio.gd" type="Script" id=1]
 [ext_resource path="res://Player/RayTarget/RayTarget.tscn" type="PackedScene" id=3]
 [ext_resource path="res://NarrativeTree/Chapters/introduction.tres" type="Resource" id=4]
-[ext_resource path="res://NarrativeTree/Dialogues/dialogue_system_data.tres" type="Resource" id=5]
+[ext_resource path="res://NarrativeTree/DialogueSystem/dialogue_system_data.tres" type="Resource" id=5]
 
 [sub_resource type="VisualShaderNodeColorConstant" id=1]
 output_port_for_preview = 0
