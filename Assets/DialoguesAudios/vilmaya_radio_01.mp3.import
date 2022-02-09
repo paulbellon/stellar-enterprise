@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/vilmaya_radio_01.mp3-9bb1e2b2d38cbee23d0c87b4ae897ff2.mp3str"
+
+[deps]
+
+source_file="res://Assets/DialoguesAudios/vilmaya_radio_01.mp3"
+dest_files=[ "res://.import/vilmaya_radio_01.mp3-9bb1e2b2d38cbee23d0c87b4ae897ff2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

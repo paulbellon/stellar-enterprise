@@ -1,57 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://DoorButton.gd" type="Script" id=1]
-[ext_resource path="res://Spaceship/Radio.gd" type="Script" id=2]
+[ext_resource path="res://Radio/Radio.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/RayTarget/RayTarget.tscn" type="PackedScene" id=3]
 [ext_resource path="res://NavigationTable/NavigationTable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://NarrativeTree/Dialogues/dialogue_system_data.tres" type="Resource" id=6]
-[ext_resource path="res://NarrativeTree/Chapters/introduction.tres" type="Resource" id=7]
 [ext_resource path="res://Spaceship/Spaceship.gd" type="Script" id=8]
-
-[sub_resource type="VisualShaderNodeColorConstant" id=1]
-output_port_for_preview = 0
-constant = Color( 1, 0, 0, 1 )
-
-[sub_resource type="VisualShader" id=2]
-code = "shader_type spatial;
-render_mode specular_schlick_ggx;
-
-
-
-
-void vertex() {
-// Output:0
-
-}
-
-void fragment() {
-// Color:2
-	vec3 n_out2p0 = vec3(1.000000, 0.000000, 0.000000);
-	float n_out2p1 = 1.000000;
-
-// Output:0
-	ALBEDO = n_out2p0;
-
-}
-
-void light() {
-// Output:0
-
-}
-"
-graph_offset = Vector2( -212, 120 )
-nodes/vertex/0/position = Vector2( 460, 180 )
-nodes/fragment/2/node = SubResource( 1 )
-nodes/fragment/2/position = Vector2( 100, 200 )
-nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
-
-[sub_resource type="CubeMesh" id=4]
-material = SubResource( 3 )
-size = Vector3( 0.5, 0.5, 0.5 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "close_door"
@@ -220,20 +174,7 @@ width = 15.0
 height = 0.2
 depth = 15.0
 
-[node name="Radio" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98622, 1.5967, 0 )
-script = ExtResource( 2 )
-chapter_data = ExtResource( 7 )
-dialogue_system_data = ExtResource( 6 )
-
-[node name="Area" parent="Radio" instance=ExtResource( 3 )]
-
-[node name="Mesh" type="MeshInstance" parent="Radio"]
-mesh = SubResource( 4 )
-skeleton = NodePath("../..")
-material/0 = null
-
-[node name="Audio" type="AudioStreamPlayer3D" parent="Radio"]
+[node name="Radio" parent="." instance=ExtResource( 2 )]
 
 [node name="NavigationTable" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19587, 0.555139, -4.57048 )
@@ -272,6 +213,5 @@ anims/open_door = SubResource( 6 )
 [node name="Player" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 
-[connection signal="ray_click" from="Radio/Area" to="Radio" method="_on_Area_ray_click"]
 [connection signal="ray_click" from="Door/DoorButton/Area" to="Door/DoorButton" method="_on_Area_ray_click"]
 [connection signal="animation_finished" from="Door/DoorButton/AnimationPlayer" to="Door/DoorButton" method="_on_AnimationPlayer_animation_finished"]

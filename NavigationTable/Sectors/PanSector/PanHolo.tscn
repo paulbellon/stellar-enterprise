@@ -71,3 +71,4 @@ polygon = PoolVector2Array( 0, 0, 0.0186896, 1.10412, 0.311053, 0.83791, 0.15291
 mode = 1
 spin_degrees = 360.0
 spin_sides = 8
+script = ExtResource( 2 )

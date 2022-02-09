@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://SceneManager/SceneManager.gd" type="Script" id=1]
 [ext_resource path="res://NavigationTable/Sectors/main_sector_list.tres" type="Resource" id=2]
 [ext_resource path="res://Spaceship/Spaceship.tscn" type="PackedScene" id=3]
 [ext_resource path="res://loading_placeholder.png" type="Texture" id=4]
+[ext_resource path="res://DialogueDisplay.gd" type="Script" id=5]
+[ext_resource path="res://NarrativeTree/Dialogues/dialogue_system_data.tres" type="Resource" id=6]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -36,15 +38,22 @@ tracks/0/keys = {
 "values": [ -5.0, 5.0, -5.0 ]
 }
 
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
 [node name="SceneManager" type="Node"]
 script = ExtResource( 1 )
 sector_data = ExtResource( 2 )
 default_scene = ExtResource( 3 )
 
-[node name="TransitionLayer" type="CanvasLayer" parent="."]
+[node name="OverlayLayer" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="LoadingScreen" type="Control" parent="TransitionLayer"]
+[node name="LoadingScreen" type="Control" parent="OverlayLayer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -52,7 +61,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="TransitionLayer/LoadingScreen"]
+[node name="ColorRect" type="ColorRect" parent="OverlayLayer/LoadingScreen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
@@ -60,7 +69,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="TransitionLayer/LoadingScreen"]
+[node name="TextureRect" type="TextureRect" parent="OverlayLayer/LoadingScreen"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -77,7 +86,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TransitionLayer/LoadingScreen"]
+[node name="Label" type="Label" parent="OverlayLayer/LoadingScreen"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 26.0
@@ -89,11 +98,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionLayer/LoadingScreen"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OverlayLayer/LoadingScreen"]
 anims/RESET = SubResource( 2 )
 anims/Twirl = SubResource( 1 )
 
-[node name="Timer" type="Timer" parent="TransitionLayer"]
+[node name="Timer" type="Timer" parent="OverlayLayer"]
 one_shot = true
+
+[node name="DialogueDisplay" type="Control" parent="OverlayLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+dialogue_system_data = ExtResource( 6 )
+
+[node name="Container" type="MarginContainer" parent="OverlayLayer/DialogueDisplay"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_top = -46.0
+margin_bottom = -32.0
+grow_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="OverlayLayer/DialogueDisplay/Container"]
+margin_right = 151.0
+margin_bottom = 14.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="OverlayLayer/DialogueDisplay/Container"]
+margin_right = 151.0
+margin_bottom = 14.0
+grow_horizontal = 2
+text = "Je suis une longue ligne"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MainScene" type="Spatial" parent="."]

@@ -1,4 +1,4 @@
-extends CSGBox
+extends Spatial
 
 export(float) var rotation_speed = 0.2
 export(Vector3) var rotation_axis = Vector3(0,1,0)

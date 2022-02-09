@@ -14,19 +14,19 @@ func _input(_event):
 		get_tree().quit() 
 	
 func switch_scene(next_scene):
-	$TransitionLayer/LoadingScreen.show()
-	$TransitionLayer/LoadingScreen/AnimationPlayer.play("Twirl")
+	$OverlayLayer/LoadingScreen.show()
+	$OverlayLayer/LoadingScreen/AnimationPlayer.play("Twirl")
 	# Removes everything inside
 	for child in $MainScene.get_children():
 		child.queue_free()
 	# Instanciates next scene inside
-	var timer = $TransitionLayer/Timer
+	var timer = $OverlayLayer/Timer
 	timer.start()
 	yield(timer, "timeout")
 	var current_scene = next_scene.instance()
 	$MainScene.add_child(current_scene)
-	$TransitionLayer/LoadingScreen.hide()
-	$TransitionLayer/LoadingScreen/AnimationPlayer.stop()
+	$OverlayLayer/LoadingScreen.hide()
+	$OverlayLayer/LoadingScreen/AnimationPlayer.stop()
 	
 func change_sector():
 	switch_scene(default_scene)
