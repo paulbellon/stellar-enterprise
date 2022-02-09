@@ -2,6 +2,8 @@ extends Area
 
 class_name RayTarget
 
+export (String) var display_name = null
+
 signal ray_enter
 signal ray_hover
 signal ray_exit

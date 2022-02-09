@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/StateMachine/StateMachine.gd" type="Script" id=1]
 [ext_resource path="res://Player/Script/FPSController.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Player/Script/VisionCheck.gd" type="Script" id=5]
 [ext_resource path="res://crosshair.png" type="Texture" id=6]
 [ext_resource path="res://Player/Script/Freeze.gd" type="Script" id=7]
+[ext_resource path="res://Player/UserInterface.gd" type="Script" id=8]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -43,6 +44,7 @@ collide_with_areas = true
 script = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera/RayCast"]
+script = ExtResource( 8 )
 
 [node name="Crosshair" type="TextureRect" parent="Head/Camera/RayCast/CanvasLayer"]
 anchor_left = 0.5
@@ -59,7 +61,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="RichTextLabel" parent="Head/Camera/RayCast/CanvasLayer"]
+[node name="Label" type="Label" parent="Head/Camera/RayCast/CanvasLayer"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -68,6 +70,9 @@ margin_left = -20.0
 margin_top = -64.0
 margin_right = 20.0
 margin_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -84,3 +89,6 @@ script = ExtResource( 4 )
 
 [node name="Freeze" type="Node" parent="StateMachine"]
 script = ExtResource( 7 )
+
+[connection signal="enter_target" from="Head/Camera/RayCast" to="Head/Camera/RayCast/CanvasLayer" method="_on_RayCast_enter_target"]
+[connection signal="exit_target" from="Head/Camera/RayCast" to="Head/Camera/RayCast/CanvasLayer" method="_on_RayCast_exit_target"]
