@@ -189,30 +189,25 @@ modulate = Color( 1, 1, 1, 0 )
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 16.0
-margin_top = -69.0
+margin_top = -38.0
 margin_right = 165.0
 margin_bottom = -24.0
-grow_horizontal = 2
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="OverlayLayer/LocationNotifier/Container2"]
 margin_right = 149.0
-margin_bottom = 45.0
+margin_bottom = 14.0
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="OverlayLayer/LocationNotifier/Container2"]
-margin_top = 15.0
 margin_right = 149.0
-margin_bottom = 29.0
-grow_horizontal = 2
+margin_bottom = 14.0
 text = "Location name"
-align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
