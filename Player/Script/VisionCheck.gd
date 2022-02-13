@@ -6,8 +6,9 @@ signal enter_target
 signal exit_target
 
 func check_vision():
-	if get_collider():
-		var new_target = get_collider()
+	var collider = get_collider()
+	if collider != null && collider is RayTarget:
+		var new_target = collider
 		if current_target == null:
 			current_target = new_target
 			current_target.enter()
