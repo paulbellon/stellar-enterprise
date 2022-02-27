@@ -8,7 +8,9 @@ func physics_update(_delta: float) -> void:
 	
 	player.velocity.x = player.direction.x * player.speed
 	player.velocity.z = player.direction.z * player.speed
-	player.velocity = player.move_and_slide_with_snap(player.velocity, player.snap_vec, Vector3.UP)
+	player.velocity.y = 0
+	player.velocity = player.move_and_slide_with_snap(player.velocity, player.snap_vec, Vector3.UP, true, 4, PI)
 	
 	player.ray.check_vision()
-#	player.ray.trigger_radio()
+	
+	
