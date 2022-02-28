@@ -13,6 +13,7 @@ func _ready():
 func toggle():
 	is_local = !is_local
 	update_display()
+	$SwitchButton/AudioStreamPlayer3D.play()
 	
 func update_display():
 	for child in $HologramHolder.get_children():

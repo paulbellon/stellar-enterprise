@@ -49,7 +49,7 @@ shader = SubResource( 2 )
 
 [sub_resource type="CubeMesh" id=4]
 material = SubResource( 3 )
-size = Vector3( 0.5, 0.5, 0.5 )
+size = Vector3( 0.2, 0.2, 0.3 )
 
 [node name="Radio" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98622, 1.5967, 0 )
