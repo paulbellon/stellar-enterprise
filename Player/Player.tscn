@@ -13,8 +13,9 @@
 radius = 0.35
 mid_height = 0.9
 
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.5, 0.5, 0.8 )
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.373724
+height = 0.866028
 
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
