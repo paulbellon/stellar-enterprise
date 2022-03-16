@@ -24,10 +24,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://NarrativeTree/DialogueSystem/Models/DialogueSystemModel.gd"
 }, {
+"base": "Spatial",
+"class": "Firefly",
+"language": "GDScript",
+"path": "res://Firefly.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
+}, {
+"base": "KinematicBody",
+"class": "LightTarget",
+"language": "GDScript",
+"path": "res://LightTarget.gd"
 }, {
 "base": "Resource",
 "class": "LineModel",
@@ -78,7 +88,9 @@ _global_script_class_icons={
 "DayModel": "",
 "DialogueModel": "",
 "DialogueSystemModel": "",
+"Firefly": "",
 "GitAPI": "",
+"LightTarget": "",
 "LineModel": "",
 "LocationModel": "",
 "NewSector": "",
@@ -95,6 +107,10 @@ _global_script_class_icons={
 config/name="Stellar Enterprise (proto)"
 run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/always_on_top=true
 
 [gdnative]
 
@@ -125,6 +141,11 @@ move_right={
 left_mouse={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+use={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
