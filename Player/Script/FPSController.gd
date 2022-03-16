@@ -11,6 +11,7 @@ onready var dialogue_system_data = load("res://NarrativeTree/DialogueSystem/dial
 
 onready var head = $Head
 onready var ray = $Head/Camera/RayCast
+onready var flashlight = $Head/Flashlight
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
