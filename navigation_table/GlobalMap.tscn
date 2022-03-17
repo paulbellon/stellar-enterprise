@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://navigation_table/sectors/global_sector_selector.gd" type="Script" id=1]
+[ext_resource path="res://navigation_table/sectors/select_sector.gd" type="Script" id=2]
+[ext_resource path="res://navigation_table/sectors/pan_sector/PanSectorData.tres" type="Resource" id=3]
+[ext_resource path="res://navigation_table/sectors/iapetus_sector/IapetusSectorData.tres" type="Resource" id=4]
+
+[node name="GlobalMap" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+script = ExtResource( 1 )
+
+[node name="Iapetus" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.398, -0.553148, 0 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+sector_data = ExtResource( 4 )
+
+[node name="Model" type="CSGSphere" parent="Iapetus"]
+radius = 0.1
+
+[node name="Titan" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77518, 0.757624, -1.31354 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Model" type="CSGSphere" parent="Titan"]
+radius = 0.2
+
+[node name="Saturn" type="Spatial" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Model2" type="CSGSphere" parent="Saturn"]
+radius = 0.4
+radial_segments = 24
+rings = 12
+
+[node name="Model" type="CSGTorus" parent="Saturn/Model2"]
+inner_radius = 0.6
+outer_radius = 0.8
+sides = 16
+ring_sides = 12
+
+[node name="Pan" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30911, 0.329627, 0.778747 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+sector_data = ExtResource( 3 )
+
+[node name="Model" type="CSGSphere" parent="Pan"]
+radius = 0.03

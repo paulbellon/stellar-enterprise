@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Diffuse.png-0aedea751d016b5c0dc2ccd9fb62cdac.s3tc.stex"
-path.etc2="res://.import/Diffuse.png-0aedea751d016b5c0dc2ccd9fb62cdac.etc2.stex"
+path.s3tc="res://.import/Diffuse.png-dc7c372c25f170259629590ee9e89d18.s3tc.stex"
+path.etc2="res://.import/Diffuse.png-dc7c372c25f170259629590ee9e89d18.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Asteroids/asteroid_1/Diffuse.png"
-dest_files=[ "res://.import/Diffuse.png-0aedea751d016b5c0dc2ccd9fb62cdac.s3tc.stex", "res://.import/Diffuse.png-0aedea751d016b5c0dc2ccd9fb62cdac.etc2.stex" ]
+source_file="res://assets/asteroids/asteroid_1/Diffuse.png"
+dest_files=[ "res://.import/Diffuse.png-dc7c372c25f170259629590ee9e89d18.s3tc.stex", "res://.import/Diffuse.png-dc7c372c25f170259629590ee9e89d18.etc2.stex" ]
 
 [params]
 

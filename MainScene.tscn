@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://SceneManager/SceneManager.gd" type="Script" id=1]
-[ext_resource path="res://NavigationTable/Sectors/main_sector_list.tres" type="Resource" id=2]
-[ext_resource path="res://NavigationTable/Locations/Shipwreck.tscn" type="PackedScene" id=3]
-[ext_resource path="res://loading_placeholder.png" type="Texture" id=4]
-[ext_resource path="res://DialogueDisplay.gd" type="Script" id=5]
-[ext_resource path="res://NarrativeTree/DialogueSystem/dialogue_system_data.tres" type="Resource" id=6]
-[ext_resource path="res://LocationNotifier.gd" type="Script" id=7]
+[ext_resource path="res://scene_manager/scene_manager.gd" type="Script" id=1]
+[ext_resource path="res://navigation_table/sectors/main_sector_list.tres" type="Resource" id=2]
+[ext_resource path="res://luna_moth/Shipwreck.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/loading_placeholder.png" type="Texture" id=4]
+[ext_resource path="res://player/user_interface/dialogue_display.gd" type="Script" id=5]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogue_system_data.tres" type="Resource" id=6]
+[ext_resource path="res://player/user_interface/location_notifier.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=2]
 length = 0.001

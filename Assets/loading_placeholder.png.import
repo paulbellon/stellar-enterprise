@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/saturn_skybox.jpg-f5c538ba2115029cfba5c9f9682aa4e4.stex"
+path="res://.import/loading_placeholder.png-ded18ed13853a0d23f655f073e334631.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/saturn_skybox.jpg"
-dest_files=[ "res://.import/saturn_skybox.jpg-f5c538ba2115029cfba5c9f9682aa4e4.stex" ]
+source_file="res://assets/loading_placeholder.png"
+dest_files=[ "res://.import/loading_placeholder.png-ded18ed13853a0d23f655f073e334631.stex" ]
 
 [params]
 

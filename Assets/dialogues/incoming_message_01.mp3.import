@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/incoming_message_01.mp3-a8d66a1d1537e03e7b16cfaa4ec0553a.mp3str"
+
+[deps]
+
+source_file="res://assets/dialogues/incoming_message_01.mp3"
+dest_files=[ "res://.import/incoming_message_01.mp3-a8d66a1d1537e03e7b16cfaa4ec0553a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

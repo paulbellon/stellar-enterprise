@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Normal.png-3a3f4d4e1c25cf29fdf4879cde8b5bd3.s3tc.stex"
-path.etc2="res://.import/Normal.png-3a3f4d4e1c25cf29fdf4879cde8b5bd3.etc2.stex"
+path.s3tc="res://.import/Normal.png-95660a5af2fe5781a2082c3f4bdb8dec.s3tc.stex"
+path.etc2="res://.import/Normal.png-95660a5af2fe5781a2082c3f4bdb8dec.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Asteroids/asteroid_2/Normal.png"
-dest_files=[ "res://.import/Normal.png-3a3f4d4e1c25cf29fdf4879cde8b5bd3.s3tc.stex", "res://.import/Normal.png-3a3f4d4e1c25cf29fdf4879cde8b5bd3.etc2.stex" ]
+source_file="res://assets/asteroids/asteroid_2/Normal.png"
+dest_files=[ "res://.import/Normal.png-95660a5af2fe5781a2082c3f4bdb8dec.s3tc.stex", "res://.import/Normal.png-95660a5af2fe5781a2082c3f4bdb8dec.etc2.stex" ]
 
 [params]
 

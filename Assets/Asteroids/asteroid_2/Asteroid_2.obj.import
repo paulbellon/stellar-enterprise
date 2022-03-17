@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/Asteroid_2.obj-f8222be97aa349bcabd69b16d99fc38e.mesh"
+path="res://.import/Asteroid_2.obj-3f26eb3029f26f13cffbfd5483f2895f.mesh"
 
 [deps]
 
-files=[ "res://.import/Asteroid_2.obj-f8222be97aa349bcabd69b16d99fc38e.mesh" ]
+files=[ "res://.import/Asteroid_2.obj-3f26eb3029f26f13cffbfd5483f2895f.mesh" ]
 
-source_file="res://Assets/Asteroids/asteroid_2/Asteroid_2.obj"
-dest_files=[ "res://.import/Asteroid_2.obj-f8222be97aa349bcabd69b16d99fc38e.mesh", "res://.import/Asteroid_2.obj-f8222be97aa349bcabd69b16d99fc38e.mesh" ]
+source_file="res://assets/asteroids/asteroid_2/Asteroid_2.obj"
+dest_files=[ "res://.import/Asteroid_2.obj-3f26eb3029f26f13cffbfd5483f2895f.mesh", "res://.import/Asteroid_2.obj-3f26eb3029f26f13cffbfd5483f2895f.mesh" ]
 
 [params]
 
