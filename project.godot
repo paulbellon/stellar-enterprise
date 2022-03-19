@@ -108,6 +108,10 @@ config/name="Stellar Enterprise (proto)"
 run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [display]
 
 window/size/always_on_top=true

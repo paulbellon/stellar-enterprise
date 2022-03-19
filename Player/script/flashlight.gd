@@ -2,7 +2,7 @@ extends SpotLight
 
 onready var focus_point = $FocusPoint
 
-var is_lit: bool
+var is_on: bool = true
 
 func light_detection():
 	var light_pos = global_transform.origin
@@ -25,6 +25,6 @@ func light_detection():
 		var angle = acos(cos_angle)
 
 		if angle < max_angle:
-			is_lit = true
+			target.acceleration += target.follow_light()
 		else:
-			is_lit = false
+			target.acceleration = Vector3.ZERO

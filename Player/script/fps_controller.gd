@@ -14,6 +14,7 @@ onready var ray = $Head/Camera/RayCast
 onready var flashlight = $Head/Flashlight
 
 func _ready() -> void:
+	Global.player_node = self	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ray.enabled = true
 	dialogue_system_data.speaker_reference["Vilm"] = $Speaker
