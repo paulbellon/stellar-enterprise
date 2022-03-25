@@ -3,13 +3,14 @@ extends SpotLight
 onready var focus_point = $FocusPoint
 
 var is_on: bool = true
+var is_lit: bool
 
 func light_detection():
 	var light_pos = global_transform.origin
 	var max_distance_squared = pow(spot_range, 2)
 	var max_angle = deg2rad(spot_angle)
 
-	for target in get_tree().get_nodes_in_group("LightTarget"):
+	for target in get_tree().get_nodes_in_group("Firefly"):
 
 		var target_pos = target.global_transform.origin
 
@@ -25,6 +26,6 @@ func light_detection():
 		var angle = acos(cos_angle)
 
 		if angle < max_angle:
-			target.acceleration += target.follow_light()
+			is_lit = true
 		else:
-			target.acceleration = Vector3.ZERO
+			is_lit = false

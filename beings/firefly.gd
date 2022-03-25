@@ -1,90 +1,118 @@
-extends Spatial
+extends KinematicBody
 class_name Firefly
 
-var boids = []
-var move_speed = 1
-var perception_radius = 2
+onready var flashlight = Global.player_node.flashlight
+
+var fireflies = []
+var speed = rand_range(1.0, 2.0)
+var perception_radius = 1.5
 var velocity = Vector3()
 var acceleration = Vector3()
-var steer_force = 2.0
-var alignment_force = 0.6
-var cohesion_force = 0.1
-var seperation_force = 0.2
+var friction = 0.05
 
+var steer_force = 0.8
+var avoid_force = 1.0
+var cohesion_force = 0.4
+var alignement_force = 0.2
+var separation_force = 0.8
 
 func _ready():
 	randomize()
 	
-	transform.origin = Vector3(rand_range(0, 3), rand_range(0, 3), rand_range(0, 3))
-	velocity = Vector3(rand_range(-1, 1), rand_range(-1, 1), rand_range(-1, 1)).normalized() * move_speed
+	transform.origin = Vector3(rand_range(-0.5, 0.5), rand_range(-0.5, 0.5), rand_range(-0.5, 0.5))
+	velocity = Vector3(rand_range(-1, 1), rand_range(-1, 1), rand_range(-1, 1)).normalized()
 
+func _physics_process(delta):
 
-func _process(delta):
-	
 	var neighbors = get_neighbors(perception_radius)
 	
-	acceleration += process_alignments(neighbors) * alignment_force
+	acceleration += avoid_collision() * avoid_force
 	acceleration += process_cohesion(neighbors) * cohesion_force
-	acceleration += process_seperation(neighbors) * seperation_force
-		
+	acceleration += process_alignement(neighbors) * alignement_force
+	acceleration += process_separation(neighbors) * separation_force
+	acceleration += follow_light()
+	
+	velocity = velocity.linear_interpolate(Vector3.ZERO, friction)
 	velocity += acceleration * delta
-#	velocity = velocity.clamped(move_speed)
-#	rotation = velocity.angle()
 	
 	translate(velocity * delta)
+	clamp_speed(velocity)
 	
-	transform.origin.x = wrapf(transform.origin.x, -32, get_viewport().size.x + 32)
-	transform.origin.y = wrapf(transform.origin.y, -32, get_viewport().size.y + 32)
-
 func process_cohesion(neighbors):
 	var vector = Vector3()
 	if neighbors.empty():
 		return vector
-	for boid in neighbors:
-		vector += boid.transform.origin
+	for firefly in neighbors:
+		vector += firefly.global_transform.origin
 	vector /= neighbors.size()
-	return steer((vector - transform.origin).normalized() * move_speed)
-		
-
-func process_alignments(neighbors):
+	return steer((vector - global_transform.origin).normalized() * speed)
+	
+func process_alignement(neighbors):
 	var vector = Vector3()
 	if neighbors.empty():
 		return vector
-		
-	for boid in neighbors:
-		vector += boid.velocity
+	for firefly in neighbors:
+		vector += firefly.velocity
 	vector /= neighbors.size()
-	return steer(vector.normalized() * move_speed)
-
-func process_seperation(neighbors):
+	return steer(vector.normalized() * speed)
+	
+func process_separation(neighbors):
 	var vector = Vector3()
 	var close_neighbors = []
-	for boid in neighbors:
-		if transform.origin.distance_to(boid.transform.origin) < perception_radius / 2:
-			close_neighbors.push_back(boid)
+	for firefly in neighbors:
+		if global_transform.origin.distance_to(firefly.global_transform.origin) <= perception_radius / 2:
+			close_neighbors.push_back(firefly)
 	if close_neighbors.empty():
 		return vector
-	
-	for boid in close_neighbors:
-		var difference = transform.origin - boid.transform.origin
+		
+	for firefly in close_neighbors:
+		var difference = global_transform.origin - firefly.global_transform.origin
 		vector += difference.normalized() / difference.length()
-	
 	vector /= close_neighbors.size()
-	return steer(vector.normalized() * move_speed)
-	
+	return steer(vector.normalized() * speed)
 
+func avoid_collision():
+	var vector = Vector3()
+	
+	for ray in $Sensors.get_children():
+		if ray.is_colliding():
+			var repel_direction = ray.get_collision_normal()
+			vector += repel_direction
+			
+			return vector.normalized() * speed
+		else:
+			return Vector3.ZERO
+
+func follow_light():
+	var vector = Vector3()
+	var target_pos = global_transform.origin
+	var focus_pos = flashlight.focus_point.global_transform.origin
+	var target_to_focus = target_pos.direction_to(focus_pos)
+	
+	if flashlight.is_on == true && flashlight.is_lit == true:
+		vector += target_to_focus.normalized()
+		return steer(vector.normalized() * speed)
+	else:
+		vector = vector.linear_interpolate(Vector3.ZERO, friction)
+		return vector
+	
+func get_neighbors(view_radius):
+	var neighbors = []
+	
+	for firefly in fireflies:
+		if global_transform.origin.distance_to(firefly.global_transform.origin) <= view_radius \
+		and not firefly == self:
+			neighbors.push_back(firefly)
+	return neighbors
+	
 func steer(target):
 	var steer = target - velocity
 	steer = steer.normalized() * steer_force
 	return steer
-	
 
-func get_neighbors(view_radius):
-	var neighbors = []
-
-	for boid in boids:
-		if transform.origin.distance_to(boid.transform.origin) <= view_radius and not boid == self:
-			neighbors.push_back(boid)
-	return neighbors
-			
+func clamp_speed(vector):
+	var l = vector.length()
 	
+	if l > 0.0 && speed < l:
+		velocity /= l
+		velocity *= speed

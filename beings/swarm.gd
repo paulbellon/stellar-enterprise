@@ -2,7 +2,7 @@ extends Spatial
 
 const FIREFLY_COUNT = 20
 
-onready var firefly_scene = preload("res://beings/LightTarget.tscn")
+onready var firefly_scene = preload("res://beings/Firefly.tscn")
 
 var fireflies = []
 
