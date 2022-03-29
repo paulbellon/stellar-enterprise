@@ -12,6 +12,7 @@ onready var dialogue_system_data = load("res://narrative_tree/dialogue_system/di
 onready var head = $Head
 onready var ray = $Head/Camera/RayCast
 onready var flashlight = $Head/Flashlight
+onready var camera = $Head/Camera
 
 func _ready() -> void:
 	Global.player_node = self	

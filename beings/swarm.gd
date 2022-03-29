@@ -1,8 +1,7 @@
 extends Spatial
 
-const FIREFLY_COUNT = 20
-
-onready var firefly_scene = preload("res://beings/Firefly.tscn")
+export var FIREFLY_COUNT = 20
+export var firefly_scene: PackedScene
 
 var fireflies = []
 

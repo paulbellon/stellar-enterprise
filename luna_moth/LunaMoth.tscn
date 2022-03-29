@@ -1,18 +1,91 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://beings/swarm.gd" type="Script" id=1]
-[ext_resource path="res://Door.tscn" type="PackedScene" id=2]
-[ext_resource path="res://luna_moth/exit_button/ExitButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://beings/GoodFirefly.tscn" type="PackedScene" id=1]
+[ext_resource path="res://luna_moth/SecurityDoor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://luna_moth/airlock/Airlock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://luna_moth/LeverDoor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://beings/BadBeing.tscn" type="PackedScene" id=6]
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="GDScript" id=22]
+script/source = "extends Spatial
+
+export var FIREFLY_COUNT = 20
+export var firefly_scene: PackedScene
+
+var fireflies = []
+
+func _ready():
+	
+	for i in FIREFLY_COUNT:
+		var firefly = firefly_scene.instance()
+		add_child(firefly)
+		fireflies.push_back(firefly)
+	
+	for firefly in get_children():
+		firefly.fireflies = fireflies
+		
+"
+
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 5, 0.2, 10 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 5, 0.2, 10 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 5, 0.2, 2.86184 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 5, 0.2, 5.00135 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 5, 0.2, 10 )
+
+[sub_resource type="BoxShape" id=19]
+extents = Vector3( 7.5, 3, 0.2 )
+
+[sub_resource type="BoxShape" id=20]
+extents = Vector3( 7.5, 5, 0.2 )
+
+[sub_resource type="BoxShape" id=21]
+extents = Vector3( 7.5, 5, 0.2 )
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 10, 20 )
 
+[sub_resource type="PlaneMesh" id=12]
+size = Vector2( 15, 10 )
+
+[sub_resource type="PlaneMesh" id=16]
+size = Vector2( 15, 10 )
+
+[sub_resource type="PlaneMesh" id=13]
+size = Vector2( 15, 10 )
+
+[sub_resource type="PlaneMesh" id=15]
+size = Vector2( 3, 10 )
+
+[sub_resource type="PlaneMesh" id=17]
+size = Vector2( 3, 10 )
+
+[sub_resource type="PlaneMesh" id=18]
+size = Vector2( 4, 1 )
+
+[sub_resource type="PlaneMesh" id=14]
+size = Vector2( 15, 10 )
+
 [sub_resource type="PlaneMesh" id=3]
 size = Vector2( 10, 10 )
+
+[sub_resource type="PlaneMesh" id=9]
+size = Vector2( 10, 6 )
+
+[sub_resource type="PlaneMesh" id=10]
+size = Vector2( 10, 10.5 )
+
+[sub_resource type="PlaneMesh" id=11]
+size = Vector2( 2, 5 )
 
 [node name="Shipwreck" type="Spatial"]
 
@@ -24,7 +97,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.795301, 4.07016 )
 
 [node name="Swarm" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.39007, -10.5466 )
-script = ExtResource( 1 )
+script = SubResource( 22 )
+firefly_scene = ExtResource( 1 )
+
+[node name="SecurityDoor" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.90691, 2, -2.87401 )
+
+[node name="LeverDoor" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.701, 2, -2.80124 )
 
 [node name="Collisions" type="Spatial" parent="."]
 
@@ -32,70 +112,155 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Collisions/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.187654, -5.02632 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2" type="StaticBody" parent="Collisions"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 5.48314, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Collisions/StaticBody2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.187654, -5.02632 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="StaticBody3" type="StaticBody" parent="Collisions"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.93862, 0.689354, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Collisions/StaticBody3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.187654, -5.02632 )
-shape = SubResource( 2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.187654, 1.94321 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Collisions/StaticBody3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.187654, -9.9081 )
+shape = SubResource( 7 )
 
 [node name="StaticBody4" type="StaticBody" parent="Collisions"]
 transform = Transform( 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -4.94284, 0.689354, -10.0509 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Collisions/StaticBody4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.187654, -5.02632 )
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
-[node name="Meshes" type="Spatial" parent="."]
+[node name="StaticBody5" type="StaticBody" parent="Collisions"]
 
-[node name="CSGMesh" type="CSGMesh" parent="Meshes"]
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/StaticBody5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5089, 1.91009, 2.07124 )
+shape = SubResource( 19 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Collisions/StaticBody5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5089, 1.91009, -7.92213 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Collisions/StaticBody5"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 12.5089, -0.161663, -2.89085 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Collisions/StaticBody5"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.5089, 4.95205, -2.89085 )
+shape = SubResource( 21 )
+
+[node name="Walls" type="Spatial" parent="."]
+
+[node name="CSGMesh" type="MeshInstance" parent="Walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.99352 )
 mesh = SubResource( 1 )
+material/0 = null
 
-[node name="CSGMesh2" type="CSGMesh" parent="Meshes"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.94879, 0.683609, -4.99352 )
-mesh = SubResource( 1 )
+[node name="CSGMesh2" type="MeshInstance" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2188, 0, -2.93628 )
+mesh = SubResource( 12 )
+material/0 = null
 
-[node name="CSGMesh3" type="CSGMesh" parent="Meshes"]
+[node name="CSGMesh12" type="MeshInstance" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 12.4939, 4.79219, -2.93628 )
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="CSGMesh7" type="MeshInstance" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 12.4721, 0, -7.81703 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="CSGMesh9" type="MeshInstance" parent="Walls"]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 19.7833, 0, -6.27076 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="CSGMesh10" type="MeshInstance" parent="Walls"]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 19.7833, 0, 0.568923 )
+mesh = SubResource( 17 )
+material/0 = null
+
+[node name="CSGMesh11" type="MeshInstance" parent="Walls"]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 19.7833, 4.47953, -2.81439 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="CSGMesh8" type="MeshInstance" parent="Walls"]
+transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 12.482, 0, 1.90798 )
+mesh = SubResource( 14 )
+material/0 = null
+
+[node name="CSGMesh3" type="MeshInstance" parent="Walls"]
 transform = Transform( 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -4.99478, 0.683609, -4.99352 )
 mesh = SubResource( 1 )
+material/0 = null
 
-[node name="CSGMesh4" type="CSGMesh" parent="Meshes"]
+[node name="CSGMesh4" type="MeshInstance" parent="Walls"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.109816, 5.46961, -4.99352 )
 mesh = SubResource( 1 )
+material/0 = null
 
-[node name="CSGMesh5" type="CSGMesh" parent="Meshes"]
+[node name="CSGMesh5" type="MeshInstance" parent="Walls"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.66693, -14.9643 )
 mesh = SubResource( 3 )
+material/0 = null
 
-[node name="CSGMesh6" type="CSGMesh" parent="Meshes"]
+[node name="CSGMesh6" type="MeshInstance" parent="Walls"]
 transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0.66693, 4.88245 )
 mesh = SubResource( 3 )
+material/0 = null
 
-[node name="Door" parent="." instance=ExtResource( 2 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.90691, 2, -2.87401 )
+[node name="MeshInstance" type="MeshInstance" parent="Walls"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.97893, 0.542187, 2.01376 )
+mesh = SubResource( 9 )
+material/0 = null
 
-[node name="OmniLight" type="OmniLight" parent="."]
+[node name="MeshInstance2" type="MeshInstance" parent="Walls"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.97893, 0.542187, -10.0507 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Walls"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.97893, 4.94631, -3.00858 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="Lights" type="Spatial" parent="."]
+
+[node name="OmniLight" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30321, 3.80447, -0.833816 )
 light_color = Color( 1, 0, 0, 1 )
 omni_attenuation = 2.0
 
-[node name="OmniLight2" type="OmniLight" parent="."]
+[node name="OmniLight4" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9162, 3.80447, -0.833816 )
+light_color = Color( 1, 0, 0, 1 )
+omni_attenuation = 2.0
+
+[node name="OmniLight5" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9162, 3.80447, -5.6226 )
+light_color = Color( 1, 0, 0, 1 )
+omni_attenuation = 2.0
+
+[node name="OmniLight2" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35689, 3.80447, -5.19795 )
 light_color = Color( 1, 0, 0, 1 )
 omni_attenuation = 2.0
 
-[node name="OmniLight3" type="OmniLight" parent="."]
+[node name="OmniLight3" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19257, 1.58075, 0 )
 light_color = Color( 1, 0, 0, 1 )
 omni_range = 3.0
 omni_attenuation = 2.0
+
+[node name="BadFirefly" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0564, 1.76559, -5.71287 )

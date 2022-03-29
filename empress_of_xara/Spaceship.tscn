@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://luna_moth/SecurityDoor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://empress_of_xara/radio/Radio.tscn" type="PackedScene" id=2]
 [ext_resource path="res://navigation_table/NavigationTable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=5]

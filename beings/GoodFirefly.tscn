@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://beings/firefly.gd" type="Script" id=1]
+[ext_resource path="res://beings/good_firefly.gd" type="Script" id=1]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.05, 0.05, 0.05 )
 
 [sub_resource type="SphereMesh" id=2]
-radius = 0.1
-height = 0.2
+radius = 0.05
+height = 0.1
 
-[node name="Firefly" type="KinematicBody" groups=["Firefly"]]
+[node name="GoodFirefly" type="KinematicBody" groups=["Firefly"]]
 collision_layer = 2
 script = ExtResource( 1 )
 

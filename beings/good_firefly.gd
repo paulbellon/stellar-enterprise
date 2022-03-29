@@ -1,5 +1,4 @@
 extends KinematicBody
-class_name Firefly
 
 onready var flashlight = Global.player_node.flashlight
 

@@ -24,11 +24,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://narrative_tree/dialogue_system/models/dialogue_system_model.gd"
 }, {
-"base": "KinematicBody",
-"class": "Firefly",
-"language": "GDScript",
-"path": "res://beings/firefly.gd"
-}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
@@ -83,7 +78,6 @@ _global_script_class_icons={
 "DayModel": "",
 "DialogueModel": "",
 "DialogueSystemModel": "",
-"Firefly": "",
 "GitAPI": "",
 "LineModel": "",
 "LocationModel": "",

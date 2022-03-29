@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://luna_moth/airlock/airlock.gd" type="Script" id=1]
+[ext_resource path="res://player/ray_target/RayTarget.tscn" type="PackedScene" id=2]
+
+[node name="Airlock" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+width = 0.6
+height = 0.550308
+depth = 0.452911
+
+[node name="RayTarget" parent="." instance=ExtResource( 2 )]
+display_name = "Exit"
+
+[connection signal="ray_click" from="RayTarget" to="." method="exit_location"]
