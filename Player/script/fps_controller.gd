@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var speed = 7
+var speed = 3.5
 var mouse_sensitivity = 0.06
 
 var direction = Vector3()
@@ -13,9 +13,10 @@ onready var head = $Head
 onready var ray = $Head/Camera/RayCast
 onready var flashlight = $Head/Flashlight
 onready var camera = $Head/Camera
+onready var hud = $Head/Camera/HUDLayer
 
 func _ready() -> void:
-	Global.player_node = self	
+	Global.player_node = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ray.enabled = true
 	dialogue_system_data.speaker_reference["Vilm"] = $Speaker

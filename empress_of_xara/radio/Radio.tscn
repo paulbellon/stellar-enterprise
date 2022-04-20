@@ -49,16 +49,16 @@ shader = SubResource( 2 )
 
 [sub_resource type="CubeMesh" id=4]
 material = SubResource( 3 )
-size = Vector3( 0.2, 0.2, 0.3 )
+size = Vector3( 0.05, 0.05, 0.075 )
 
 [node name="Radio" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98622, 1.5967, 0 )
 script = ExtResource( 1 )
 chapter_data = ExtResource( 4 )
 dialogue_system_data = ExtResource( 5 )
 notification_sound = ExtResource( 2 )
 
 [node name="Area" parent="." instance=ExtResource( 3 )]
+display_name = "Radio"
 
 [node name="Mesh" type="MeshInstance" parent="."]
 mesh = SubResource( 4 )

@@ -108,6 +108,10 @@ window/size/always_on_top=true
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
 
+[global]
+
+fps=false
+
 [input]
 
 move_forward={

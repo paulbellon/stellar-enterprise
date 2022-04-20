@@ -3,13 +3,15 @@
 [ext_resource path="res://beings/bad_being.gd" type="Script" id=1]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.05, 0.05, 0.05 )
+extents = Vector3( 0.513107, 0.512513, 0.508286 )
 
 [sub_resource type="CubeMesh" id=2]
 size = Vector3( 1, 1, 1 )
 
-[node name="BadFirefly" type="KinematicBody"]
+[node name="BadBeing" type="Area"]
 collision_layer = 2
+collision_mask = 3
+monitorable = false
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -23,3 +25,5 @@ material/0 = null
 light_color = Color( 1, 0, 0, 1 )
 shadow_enabled = true
 omni_range = 3.0
+
+[connection signal="body_entered" from="." to="." method="catch_player"]

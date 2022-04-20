@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/simpledooropen.mp3-fbd006ba2da47a07716fb8673f26036a.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/simpledooropen.mp3"
+dest_files=[ "res://.import/simpledooropen.mp3-fbd006ba2da47a07716fb8673f26036a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
