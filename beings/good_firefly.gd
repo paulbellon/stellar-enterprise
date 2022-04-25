@@ -34,7 +34,8 @@ func _physics_process(delta):
 	velocity = velocity.linear_interpolate(Vector3.ZERO, friction)
 	velocity += acceleration * delta
 	
-	translate(velocity * delta)
+# warning-ignore:return_value_discarded
+	move_and_collide(velocity * delta, true, false)
 	clamp_speed(velocity)
 	
 func process_cohesion(neighbors):

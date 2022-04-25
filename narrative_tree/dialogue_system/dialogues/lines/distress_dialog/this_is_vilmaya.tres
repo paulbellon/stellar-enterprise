@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://narrative_tree/dialogue_system/models/line_model.gd" type="Script" id=1]
+[ext_resource path="res://assets/voices/vilmaya/vilmaya_radio_01.ogg" type="AudioStream" id=2]
+
+[resource]
+script = ExtResource( 1 )
+audio = ExtResource( 2 )
+text = "This is Vilmaya Lova speaking, captain and only crew member of the Empress of Xara mandated by the Taka-Kanoï Space Corporation. Please decline your identity and the motive of your message. Over."
+speakerName = "Vilmaya"
+quietTime = 0.0

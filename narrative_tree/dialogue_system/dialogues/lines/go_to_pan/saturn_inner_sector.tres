@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://narrative_tree/dialogue_system/models/line_model.gd" type="Script" id=1]
+[ext_resource path="res://assets/voices/vilmaya/vilmaya_radio_04.ogg" type="AudioStream" id=2]
+
+[resource]
+script = ExtResource( 1 )
+audio = ExtResource( 2 )
+text = "Saturn's inner sector is well under control of Hasegawa and Omegacom. Why would a single vessel from their company need assistance here ? There's Epimetheus's mining facility and New Babylon space station nearby, they could easily offer help."
+speakerName = "Vilmaya"
+quietTime = 3.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://player/state_machine/idle.gd" type="Script" id=1]
 [ext_resource path="res://player/script/vision_check.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/images/crosshair.png" type="Texture" id=7]
 [ext_resource path="res://player/script/fps_controller.gd" type="Script" id=8]
 [ext_resource path="res://player/Flashlight.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sounds/breathing.mp3" type="AudioStream" id=10]
 
 [sub_resource type="CapsuleShape" id=2]
 radius = 0.373724
@@ -39,6 +40,11 @@ shape = SubResource( 2 )
 
 [node name="Speaker" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.448662, 0 )
+stream = ExtResource( 10 )
+unit_db = -5.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
 
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00743, 0 )
@@ -63,8 +69,8 @@ script = ExtResource( 2 )
 script = ExtResource( 6 )
 
 [node name="HUD" type="Control" parent="Head/Camera/HUDLayer"]
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

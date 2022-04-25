@@ -1,6 +1,6 @@
 extends Spatial
 
-export var FIREFLY_COUNT = 20
+export var FIREFLY_COUNT: int
 export var firefly_scene: PackedScene
 
 var fireflies = []

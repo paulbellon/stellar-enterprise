@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/vilmaya_radio_03.ogg-af037b471904acd559a50281327ad8c2.oggstr"
+
+[deps]
+
+source_file="res://assets/voices/vilmaya/vilmaya_radio_03.ogg"
+dest_files=[ "res://.import/vilmaya_radio_03.ogg-af037b471904acd559a50281327ad8c2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

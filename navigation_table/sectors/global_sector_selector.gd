@@ -6,6 +6,7 @@ func _ready():
 	for child in get_children():
 		if child.is_in_group("sector_selector"):
 			var t : RayTarget = child.target
+# warning-ignore:return_value_discarded
 			t.connect("ray_click", self, "select_sector", [child.sector_data])
 
 func select_sector(sector_data):

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/materials/luna_moth/hub_light.tres" type="Material" id=1]
-[ext_resource path="res://luna_moth/hub_light.gd" type="Script" id=2]
+[ext_resource path="res://luna_moth/lights/hub_light.gd" type="Script" id=2]
+[ext_resource path="res://assets/meshes/luna_moth/GodRay.obj" type="ArrayMesh" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 0.005, 0.005, 0.35 )
@@ -29,6 +30,12 @@ spot_range = 8.0
 spot_attenuation = 1.5
 spot_angle = 60.0
 spot_angle_attenuation = 0.5
+
+[node name="GodRays" type="MeshInstance" parent="SpotLight"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.36916e-07, 0, -5.42001 )
+cast_shadow = 0
+mesh = ExtResource( 3 )
+material/0 = null
 
 [connection signal="body_entered" from="." to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Area_body_exited"]

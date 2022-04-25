@@ -1,10 +1,11 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://narrative_tree/dialogue_system/models/line_model.gd" type="Script" id=1]
-[ext_resource path="res://assets/dialogues/vilmaya_radio_01.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/voices/vilmaya/vilmaya_radio_02.ogg" type="AudioStream" id=2]
 
 [resource]
 script = ExtResource( 1 )
 audio = ExtResource( 2 )
-text = "Roger, yes, who is it, please answer."
-speakerName = "Vilm"
+text = ""
+speakerName = "Vilmaya"
+quietTime = 2.0

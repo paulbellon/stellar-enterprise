@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/GodRay.obj-3c1863dc8b7e484a854423ac00d1cc8d.mesh"
+
+[deps]
+
+files=[ "res://.import/GodRay.obj-3c1863dc8b7e484a854423ac00d1cc8d.mesh" ]
+
+source_file="res://assets/meshes/luna_moth/GodRay.obj"
+dest_files=[ "res://.import/GodRay.obj-3c1863dc8b7e484a854423ac00d1cc8d.mesh", "res://.import/GodRay.obj-3c1863dc8b7e484a854423ac00d1cc8d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

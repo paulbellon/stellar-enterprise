@@ -10,7 +10,7 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
-"class": "DayModel",
+"class": "ChapterModel",
 "language": "GDScript",
 "path": "res://narrative_tree/chapters/models/chapter_model.gd"
 }, {
@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://navigation_table/sectors/models/sector_model.gd"
 }, {
+"base": "Resource",
+"class": "SpeechSystemModel",
+"language": "GDScript",
+"path": "res://narrative_tree/dialogue_system/models/speech_system_model.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -75,7 +80,7 @@ _global_script_classes=[ {
 "path": "res://player/state_machine/models/state_machine.gd"
 } ]
 _global_script_class_icons={
-"DayModel": "",
+"ChapterModel": "",
 "DialogueModel": "",
 "DialogueSystemModel": "",
 "GitAPI": "",
@@ -86,6 +91,7 @@ _global_script_class_icons={
 "RayTarget": "",
 "SectorList": "",
 "SectorModel": "",
+"SpeechSystemModel": "",
 "State": "",
 "StateMachine": ""
 }

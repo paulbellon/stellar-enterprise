@@ -14,12 +14,14 @@ onready var ray = $Head/Camera/RayCast
 onready var flashlight = $Head/Flashlight
 onready var camera = $Head/Camera
 onready var hud = $Head/Camera/HUDLayer
+onready var speaker = $Speaker
 
 func _ready() -> void:
 	Global.player_node = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ray.enabled = true
-	dialogue_system_data.speaker_reference["Vilm"] = $Speaker
+	dialogue_system_data.speaker_reference["Vilmaya"] = $Speaker
+	dialogue_system_data.timer_reference["Vilmaya"] = $Timer
 
 func _input(event):
 	if event is InputEventMouseMotion:
