@@ -14,7 +14,6 @@ onready var ray = $Head/Camera/RayCast
 onready var flashlight = $Head/Flashlight
 onready var camera = $Head/Camera
 onready var hud = $Head/Camera/HUDLayer
-onready var speaker = $Speaker
 
 func _ready() -> void:
 	Global.player_node = self

@@ -64,11 +64,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://navigation_table/sectors/models/sector_model.gd"
 }, {
-"base": "Resource",
-"class": "SpeechSystemModel",
-"language": "GDScript",
-"path": "res://narrative_tree/dialogue_system/models/speech_system_model.gd"
-}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -91,7 +86,6 @@ _global_script_class_icons={
 "RayTarget": "",
 "SectorList": "",
 "SectorModel": "",
-"SpeechSystemModel": "",
 "State": "",
 "StateMachine": ""
 }
@@ -109,6 +103,10 @@ Global="*res://global.gd"
 [display]
 
 window/size/always_on_top=true
+
+[filesystem]
+
+import/fbx/use_fbx=false
 
 [gdnative]
 

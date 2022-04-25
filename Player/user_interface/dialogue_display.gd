@@ -16,3 +16,12 @@ func dialogue_started():
 
 func dialogue_ended():
 	hide()
+	
+func sentence_changed(text):
+	$Container/Label.text = text
+	
+func sentence_started():
+	show()
+
+func sentence_ended():
+	hide()

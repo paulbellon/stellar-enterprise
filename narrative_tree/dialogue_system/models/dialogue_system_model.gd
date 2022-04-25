@@ -10,7 +10,7 @@ signal start_dialogue
 signal end_dialogue
 signal change_line
 
-func chat(data):
+func talk(data):
 	emit_signal("start_dialogue")
 	current_dialogue = data.lines
 	while step != current_dialogue.size():
@@ -27,3 +27,4 @@ func chat(data):
 		yield(speaker, "finished")
 		step += 1
 	emit_signal("end_dialogue")
+	step = 0

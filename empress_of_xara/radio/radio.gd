@@ -18,8 +18,10 @@ func check_messages():
 func respond():
 	# Ignore if there is no dialogue to play
 	if chapter_data.messages.size() == 0: return
+	if chapter_data.progress != chapter_data.messages.front().progress_step: return
 	$NotificationAudio.stop()
 	var dialogue_to_play = chapter_data.messages.pop_front()
-	dialogue_system_data.chat(dialogue_to_play)
+	dialogue_system_data.talk(dialogue_to_play)
 	yield(dialogue_system_data, "end_dialogue")
+	chapter_data.progress += 1
 	check_messages()

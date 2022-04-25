@@ -41,7 +41,7 @@ shape = SubResource( 2 )
 [node name="Speaker" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.448662, 0 )
 stream = ExtResource( 10 )
-unit_db = -5.0
+unit_db = -8.0
 autoplay = true
 
 [node name="Timer" type="Timer" parent="."]

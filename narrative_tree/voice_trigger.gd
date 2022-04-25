@@ -1,11 +1,14 @@
 extends Area
 
 export (Resource) var chapter_data
-export (Resource) var speech_system_data
+export (Resource) var dialogue_system_data
 
 func _on_body_entered(body):
-	if body.name == "Player" && chapter_data.sentences.size() != 0:
-		var speech_to_play = chapter_data.sentences.pop_front()
-		speech_system_data.talk(speech_to_play)
-		yield(speech_system_data, "end_sentence")
+	if body.name == "Player":
+		if chapter_data.monologues.size() == 0: return
+		if chapter_data.progress != chapter_data.monologues.front().progress_step: return
+		var speech_to_play = chapter_data.monologues.pop_front()
+		dialogue_system_data.talk(speech_to_play)
+		yield(dialogue_system_data, "end_dialogue")
+		chapter_data.progress += 1
 		queue_free()

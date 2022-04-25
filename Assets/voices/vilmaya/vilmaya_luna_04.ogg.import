@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/vilmaya_luna_04.ogg-2022f581ec6d8fb93690eaf4ba174a88.oggstr"
+
+[deps]
+
+source_file="res://assets/voices/vilmaya/vilmaya_luna_04.ogg"
+dest_files=[ "res://.import/vilmaya_luna_04.ogg-2022f581ec6d8fb93690eaf4ba174a88.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
