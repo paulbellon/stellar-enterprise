@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var speed = 3.5
+var speed = 2.5
 var mouse_sensitivity = 0.06
 
 var direction = Vector3()
@@ -14,6 +14,9 @@ onready var ray = $Head/Camera/RayCast
 onready var flashlight = $Head/Flashlight
 onready var camera = $Head/Camera
 onready var hud = $Head/Camera/HUDLayer
+onready var voice = $Speaker
+onready var timer = $Timer
+onready var state_machine = $StateMachine
 
 func _ready() -> void:
 	Global.player_node = self

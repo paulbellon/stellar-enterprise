@@ -20,12 +20,13 @@ signal caught_player
 
 func _ready():
 	randomize()
+	
 		
 	transform.origin = Vector3(rand_range(-0.25, 0.25), rand_range(-0.25, 0.25), rand_range(-0.25, 0.25))
 	velocity = Vector3(rand_range(-0.5, 0.5), rand_range(-0.5, 0.5), rand_range(-0.5, 0.5)).normalized()
 	
 	if player:
-		connect("caught_player", player.hud, "collapse")
+		connect("caught_player", player.state_machine.helmet_state, "on_Being_catch")
 
 func _physics_process(delta):
 	
@@ -75,6 +76,8 @@ func chase_player():
 func catch_player(body):
 	if body.name == "Player":
 		emit_signal("caught_player")
+		for firefly in fireflies:
+			firefly.queue_free()
 		
 func process_cohesion(neighbors):
 	var vector = Vector3()

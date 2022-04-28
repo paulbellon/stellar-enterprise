@@ -15,3 +15,9 @@ func collapse():
 	$HUD/ColorRect.show()
 	ui_crosshair.hide()
 	anim_player.play("collapse")
+	
+func emerge():
+	anim_player.play_backwards("collapse")
+	yield(anim_player, "animation_finished")
+	ui_crosshair.show()
+	$HUD/ColorRect.hide()

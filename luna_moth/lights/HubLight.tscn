@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/materials/luna_moth/hub_light.tres" type="Material" id=1]
 [ext_resource path="res://luna_moth/lights/hub_light.gd" type="Script" id=2]
 [ext_resource path="res://assets/meshes/luna_moth/GodRay.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://assets/materials/luna_moth/light/GodRay.tres" type="Material" id=4]
+[ext_resource path="res://assets/materials/luna_moth/light/LightShaftMat.tres" type="Material" id=4]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 0.005, 0.005, 0.35 )
@@ -23,18 +23,17 @@ material/0 = ExtResource( 1 )
 shape = SubResource( 2 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.155505, 0, 0 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0918511, 0, 0 )
 light_color = Color( 1, 0.678431, 0, 1 )
 light_energy = 12.0
 light_indirect_energy = 0.5
-spot_range = 8.0
+spot_range = 9.20202
 spot_attenuation = 1.5
-spot_angle = 60.0
+spot_angle = 46.5717
 spot_angle_attenuation = 0.5
 
 [node name="GodRays" type="MeshInstance" parent="SpotLight"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.36916e-07, 0, -5.42001 )
-visible = false
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.21037e-07, 0, -5.05675 )
 cast_shadow = 0
 mesh = ExtResource( 3 )
 material/0 = ExtResource( 4 )

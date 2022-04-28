@@ -1,11 +1,14 @@
 class_name StateMachine
 extends Node
 
-signal transitioned(state_name)
-
 export var initial_state := NodePath()
 
 onready var state: State = get_node(initial_state)
+onready var helmet_state = $Helmet
+onready var freeze_state = $Freeze
+onready var death_state = $Death
+
+signal transitioned(state_name)
 
 func _ready() -> void:
 	yield(owner, "ready")

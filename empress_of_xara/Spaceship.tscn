@@ -56,6 +56,9 @@ points = PoolVector3Array( 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1 
 [node name="Spaceship" type="Spatial"]
 script = ExtResource( 8 )
 
+[node name="Player" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.789708, 10.0625 )
+
 [node name="Radio" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.94735, 0, -0.3202, 0, 1, 0, 0.3202, 0, 0.94735, -1.74282, 1.12899, 0.945823 )
 
@@ -63,9 +66,6 @@ transform = Transform( 0.94735, 0, -0.3202, 0, 1, 0, 0.3202, 0, 0.94735, -1.7428
 transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 2.01925, 1.25058, 3.58967 )
 
 [node name="Background" type="Spatial" parent="."]
-
-[node name="Player" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.789708, 10.0625 )
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )

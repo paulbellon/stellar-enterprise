@@ -25,6 +25,8 @@ func flickering_light():
 	if near_fireflies != 0:
 		material.emission_enabled = true
 		light.light_energy = 12
+		godrays.show()
 	else:
 		material.emission_enabled = false
 		light.light_energy = 0
+		godrays.hide()

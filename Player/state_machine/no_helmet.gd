@@ -2,11 +2,17 @@ extends PlayerState
 
 func enter(_msg := {}) -> void:
 	player.velocity = Vector3.ZERO
+	player.flashlight.hide()
+	
+	player.move_lock_x = false
+	player.move_lock_y = false
+	player.move_lock_z = false
 
 func physics_update(_delta: float) -> void:
+	player_movement()
 	player.ray.check_vision()
-	player.flashlight.light_detection()
-	
+
+func player_movement():
 	if Input.is_action_pressed("move_forward") \
 	or Input.is_action_pressed("move_backward") \
 	or Input.is_action_pressed("move_left") \
@@ -17,15 +23,8 @@ func physics_update(_delta: float) -> void:
 		player.direction = player.direction.rotated(Vector3.UP, player.rotation.y).normalized()
 		player.velocity.x = player.direction.x * player.speed
 		player.velocity.z = player.direction.z * player.speed
-		player.velocity.y = - 100 * _delta
 		player.velocity = player.move_and_slide_with_snap(player.velocity, player.snap_vec, Vector3.UP, true, 4, PI)
-	
-	if Input.is_action_just_pressed("use") && player.flashlight.light_energy == 1:
-		player.flashlight.light_energy = 0
-		player.flashlight.is_on = false
-	elif Input.is_action_just_pressed("use") && player.flashlight.light_energy == 0:
-		player.flashlight.light_energy = 1
-		player.flashlight.is_on = true
 		
-#	if player.ray.trigger_radio():
-#		state_machine.transition_to("Freeze")
+func on_Radio_play():
+	state_machine.transition_to("Freeze")
+		
