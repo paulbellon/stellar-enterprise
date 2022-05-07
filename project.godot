@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "ChapterList",
+"language": "GDScript",
+"path": "res://narrative_tree/chapters/models/chapter_list_model.gd"
+}, {
+"base": "Resource",
 "class": "ChapterModel",
 "language": "GDScript",
 "path": "res://narrative_tree/chapters/models/chapter_model.gd"
@@ -42,7 +47,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "NewSector",
 "language": "GDScript",
-"path": "res://narrative_tree/narrative_action/new_sector.gd"
+"path": "res://narrative_tree/narrative_action/models/new_sector.gd"
 }, {
 "base": "State",
 "class": "PlayerState",
@@ -75,6 +80,7 @@ _global_script_classes=[ {
 "path": "res://player/state_machine/models/state_machine.gd"
 } ]
 _global_script_class_icons={
+"ChapterList": "",
 "ChapterModel": "",
 "DialogueModel": "",
 "DialogueSystemModel": "",
@@ -99,10 +105,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://global.gd"
-
-[display]
-
-window/size/always_on_top=true
 
 [filesystem]
 
@@ -146,6 +148,11 @@ left_mouse={
 use={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+screenshot={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

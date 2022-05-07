@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/materials/luna_moth/portal/ring_effect.tres" type="Material" id=2]
 [ext_resource path="res://assets/materials/luna_moth/portal/air_effect_2.tres" type="Material" id=3]
@@ -7,10 +7,113 @@
 [ext_resource path="res://assets/meshes/luna_moth/portal/air.obj" type="ArrayMesh" id=6]
 
 [sub_resource type="QuadMesh" id=5]
-size = Vector2( 4, 4 )
+size = Vector2( 2.5, 2.5 )
 
 [sub_resource type="QuadMesh" id=6]
-size = Vector2( 4.5, 4.5 )
+size = Vector2( 3, 3 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "PortalOpen"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ring/Hole:material_override:shader_param/Opening")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.1, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ring/Ring:mesh:size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 3, 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Effects/air:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.1, 0.1, 0.1 ), Vector3( 1.5, 1.5, 1.5 ), Vector3( 2, 2, 2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Effects/air2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.1, 0.1, 0.1 ), Vector3( 2, 2, 2 ), Vector3( 2.5, 2.5, 2.5 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ring/Hole:material_override:shader_param/Opening")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ring/Ring:mesh:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3, 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Effects/air:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 2, 2, 2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Effects/air2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 2.5, 2.5, 2.5 ) ]
+}
 
 [node name="Portal" type="Spatial"]
 
@@ -24,6 +127,7 @@ mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Ring" type="MeshInstance" parent="Ring"]
+transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 material_override = ExtResource( 2 )
 mesh = SubResource( 6 )
 material/0 = null
@@ -31,13 +135,17 @@ material/0 = null
 [node name="Effects" type="Spatial" parent="."]
 
 [node name="air" type="MeshInstance" parent="Effects"]
-transform = Transform( 3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 material_override = ExtResource( 4 )
 mesh = ExtResource( 6 )
 material/0 = null
 
 [node name="air2" type="MeshInstance" parent="Effects"]
-transform = Transform( -0.102265, 1.40756, 3.74277, -3.99869, -0.0359972, -0.0957201, -6.10947e-07, -3.74399, 1.40802, 0, 0, 0 )
+transform = Transform( -0.0639157, 0.879725, 2.33923, -2.49918, -0.0224983, -0.0598251, -3.88827e-07, -2.34, 0.880013, 0, 0, 0 )
 material_override = ExtResource( 3 )
 mesh = ExtResource( 6 )
 material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/PortalOpen = SubResource( 7 )
+anims/RESET = SubResource( 8 )

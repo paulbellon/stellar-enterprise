@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/materials/luna_moth/hub_light.tres" type="Material" id=1]
+[ext_resource path="res://assets/materials/luna_moth/light/hub_light.tres" type="Material" id=1]
 [ext_resource path="res://luna_moth/lights/hub_light.gd" type="Script" id=2]
 [ext_resource path="res://assets/meshes/luna_moth/GodRay.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://assets/materials/luna_moth/light/LightShaftMat.tres" type="Material" id=4]

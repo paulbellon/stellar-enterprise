@@ -21,3 +21,12 @@ func emerge():
 	yield(anim_player, "animation_finished")
 	ui_crosshair.show()
 	$HUD/ColorRect.hide()
+	
+func dazzle():
+	$HUD/ColorRect.show()
+	anim_player.play("dazzle")
+	yield(anim_player, "animation_finished")
+	anim_player.play_backwards("dazzle")
+	yield(anim_player, "animation_finished")
+	$HUD/ColorRect.hide()
+	

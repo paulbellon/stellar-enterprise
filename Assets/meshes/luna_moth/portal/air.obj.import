@@ -16,5 +16,5 @@ dest_files=[ "res://.import/air.obj-fed4b84c0032ab7bf3961dd691aa39e7.mesh", "res
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
 offset_mesh=Vector3( 0, 0, 0 )
-octahedral_compression=true
+octahedral_compression=false
 optimize_mesh_flags=4286

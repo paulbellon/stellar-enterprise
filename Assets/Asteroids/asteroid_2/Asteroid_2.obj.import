@@ -16,5 +16,5 @@ dest_files=[ "res://.import/Asteroid_2.obj-3f26eb3029f26f13cffbfd5483f2895f.mesh
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
 offset_mesh=Vector3( 0, 0, 0 )
-octahedral_compression=true
+octahedral_compression=false
 optimize_mesh_flags=4286

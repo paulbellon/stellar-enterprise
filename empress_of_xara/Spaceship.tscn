@@ -1,15 +1,14 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://narrative_tree/VoiceTrigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://empress_of_xara/radio/Radio.tscn" type="PackedScene" id=2]
-[ext_resource path="res://narrative_tree/chapters/introduction.tres" type="Resource" id=3]
 [ext_resource path="res://navigation_table/NavigationTable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sounds/background_sound.mp3" type="AudioStream" id=6]
 [ext_resource path="res://assets/meshes/empress_of_xara/corridor.obj" type="ArrayMesh" id=7]
 [ext_resource path="res://empress_of_xara/spaceship.gd" type="Script" id=8]
 [ext_resource path="res://assets/meshes/empress_of_xara/deck.obj" type="ArrayMesh" id=9]
-[ext_resource path="res://narrative_tree/dialogue_system/dialogue_system_data.tres" type="Resource" id=10]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=11]
 
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 8.85067, 0.2, 20 )
@@ -61,6 +60,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.789708, 10.0625 )
 
 [node name="Radio" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.94735, 0, -0.3202, 0, 1, 0, 0.3202, 0, 0.94735, -1.74282, 1.12899, 0.945823 )
+chapter_list = ExtResource( 11 )
 
 [node name="NavigationTable" parent="." instance=ExtResource( 4 )]
 transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 2.01925, 1.25058, 3.58967 )
@@ -298,5 +298,3 @@ shape = SubResource( 10 )
 
 [node name="VoiceTrigger" parent="VoiceTriggers" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0835159, 5.17275 )
-chapter_data = ExtResource( 3 )
-dialogue_system_data = ExtResource( 10 )

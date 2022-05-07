@@ -16,5 +16,5 @@ dest_files=[ "res://.import/demi_sphere.obj-9e19e01f8f618fc9f50caaa567dfcdc1.mes
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
 offset_mesh=Vector3( 0, 0, 0 )
-octahedral_compression=true
+octahedral_compression=false
 optimize_mesh_flags=4286

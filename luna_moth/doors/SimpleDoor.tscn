@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://assets/materials/luna_moth/Simple_Door_A.material" type="Material" id=1]
-[ext_resource path="res://assets/materials/luna_moth/Simple_Door_B.material" type="Material" id=2]
-[ext_resource path="res://assets/materials/luna_moth/Simple_Lever.material" type="Material" id=3]
-[ext_resource path="res://assets/materials/luna_moth/Lever.material" type="Material" id=4]
+[ext_resource path="res://assets/materials/luna_moth/doors/Simple_Door_A.material" type="Material" id=1]
+[ext_resource path="res://assets/materials/luna_moth/doors/Simple_Door_B.material" type="Material" id=2]
+[ext_resource path="res://assets/materials/luna_moth/interactibles/Simple_Lever.material" type="Material" id=3]
+[ext_resource path="res://assets/materials/luna_moth/interactibles/Lever.material" type="Material" id=4]
 [ext_resource path="res://player/ray_target/RayTarget.tscn" type="PackedScene" id=5]
 [ext_resource path="res://luna_moth/doors/lever_action.gd" type="Script" id=6]
 [ext_resource path="res://assets/sounds/simpledooropen.mp3" type="AudioStream" id=7]

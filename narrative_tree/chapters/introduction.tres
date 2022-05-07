@@ -9,3 +9,4 @@ script = ExtResource( 1 )
 messages = [ ExtResource( 2 ) ]
 monologues = [ ExtResource( 3 ) ]
 progress = 0
+max_step = 2

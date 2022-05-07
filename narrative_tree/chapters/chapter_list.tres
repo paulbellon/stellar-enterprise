@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://narrative_tree/chapters/models/chapter_list_model.gd" type="Script" id=1]
+[ext_resource path="res://narrative_tree/chapters/introduction.tres" type="Resource" id=2]
+[ext_resource path="res://narrative_tree/chapters/luna_moth.tres" type="Resource" id=3]
+[ext_resource path="res://narrative_tree/chapters/at_pan_sector.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+chapters = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ]

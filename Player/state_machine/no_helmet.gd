@@ -24,7 +24,3 @@ func player_movement():
 		player.velocity.x = player.direction.x * player.speed
 		player.velocity.z = player.direction.z * player.speed
 		player.velocity = player.move_and_slide_with_snap(player.velocity, player.snap_vec, Vector3.UP, true, 4, PI)
-		
-func on_Radio_play():
-	state_machine.transition_to("Freeze")
-		

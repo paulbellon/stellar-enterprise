@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/materials/luna_moth/Security_Door.material" type="Material" id=1]
-[ext_resource path="res://assets/materials/luna_moth/Security_Panel.material" type="Material" id=2]
-[ext_resource path="res://assets/materials/luna_moth/Security_Panel_Support.material" type="Material" id=3]
+[ext_resource path="res://assets/materials/luna_moth/doors/Security_Door.material" type="Material" id=1]
+[ext_resource path="res://assets/materials/luna_moth/interactibles/Security_Panel.material" type="Material" id=2]
+[ext_resource path="res://assets/materials/luna_moth/interactibles/Security_Panel_Support.material" type="Material" id=3]
 [ext_resource path="res://luna_moth/doors/short_circuit.gd" type="Script" id=4]
 
 [sub_resource type="ArrayMesh" id=1]

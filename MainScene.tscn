@@ -1,43 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scene_manager/scene_manager.gd" type="Script" id=1]
 [ext_resource path="res://navigation_table/sectors/main_sector_list.tres" type="Resource" id=2]
 [ext_resource path="res://empress_of_xara/Spaceship.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/images/loading_placeholder.png" type="Texture" id=4]
 [ext_resource path="res://player/user_interface/dialogue_display.gd" type="Script" id=5]
 [ext_resource path="res://narrative_tree/dialogue_system/dialogue_system_data.tres" type="Resource" id=6]
 [ext_resource path="res://player/user_interface/location_notifier.gd" type="Script" id=7]
-
-[sub_resource type="Animation" id=2]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect:rect_rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -25.0 ]
-}
-
-[sub_resource type="Animation" id=1]
-resource_name = "Twirl"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect:rect_rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ -5.0, 5.0, -5.0 ]
-}
+[ext_resource path="res://narrative_tree/chapters/introduction.tres" type="Resource" id=8]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=9]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
@@ -78,60 +48,13 @@ tracks/0/keys = {
 
 [node name="SceneManager" type="Node"]
 script = ExtResource( 1 )
-sector_data = ExtResource( 2 )
+sector_list = ExtResource( 2 )
+chapter_list = ExtResource( 9 )
 default_scene = ExtResource( 3 )
+default_chapter = ExtResource( 8 )
 
 [node name="OverlayLayer" type="CanvasLayer" parent="."]
 layer = 2
-
-[node name="LoadingScreen" type="Control" parent="OverlayLayer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="OverlayLayer/LoadingScreen"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="OverlayLayer/LoadingScreen"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -193.0
-margin_top = -87.0
-margin_right = 194.0
-margin_bottom = 87.0
-rect_rotation = -25.0
-rect_pivot_offset = Vector2( 193, 106 )
-texture = ExtResource( 4 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="OverlayLayer/LoadingScreen"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 26.0
-margin_top = -36.0
-margin_right = 75.0
-margin_bottom = -22.0
-text = "Loading"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="OverlayLayer/LoadingScreen"]
-anims/RESET = SubResource( 2 )
-anims/Twirl = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="OverlayLayer"]
 one_shot = true

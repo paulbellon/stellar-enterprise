@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=31 format=2]
+[gd_resource type="ShaderMaterial" load_steps=33 format=2]
 
 [sub_resource type="VisualShaderNodeInput" id=1]
 input_name = "uv"
@@ -86,6 +86,13 @@ default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 0.02, 0.02, 0.02 ) ]
 default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 0.5, 0.5, 0 ) ]
 operator = 2
 
+[sub_resource type="VisualShaderNodeScalarOp" id=31]
+default_input_values = [ 0, 0.0, 1, 2.0 ]
+operator = 3
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=32]
+constant = 0.8
+
 [sub_resource type="VisualShaderNodeVectorCompose" id=23]
 
 [sub_resource type="VisualShaderNodeVectorDecompose" id=24]
@@ -141,6 +148,13 @@ void fragment() {
 	float n_in29p0 = 0.50000;
 	float n_in29p1 = 0.45000;
 	float n_out29p0 = smoothstep(n_in29p0, n_in29p1, n_out28p0);
+
+// Scalar:34
+	float n_out34p0 = 0.800000;
+
+// ScalarOp:33
+	float n_in33p1 = 2.00000;
+	float n_out33p0 = n_out34p0 / n_in33p1;
 
 // Input:3
 	vec3 n_out3p0 = vec3(UV, 0.0);
@@ -209,9 +223,8 @@ void fragment() {
 	float n_out2p1 = tex_frg_2_read.a;
 
 // ScalarSmoothStep:22
-	float n_in22p0 = 0.40000;
 	float n_in22p1 = 0.60000;
-	float n_out22p0 = smoothstep(n_in22p0, n_in22p1, dot(n_out2p0, vec3(0.333333, 0.333333, 0.333333)));
+	float n_out22p0 = smoothstep(n_out33p0, n_in22p1, dot(n_out2p0, vec3(0.333333, 0.333333, 0.333333)));
 
 // ScalarOp:13
 	float n_out13p0 = n_out29p0 * n_out22p0;
@@ -247,7 +260,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( 209, 89 )
+graph_offset = Vector2( -534.715, -101.829 )
 flags/shadows_disabled = true
 nodes/vertex/0/position = Vector2( 646, 114 )
 nodes/vertex/2/node = SubResource( 29 )
@@ -275,7 +288,7 @@ nodes/fragment/8/position = Vector2( -680, 280 )
 nodes/fragment/9/node = SubResource( 28 )
 nodes/fragment/9/position = Vector2( -920, 240 )
 nodes/fragment/11/node = SubResource( 1 )
-nodes/fragment/11/position = Vector2( -200, 20 )
+nodes/fragment/11/position = Vector2( -200, 60 )
 nodes/fragment/13/node = SubResource( 2 )
 nodes/fragment/13/position = Vector2( 480, 100 )
 nodes/fragment/14/node = SubResource( 3 )
@@ -312,14 +325,18 @@ nodes/fragment/26/position = Vector2( -1140, 880 )
 nodes/fragment/27/node = SubResource( 17 )
 nodes/fragment/27/position = Vector2( -1020, 520 )
 nodes/fragment/28/node = SubResource( 18 )
-nodes/fragment/28/position = Vector2( 20, -40 )
+nodes/fragment/28/position = Vector2( 20, 0 )
 nodes/fragment/29/node = SubResource( 19 )
 nodes/fragment/29/position = Vector2( 240, -80 )
 nodes/fragment/31/node = SubResource( 21 )
 nodes/fragment/31/position = Vector2( -180, 300 )
 nodes/fragment/32/node = SubResource( 22 )
 nodes/fragment/32/position = Vector2( -420, 380 )
-nodes/fragment/connections = PoolIntArray( 6, 0, 4, 0, 8, 0, 4, 1, 7, 0, 9, 0, 9, 0, 6, 1, 7, 0, 16, 0, 16, 0, 8, 1, 18, 0, 19, 0, 21, 0, 18, 1, 20, 0, 18, 0, 19, 0, 0, 5, 13, 0, 14, 2, 22, 0, 13, 1, 24, 0, 23, 1, 26, 0, 23, 2, 25, 0, 27, 0, 11, 0, 28, 0, 29, 0, 13, 0, 27, 0, 23, 0, 3, 0, 5, 0, 28, 0, 29, 2, 14, 0, 0, 1, 5, 1, 8, 0, 5, 0, 6, 0, 2, 0, 22, 2, 23, 0, 31, 1, 31, 0, 2, 0, 4, 0, 32, 0, 32, 0, 31, 0, 2, 0, 18, 2 )
+nodes/fragment/33/node = SubResource( 31 )
+nodes/fragment/33/position = Vector2( -200, 140 )
+nodes/fragment/34/node = SubResource( 32 )
+nodes/fragment/34/position = Vector2( -420, 120 )
+nodes/fragment/connections = PoolIntArray( 6, 0, 4, 0, 8, 0, 4, 1, 7, 0, 9, 0, 9, 0, 6, 1, 7, 0, 16, 0, 16, 0, 8, 1, 18, 0, 19, 0, 21, 0, 18, 1, 20, 0, 18, 0, 19, 0, 0, 5, 13, 0, 14, 2, 22, 0, 13, 1, 24, 0, 23, 1, 26, 0, 23, 2, 25, 0, 27, 0, 11, 0, 28, 0, 29, 0, 13, 0, 27, 0, 23, 0, 3, 0, 5, 0, 28, 0, 29, 2, 14, 0, 0, 1, 5, 1, 8, 0, 5, 0, 6, 0, 2, 0, 22, 2, 23, 0, 31, 1, 31, 0, 2, 0, 4, 0, 32, 0, 32, 0, 31, 0, 2, 0, 18, 2, 34, 0, 33, 0, 33, 0, 22, 0 )
 
 [resource]
 shader = SubResource( 30 )
