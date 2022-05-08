@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://narrative_tree/dialogue_system/models/dialogue_model.gd" type="Script" id=1]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/lines/distress_dialog/incoming_message.tres" type="Resource" id=2]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/lines/distress_dialog/this_is_vilmaya.tres" type="Resource" id=3]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/lines/distress_dialog/identify_yourself.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+lines = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+interactible = "Radio"

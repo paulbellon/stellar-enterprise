@@ -3,7 +3,7 @@
 [ext_resource path="res://empress_of_xara/radio/radio.gd" type="Script" id=1]
 [ext_resource path="res://assets/sounds/serious-strike-533.mp3" type="AudioStream" id=2]
 [ext_resource path="res://player/ray_target/RayTarget.tscn" type="PackedScene" id=3]
-[ext_resource path="res://narrative_tree/chapters/introduction.tres" type="Resource" id=4]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=4]
 [ext_resource path="res://narrative_tree/dialogue_system/dialogue_system_data.tres" type="Resource" id=5]
 
 [sub_resource type="VisualShaderNodeColorConstant" id=1]
@@ -53,7 +53,7 @@ size = Vector3( 0.05, 0.05, 0.075 )
 
 [node name="Radio" type="Spatial"]
 script = ExtResource( 1 )
-chapter_data = ExtResource( 4 )
+chapter_list = ExtResource( 4 )
 dialogue_system_data = ExtResource( 5 )
 notification_sound = ExtResource( 2 )
 
@@ -62,7 +62,6 @@ display_name = "Radio"
 
 [node name="Mesh" type="MeshInstance" parent="."]
 mesh = SubResource( 4 )
-skeleton = NodePath("../..")
 material/0 = null
 
 [node name="Message" type="AudioStreamPlayer3D" parent="."]

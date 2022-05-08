@@ -1,13 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scene_manager/scene_manager.gd" type="Script" id=1]
 [ext_resource path="res://navigation_table/sectors/main_sector_list.tres" type="Resource" id=2]
 [ext_resource path="res://empress_of_xara/Spaceship.tscn" type="PackedScene" id=3]
+[ext_resource path="res://narrative_tree/ChapterManager.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/user_interface/dialogue_display.gd" type="Script" id=5]
 [ext_resource path="res://narrative_tree/dialogue_system/dialogue_system_data.tres" type="Resource" id=6]
 [ext_resource path="res://player/user_interface/location_notifier.gd" type="Script" id=7]
-[ext_resource path="res://narrative_tree/chapters/introduction.tres" type="Resource" id=8]
-[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=9]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
@@ -49,9 +48,9 @@ tracks/0/keys = {
 [node name="SceneManager" type="Node"]
 script = ExtResource( 1 )
 sector_list = ExtResource( 2 )
-chapter_list = ExtResource( 9 )
 default_scene = ExtResource( 3 )
-default_chapter = ExtResource( 8 )
+
+[node name="ChapterManager" parent="." instance=ExtResource( 4 )]
 
 [node name="OverlayLayer" type="CanvasLayer" parent="."]
 layer = 2

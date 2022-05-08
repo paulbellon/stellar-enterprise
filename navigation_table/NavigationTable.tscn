@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://navigation_table/GlobalMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/ray_target/RayTarget.tscn" type="PackedScene" id=2]
@@ -6,12 +6,14 @@
 [ext_resource path="res://navigation_table/sectors/main_sector_list.tres" type="Resource" id=4]
 [ext_resource path="res://assets/meshes/empress_of_xara/navigation_board_placeholder.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://assets/sounds/digital-spit-6.mp3" type="AudioStream" id=6]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=7]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 1, 0.392157, 1 )
 
 [node name="NavigationTable" type="Spatial"]
 script = ExtResource( 3 )
+chapter_list = ExtResource( 7 )
 sector_data = ExtResource( 4 )
 global_hologram = ExtResource( 1 )
 

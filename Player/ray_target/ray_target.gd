@@ -1,5 +1,4 @@
 extends Area
-
 class_name RayTarget
 
 export (String) var display_name = null

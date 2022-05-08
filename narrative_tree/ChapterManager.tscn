@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://narrative_tree/chapter_manager.gd" type="Script" id=1]
+[ext_resource path="res://narrative_tree/chapters/introduction.tres" type="Resource" id=2]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=3]
+
+[node name="ChapterManager" type="Node"]
+script = ExtResource( 1 )
+chapter_list = ExtResource( 3 )
+default_chapter = ExtResource( 2 )

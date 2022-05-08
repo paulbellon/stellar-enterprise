@@ -4,7 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-messages = [  ]
-monologues = [  ]
-progress = 0
-max_step = 0
+events = [  ]

@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "ActionEvent",
+"language": "GDScript",
+"path": "res://narrative_tree/narrative_action/models/action_event.gd"
+}, {
+"base": "Resource",
 "class": "ChapterList",
 "language": "GDScript",
 "path": "res://narrative_tree/chapters/models/chapter_list_model.gd"
@@ -80,6 +85,7 @@ _global_script_classes=[ {
 "path": "res://player/state_machine/models/state_machine.gd"
 } ]
 _global_script_class_icons={
+"ActionEvent": "",
 "ChapterList": "",
 "ChapterModel": "",
 "DialogueModel": "",
