@@ -1,13 +1,13 @@
 extends KinematicBody
 
+export (Resource) var dialogue_system_data
+
 var speed = 2.5
 var mouse_sensitivity = 0.06
 
 var direction = Vector3()
 var velocity = Vector3()
 var snap_vec = Vector3.DOWN
-
-onready var dialogue_system_data = load("res://narrative_tree/dialogue_system/dialogue_system_data.tres")
 
 onready var head = $Head
 onready var ray = $Head/Camera/RayCast

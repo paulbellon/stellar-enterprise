@@ -54,4 +54,4 @@ func setterFunc(new_value : bool):
 		player.voice.play()
 		
 func on_Being_catch():
-	state_machine.transition_to("Death")
+	state_machine.transition_to(state_machine.death_state)

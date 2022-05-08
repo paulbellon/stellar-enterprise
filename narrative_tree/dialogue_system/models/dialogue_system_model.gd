@@ -15,7 +15,7 @@ func talk(data):
 	current_dialogue = data.lines
 	while step != current_dialogue.size():
 		var line = current_dialogue[step]
-		var speaker : AudioStreamPlayer3D = speaker_reference[line.speakerName]
+		var speaker = speaker_reference[line.speakerName]
 		var timer : Timer = timer_reference[line.speakerName]
 		var audio = line.audio
 		emit_signal("change_line", line.text)

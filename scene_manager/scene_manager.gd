@@ -3,6 +3,8 @@ extends Node
 export (Resource) var sector_list
 export (PackedScene) var default_scene
 
+#var player_scene = preload("res://player/Player.tscn")
+
 signal scene_loaded
 
 func _ready():
@@ -14,18 +16,17 @@ func _ready():
 	
 func _input(_event):
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().quit() 
+		get_tree().quit()
 	
 func switch_scene(next_scene):
 	# Removes everything inside
 	for child in $MainScene.get_children():
 		child.queue_free()
 	# Instanciates next scene inside
-	var timer = $OverlayLayer/Timer
-	timer.start()
-	yield(timer, "timeout")
+#	var player = player_scene.instance()
 	var current_scene = next_scene.instance()
 	$MainScene.add_child(current_scene)
+#	set_spawnpoint(player, current_scene)
 	emit_signal("scene_loaded")
 	
 func change_sector():
@@ -36,4 +37,8 @@ func change_location():
 		switch_scene(sector_list.current_location.scene)
 	else:
 		switch_scene(default_scene)
+		
+#func set_spawnpoint(player, scene):
+#	scene.spawn_player(player)
+
 

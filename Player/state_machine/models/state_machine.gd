@@ -1,9 +1,9 @@
 class_name StateMachine
 extends Node
 
-export var initial_state := NodePath()
+export var default_state := NodePath()
 
-onready var state: State = get_node(initial_state)
+onready var state: State = get_node(default_state)
 onready var helmet_state = $Helmet
 onready var freeze_state = $Freeze
 onready var death_state = $Death
@@ -32,6 +32,4 @@ func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	state = get_node(target_state_name)
 	state.enter(msg)
 	emit_signal("transitioned", state.name)
-	
-	
 	

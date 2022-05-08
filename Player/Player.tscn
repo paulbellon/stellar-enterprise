@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://player/state_machine/no_helmet.gd" type="Script" id=1]
 [ext_resource path="res://player/script/vision_check.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://player/Flashlight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/sounds/vilmaya/breathing.mp3" type="AudioStream" id=10]
 [ext_resource path="res://player/state_machine/death.gd" type="Script" id=11]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogue_system_data.tres" type="Resource" id=13]
 
 [sub_resource type="CapsuleShape" id=2]
 radius = 0.373724
@@ -51,14 +52,14 @@ tracks/0/keys = {
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
 script = ExtResource( 8 )
+dialogue_system_data = ExtResource( 13 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 2 )
 
-[node name="Speaker" type="AudioStreamPlayer3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.448662, 0 )
-unit_db = -8.0
+[node name="Speaker" type="AudioStreamPlayer" parent="."]
+volume_db = -8.0
 autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -137,7 +138,7 @@ __meta__ = {
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 5 )
-initial_state = NodePath("Helmet")
+default_state = NodePath("NoHelmet")
 
 [node name="NoHelmet" type="Node" parent="StateMachine"]
 script = ExtResource( 1 )

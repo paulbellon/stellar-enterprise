@@ -5,7 +5,6 @@ export (Resource) var default_chapter
 
 
 func _ready():
-#	chapter_list.connect("chapter_finished", self, "change_chapter")
 	chapter_list.current_chapter = chapter_list.chapters.pop_front()
 
 #func change_chapter():

@@ -55,9 +55,6 @@ default_scene = ExtResource( 3 )
 [node name="OverlayLayer" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="Timer" type="Timer" parent="OverlayLayer"]
-one_shot = true
-
 [node name="DialogueDisplay" type="Control" parent="OverlayLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
