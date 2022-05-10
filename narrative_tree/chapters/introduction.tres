@@ -1,11 +1,12 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://narrative_tree/chapters/models/chapter_model.gd" type="Script" id=1]
 [ext_resource path="res://narrative_tree/dialogue_system/dialogues/introduction/suspicious.tres" type="Resource" id=2]
 [ext_resource path="res://narrative_tree/dialogue_system/dialogues/introduction/distress_dialog.tres" type="Resource" id=3]
 [ext_resource path="res://narrative_tree/narrative_action/switch_map.tres" type="Resource" id=4]
 [ext_resource path="res://narrative_tree/dialogue_system/dialogues/introduction/go_to_pan.tres" type="Resource" id=5]
+[ext_resource path="res://narrative_tree/narrative_action/pan_sector.tres" type="Resource" id=6]
 
 [resource]
 script = ExtResource( 1 )
-events = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ) ]
+events = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]

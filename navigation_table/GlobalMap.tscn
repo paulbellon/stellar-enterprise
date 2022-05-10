@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://navigation_table/sectors/global_sector_selector.gd" type="Script" id=1]
 [ext_resource path="res://navigation_table/sectors/select_sector.gd" type="Script" id=2]
 [ext_resource path="res://navigation_table/sectors/pan_sector/PanSectorData.tres" type="Resource" id=3]
 [ext_resource path="res://navigation_table/sectors/iapetus_sector/IapetusSectorData.tres" type="Resource" id=4]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=5]
 
 [node name="GlobalMap" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 script = ExtResource( 1 )
+chapter_list = ExtResource( 5 )
 
 [node name="Iapetus" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.398, -0.553148, 0 )

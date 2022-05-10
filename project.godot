@@ -112,6 +112,10 @@ config/icon="res://icon.png"
 
 Global="*res://global.gd"
 
+[display]
+
+window/size/always_on_top=true
+
 [filesystem]
 
 import/fbx/use_fbx=false

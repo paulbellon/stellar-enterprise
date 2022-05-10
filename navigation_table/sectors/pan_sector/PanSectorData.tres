@@ -1,12 +1,13 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://navigation_table/sectors/models/sector_model.gd" type="Script" id=1]
 [ext_resource path="res://navigation_table/sectors/pan_sector/Background2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://navigation_table/sectors/pan_sector/PanHolo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://navigation_table/locations/luna_moth_location.tres" type="Resource" id=4]
 
 [resource]
 script = ExtResource( 1 )
 name = "Pan"
-locations = [  ]
+locations = [ ExtResource( 4 ) ]
 hologram = ExtResource( 3 )
 background = ExtResource( 2 )

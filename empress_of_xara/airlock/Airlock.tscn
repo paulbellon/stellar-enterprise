@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://luna_moth/airlock/airlock.gd" type="Script" id=1]
+[ext_resource path="res://empress_of_xara/airlock/airlock.gd" type="Script" id=1]
 [ext_resource path="res://player/ray_target/RayTarget.tscn" type="PackedScene" id=2]
 
 [node name="Airlock" type="Spatial"]

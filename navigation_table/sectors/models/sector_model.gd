@@ -5,4 +5,3 @@ export (String) var name
 export (Array, Resource) var locations
 export (PackedScene) var hologram
 export (PackedScene) var background
-

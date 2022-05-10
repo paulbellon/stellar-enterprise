@@ -5,8 +5,6 @@ func enter(_msg := {}) -> void:
 	
 	player.voice.stop()
 	player.voice.stream = null
-	
-	wake_up()
 
 func die():
 	player.ray.enabled = false

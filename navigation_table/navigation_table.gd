@@ -21,10 +21,12 @@ func _ready():
 	sector_hologram = sector_data.current_sector.hologram.instance()
 	global_hologram = global_hologram.instance()
 	update_display()
-	check_events()
 	
 func check_events():
 	var is_event: bool
+	if current_chapter.events.size() == 0:
+		is_event = false
+		return is_event
 	if current_chapter.events[0].interactible == "Switch Map":
 		emit_signal("has_event")
 		is_event = true
@@ -35,6 +37,7 @@ func check_events():
 	
 func toggle():
 	if check_events() == true:
+		current_chapter.events.remove(0)
 		emit_signal("finished_event")
 		active_object.set_material_override(null)
 		is_local = !is_local

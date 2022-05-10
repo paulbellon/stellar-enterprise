@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/vilmaya_iapetus_03.ogg-7c46168e356721ad457ef4437b6c0357.oggstr"
+
+[deps]
+
+source_file="res://assets/voices/vilmaya/vilmaya_iapetus_03.ogg"
+dest_files=[ "res://.import/vilmaya_iapetus_03.ogg-7c46168e356721ad457ef4437b6c0357.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

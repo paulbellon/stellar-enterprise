@@ -1,8 +1,6 @@
 extends Node
 
 export (Resource) var chapter_list
-export (Resource) var default_chapter
-
 
 func _ready():
 	chapter_list.current_chapter = chapter_list.chapters.pop_front()

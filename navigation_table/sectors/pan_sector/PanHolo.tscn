@@ -3,7 +3,7 @@
 [ext_resource path="res://navigation_table/locations/location_selector.gd" type="Script" id=1]
 [ext_resource path="res://navigation_table/locations/select_location.gd" type="Script" id=2]
 [ext_resource path="res://navigation_table/spin_effect.gd" type="Script" id=3]
-[ext_resource path="res://navigation_table/locations/shipwreck_location.tres" type="Resource" id=4]
+[ext_resource path="res://navigation_table/locations/luna_moth_location.tres" type="Resource" id=4]
 
 [node name="Map" type="Spatial"]
 script = ExtResource( 1 )

@@ -28,6 +28,9 @@ func _ready():
 func check_events():
 	# checks if next event is for Radio
 	var is_event: bool
+	if current_chapter.events.size() == 0:
+		is_event = false
+		return is_event
 	if current_chapter.events[0].interactible == "Radio":
 		$NotificationAudio.stream = notification_sound
 		$NotificationAudio.play()

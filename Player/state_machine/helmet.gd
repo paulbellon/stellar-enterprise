@@ -5,6 +5,8 @@ export (AudioStreamMP3) var breathing_sound
 var is_speaking : bool = false setget setterFunc
 
 func enter(_msg := {}) -> void:
+	state_machine.current_state = self
+	
 	player.velocity = Vector3.ZERO
 	player.flashlight.show()
 	

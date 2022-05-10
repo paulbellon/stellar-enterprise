@@ -1,12 +1,30 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scene_manager/scene_manager.gd" type="Script" id=1]
 [ext_resource path="res://navigation_table/sectors/main_sector_list.tres" type="Resource" id=2]
 [ext_resource path="res://empress_of_xara/Spaceship.tscn" type="PackedScene" id=3]
-[ext_resource path="res://narrative_tree/ChapterManager.tscn" type="PackedScene" id=4]
+[ext_resource path="res://dream/Dream.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/user_interface/dialogue_display.gd" type="Script" id=5]
 [ext_resource path="res://narrative_tree/dialogue_system/dialogue_system_data.tres" type="Resource" id=6]
 [ext_resource path="res://player/user_interface/location_notifier.gd" type="Script" id=7]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=8]
+[ext_resource path="res://narrative_tree/chapter_manager.gd" type="Script" id=9]
+
+[sub_resource type="Animation" id=6]
+resource_name = "SceneTransition"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
@@ -50,10 +68,56 @@ script = ExtResource( 1 )
 sector_list = ExtResource( 2 )
 default_scene = ExtResource( 3 )
 
-[node name="ChapterManager" parent="." instance=ExtResource( 4 )]
+[node name="ChapterManager" type="Node" parent="."]
+script = ExtResource( 9 )
+chapter_list = ExtResource( 8 )
 
 [node name="OverlayLayer" type="CanvasLayer" parent="."]
 layer = 2
+
+[node name="DreamViewport" type="Control" parent="OverlayLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ViewportContainer" type="ViewportContainer" parent="OverlayLayer/DreamViewport"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Viewport" type="Viewport" parent="OverlayLayer/DreamViewport/ViewportContainer"]
+size = Vector2( 1920, 1080 )
+own_world = true
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="Dream" parent="OverlayLayer/DreamViewport/ViewportContainer/Viewport" instance=ExtResource( 4 )]
+
+[node name="Transition" type="Control" parent="OverlayLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="OverlayLayer/Transition"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="OverlayLayer/Transition"]
+wait_time = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OverlayLayer/Transition"]
+anims/SceneTransition = SubResource( 6 )
 
 [node name="DialogueDisplay" type="Control" parent="OverlayLayer"]
 anchor_right = 1.0

@@ -1,5 +1,6 @@
 extends KinematicBody
 
+export (Resource) var chapter_list
 export (Resource) var dialogue_system_data
 
 var speed = 2.5
@@ -8,6 +9,8 @@ var mouse_sensitivity = 0.06
 var direction = Vector3()
 var velocity = Vector3()
 var snap_vec = Vector3.DOWN
+
+onready var current_chapter = chapter_list.current_chapter
 
 onready var head = $Head
 onready var ray = $Head/Camera/RayCast
@@ -24,6 +27,9 @@ func _ready() -> void:
 	ray.enabled = true
 	dialogue_system_data.speaker_reference["Vilmaya"] = $Speaker
 	dialogue_system_data.timer_reference["Vilmaya"] = $Timer
+	
+	state_machine.no_helmet_state.connect("finished_event", chapter_list, "next_event")
+	chapter_list.connect("event_change", state_machine.no_helmet_state, "speech")
 
 func _input(event):
 	if event is InputEventMouseMotion:
