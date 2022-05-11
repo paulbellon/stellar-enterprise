@@ -26,6 +26,7 @@ func _ready():
 	velocity = Vector3(rand_range(-0.5, 0.5), rand_range(-0.5, 0.5), rand_range(-0.5, 0.5)).normalized()
 	
 	if player:
+# warning-ignore:return_value_discarded
 		connect("caught_player", player.state_machine.helmet_state, "on_Being_catch")
 
 func _physics_process(delta):

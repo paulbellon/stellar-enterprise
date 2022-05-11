@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "ActionEvent",
 "language": "GDScript",
-"path": "res://narrative_tree/narrative_action/models/action_event.gd"
+"path": "res://narrative_tree/narrative_event/models/action_event.gd"
 }, {
 "base": "Resource",
 "class": "ChapterList",
@@ -52,7 +52,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "NewSector",
 "language": "GDScript",
-"path": "res://narrative_tree/narrative_action/models/new_sector.gd"
+"path": "res://narrative_tree/narrative_event/models/new_sector.gd"
 }, {
 "base": "State",
 "class": "PlayerState",

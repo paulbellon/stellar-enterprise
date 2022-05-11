@@ -3,6 +3,7 @@ extends Spatial
 export (Resource) var chapter_list
 
 var main_sector_data : SectorList = load("res://navigation_table/sectors/main_sector_list.tres")
+var timer = Timer.new()
 
 onready var current_chapter = chapter_list.current_chapter
 onready var active_object = $Pan/Model
@@ -11,7 +12,9 @@ signal has_event
 signal finished_event
 
 func _ready():
+# warning-ignore:return_value_discarded
 	connect("has_event", chapter_list, "set_active_object", [active_object])
+# warning-ignore:return_value_discarded
 	connect("finished_event", chapter_list, "next_event")
 	chapter_list.connect("event_change", self, "check_events")
 	
@@ -38,6 +41,9 @@ func select_sector(sector_data):
 	if main_sector_data.current_sector == sector_data :
 		return
 	if check_events() == true:
+		add_child(timer)
+		timer.start(1.0)
+		yield(timer, "timeout")
 		current_chapter.events.remove(0)
 		main_sector_data.set_auto_pilot()
 		emit_signal("finished_event")

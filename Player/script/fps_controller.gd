@@ -28,8 +28,8 @@ func _ready() -> void:
 	dialogue_system_data.speaker_reference["Vilmaya"] = $Speaker
 	dialogue_system_data.timer_reference["Vilmaya"] = $Timer
 	
-	state_machine.no_helmet_state.connect("finished_event", chapter_list, "next_event")
 	chapter_list.connect("event_change", state_machine.no_helmet_state, "speech")
+	state_machine.no_helmet_state.connect("finished_event", chapter_list, "next_event")
 
 func _input(event):
 	if event is InputEventMouseMotion:

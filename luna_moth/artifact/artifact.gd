@@ -8,6 +8,7 @@ onready var anim_player = $AnimationPlayer
 signal crystal_activated
 
 func _ready():
+# warning-ignore:return_value_discarded
 	connect("crystal_activated", player.hud, "dazzle")
 
 func crystal_acceleration():

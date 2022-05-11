@@ -14,6 +14,13 @@ func enter(_msg := {}) -> void:
 func physics_update(_delta: float) -> void:
 	player_movement()
 	player.ray.check_vision()
+	
+	if Input.is_action_just_pressed("screenshot"):
+		var vpt: Viewport = get_viewport()
+		var tex: Texture = vpt.get_texture()
+		var img: Image = tex.get_data()
+		img.flip_y()
+		img.save_png("user://stuff5.png")
 
 func player_movement():
 	if Input.is_action_pressed("move_forward") \

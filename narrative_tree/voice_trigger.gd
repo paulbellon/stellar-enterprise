@@ -9,6 +9,7 @@ onready var current_chapter = chapter_list.current_chapter
 signal finished_event
 
 func _ready():
+# warning-ignore:return_value_discarded
 	connect("finished_event", chapter_list, "next_event")
 
 func _on_body_entered(body):

@@ -14,7 +14,9 @@ signal has_event
 signal finished_event
 
 func _ready():
+# warning-ignore:return_value_discarded
 	connect("has_event", chapter_list, "set_active_object", [active_object])
+# warning-ignore:return_value_discarded
 	connect("finished_event", chapter_list, "next_event")
 	chapter_list.connect("event_change", self, "check_events")
 	

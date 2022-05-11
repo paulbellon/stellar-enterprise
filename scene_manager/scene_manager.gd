@@ -18,7 +18,7 @@ func _ready():
 	sector_list.connect("location_changed", self, "change_location")
 	# We are in the ship by default
 	sector_list.current_sector = sector_list.sectors[0]
-	
+# warning-ignore:return_value_discarded
 	connect("start_dream", dream_scene, "dreaming")
 	
 	$MainScene.add_child(default_scene.instance())
