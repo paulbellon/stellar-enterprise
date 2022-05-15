@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/materials/beings/bad_being.tres" type="Material" id=1]
+[ext_resource path="res://beings/bad/bad_being.gd" type="Script" id=2]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=3]
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.5, 0.5, 0.5 )
+
+[sub_resource type="SphereShape" id=3]
+radius = 0.248233
+
+[sub_resource type="SphereMesh" id=2]
+radius = 0.1
+height = 0.2
+radial_segments = 32
+rings = 16
+
+[node name="BadBeing" type="KinematicBody"]
+collision_layer = 2
+input_ray_pickable = false
+script = ExtResource( 2 )
+chapter_list = ExtResource( 3 )
+
+[node name="Area" type="Area" parent="."]
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+cast_shadow = 0
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="Sensors" type="Spatial" parent="."]
+
+[node name="RayCast" type="RayCast" parent="Sensors"]
+enabled = true
+cast_to = Vector3( 0, 0.75, 0 )
+
+[node name="RayCast2" type="RayCast" parent="Sensors"]
+enabled = true
+cast_to = Vector3( 0, -0.75, 0 )
+
+[node name="RayCast3" type="RayCast" parent="Sensors"]
+enabled = true
+cast_to = Vector3( 0.75, 0, 0 )
+
+[node name="RayCast4" type="RayCast" parent="Sensors"]
+enabled = true
+cast_to = Vector3( 0, 0, 0.75 )
+
+[node name="RayCast5" type="RayCast" parent="Sensors"]
+enabled = true
+cast_to = Vector3( 0, 0, -0.75 )
+
+[node name="RayCast6" type="RayCast" parent="Sensors"]
+enabled = true
+cast_to = Vector3( -0.75, 0, 0 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+light_color = Color( 1, 0, 0, 1 )
+light_bake_mode = 0
+shadow_enabled = true
+omni_range = 3.0
+
+[connection signal="body_entered" from="Area" to="." method="catch_player"]

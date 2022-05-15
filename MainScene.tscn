@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scene_manager/scene_manager.gd" type="Script" id=1]
 [ext_resource path="res://navigation_table/sectors/main_sector_list.tres" type="Resource" id=2]
-[ext_resource path="res://empress_of_xara/Spaceship.tscn" type="PackedScene" id=3]
+[ext_resource path="res://luna_moth/LunaMoth.tscn" type="PackedScene" id=3]
 [ext_resource path="res://dream/Dream.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/user_interface/dialogue_display.gd" type="Script" id=5]
 [ext_resource path="res://narrative_tree/dialogue_system/dialogue_system_data.tres" type="Resource" id=6]
@@ -77,8 +77,8 @@ layer = 2
 
 [node name="DreamViewport" type="Control" parent="OverlayLayer"]
 visible = false
-anchor_right = 1.875
-anchor_bottom = 1.8
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -86,17 +86,19 @@ __meta__ = {
 [node name="ViewportContainer" type="ViewportContainer" parent="OverlayLayer/DreamViewport"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+stretch = true
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Viewport" type="Viewport" parent="OverlayLayer/DreamViewport/ViewportContainer"]
-size = Vector2( 1920, 1080 )
+size = Vector2( 1024, 600 )
 own_world = true
 handle_input_locally = false
 render_target_update_mode = 0
 
 [node name="Dream" parent="OverlayLayer/DreamViewport/ViewportContainer/Viewport" instance=ExtResource( 4 )]
+chapter_list = ExtResource( 8 )
 
 [node name="Transition" type="Control" parent="OverlayLayer"]
 anchor_right = 1.0

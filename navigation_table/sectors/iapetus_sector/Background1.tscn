@@ -5,27 +5,7 @@
 [ext_resource path="res://assets/asteroids/asteroid_1/asteroid_1.tres" type="Material" id=3]
 [ext_resource path="res://assets/asteroids/asteroid_2/Asteroid_2.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://assets/asteroids/asteroid_1/Asteroid_1.obj" type="ArrayMesh" id=5]
-
-[sub_resource type="Environment" id=1]
-background_mode = 1
-ambient_light_sky_contribution = 0.0
-fog_depth_enabled = false
-fog_depth_begin = 5.0
-ssao_radius = 0.1
-ssao_intensity = 0.5
-ssao_intensity2 = 0.0
-ssao_quality = 0
-dof_blur_far_distance = 272.3
-glow_enabled = true
-glow_levels/1 = true
-glow_levels/2 = true
-glow_levels/4 = true
-glow_levels/6 = true
-glow_levels/7 = true
-glow_intensity = 0.6
-glow_bloom = 0.05
-glow_blend_mode = 1
-glow_bicubic_upscale = true
+[ext_resource path="res://navigation_table/main_env.tres" type="Environment" id=6]
 
 [node name="IapetusBackground" type="Spatial"]
 
@@ -34,11 +14,12 @@ transform = Transform( -0.105431, -0.684996, -0.720878, 0, -0.724918, 0.688835, 
 light_color = Color( 1, 0.976471, 0.882353, 1 )
 light_bake_mode = 0
 shadow_enabled = true
+directional_shadow_blend_splits = true
 script = ExtResource( 1 )
 rotation_speed = 0.05
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+environment = ExtResource( 6 )
 
 [node name="Asteroids" type="Spatial" parent="."]
 script = ExtResource( 1 )

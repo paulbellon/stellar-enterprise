@@ -29,12 +29,12 @@ func physics_update(_delta: float) -> void:
 		player.flashlight.light_energy = 1
 		player.flashlight.is_on = true
 		
-	if Input.is_action_just_pressed("screenshot"):
-		var vpt: Viewport = get_viewport()
-		var tex: Texture = vpt.get_texture()
-		var img: Image = tex.get_data()
-		img.flip_y()
-		img.save_png("user://stuff5.png")
+#	if Input.is_action_just_pressed("screenshot"):
+#		var vpt: Viewport = get_viewport()
+#		var tex: Texture = vpt.get_texture()
+#		var img: Image = tex.get_data()
+#		img.flip_y()
+#		img.save_png("user://stuff5.png")
 
 func player_movement():
 	if Input.is_action_pressed("move_forward") \

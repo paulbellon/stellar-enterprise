@@ -10,7 +10,7 @@ var direction = Vector3()
 var velocity = Vector3()
 var snap_vec = Vector3.DOWN
 
-onready var current_chapter = chapter_list.current_chapter
+var current_chapter
 
 onready var head = $Head
 onready var ray = $Head/Camera/RayCast

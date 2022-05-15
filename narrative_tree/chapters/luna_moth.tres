@@ -1,7 +1,12 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://narrative_tree/chapters/models/chapter_model.gd" type="Script" id=1]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/entering_luna_moth.tres" type="Resource" id=2]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/good_encounter.tres" type="Resource" id=3]
+[ext_resource path="res://narrative_tree/narrative_event/short_circuit.tres" type="Resource" id=4]
+[ext_resource path="res://narrative_tree/narrative_event/door_shut.tres" type="Resource" id=5]
+[ext_resource path="res://narrative_tree/narrative_event/artifact.tres" type="Resource" id=6]
 
 [resource]
 script = ExtResource( 1 )
-events = [  ]
+events = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/materials/luna_moth/doors/Security_Door.material" type="Material" id=1]
 [ext_resource path="res://assets/materials/luna_moth/interactibles/Security_Panel.material" type="Material" id=2]
 [ext_resource path="res://assets/materials/luna_moth/interactibles/Security_Panel_Support.material" type="Material" id=3]
 [ext_resource path="res://luna_moth/doors/short_circuit.gd" type="Script" id=4]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=5]
+[ext_resource path="res://luna_moth/doors/shut_trigger.gd" type="Script" id=6]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Global_Cube097"
@@ -19,6 +21,9 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 640
 }
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.251315, 1.95809, 1.39993 )
 
 [sub_resource type="SphereShape" id=5]
 radius = 0.233762
@@ -53,8 +58,11 @@ surfaces/0 = {
 "vertex_count": 688
 }
 
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.533355, 0.089254, 1.22761 )
+
 [sub_resource type="Animation" id=4]
-resource_name = "SecurityDoorAction"
+resource_name = "DoorOpen"
 length = 4.79167
 tracks/0/type = "transform"
 tracks/0/path = NodePath("LP Security Door003")
@@ -64,37 +72,71 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = PoolRealArray( 0, 1, 0.274543, 0.957698, 1.27958, 0, 0, 0, 1, 1, 1, 1, 0.2, 1, 0.274543, 0.957698, 1.27958, 0, 0, 0, 1, 1, 1, 1, 0.266667, 1, 0.274543, 0.96537, 1.27958, 0, 0, 0, 1, 1, 1, 1, 0.333333, 1, 0.274543, 0.991377, 1.27958, 0, 0, 0, 1, 1, 1, 1, 0.4, 1, 0.274543, 1.03323, 1.27958, 0, 0, 0, 1, 1, 1, 1, 1.13333, 1, 0.274543, 1.78128, 1.27958, 0, 0, 0, 1, 1, 1, 1, 1.4, 1, 0.274543, 1.83228, 1.27958, 0, 0, 0, 1, 1, 1, 1, 2.26667, 1, 0.274543, 2.0731, 1.27958, 0, 0, 0, 1, 1, 1, 1, 4.79167, 1, 0.274543, 4.05483, 1.27958, 0, 0, 0, 1, 1, 1, 1 )
 
+[sub_resource type="Animation" id=7]
+resource_name = "DoorShut"
+length = 1.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("LP Security Door003:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 1, 1.8 ),
+"transitions": PoolRealArray( 1, 0.8, 1.2, 1.2 ),
+"update": 0,
+"values": [ Vector3( 0.275, 4.055, 1.28 ), Vector3( 0.275, 3.7, 1.28 ), Vector3( 0.275, 3.2, 1.28 ), Vector3( 0.275, 0.958, 1.28 ) ]
+}
+
 [node name="SecurityDoor" type="Spatial"]
 
 [node name="LP Security Door003" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274543, 0.957698, 1.27958 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.275, 0.958, 1.28 )
 use_in_baked_light = true
 mesh = SubResource( 1 )
 material/0 = null
 
+[node name="StaticBody" type="StaticBody" parent="LP Security Door003"]
+
+[node name="CollisionShape" type="CollisionShape" parent="LP Security Door003/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.535404, 0 )
+shape = SubResource( 6 )
+
 [node name="DoorPanel" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13351, -0.171455, -0.438385 )
 script = ExtResource( 4 )
+chapter_list = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="DoorPanel"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0932544, -0.0360056, 0.0373923 )
 shape = SubResource( 5 )
 
-[node name="Security Panel009" type="MeshInstance" parent="DoorPanel"]
+[node name="SecurityPanel" type="MeshInstance" parent="DoorPanel"]
 use_in_baked_light = true
 mesh = SubResource( 3 )
-skeleton = NodePath("../LP Security Panel005")
+skeleton = NodePath("../SecurityPanelHolder")
 material/0 = null
 
-[node name="LP Security Panel005" type="MeshInstance" parent="DoorPanel"]
+[node name="SecurityPanelHolder" type="MeshInstance" parent="DoorPanel"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125986, -0.389832, 0.0355873 )
 use_in_baked_light = true
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
 material/0 = null
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="DoorPanel"]
-root_node = NodePath("../..")
-anims/SecurityDoorAction = SubResource( 4 )
+[node name="ShutTrigger" type="Area" parent="DoorPanel"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04633, -1.27938, 1.745 )
+script = ExtResource( 6 )
+chapter_list = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="DoorPanel/ShutTrigger"]
+shape = SubResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DoorPanel/ShutTrigger"]
+root_node = NodePath("../../..")
+anims/DoorOpen = SubResource( 4 )
+anims/DoorShut = SubResource( 7 )
 
 [connection signal="body_entered" from="DoorPanel" to="DoorPanel" method="short_circuit"]
+[connection signal="body_entered" from="DoorPanel/ShutTrigger" to="DoorPanel/ShutTrigger" method="_on_body_entered"]

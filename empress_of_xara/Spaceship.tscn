@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://narrative_tree/VoiceTrigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://empress_of_xara/radio/Radio.tscn" type="PackedScene" id=2]
@@ -63,14 +63,9 @@ normal_bias = 0.0
 propagation = 0.8
 interior = true
 
-[sub_resource type="Animation" id=22]
-resource_name = "Blackout"
-
-[sub_resource type="Animation" id=23]
-resource_name = "DockingSequence"
-
 [node name="Spaceship" type="Spatial"]
 script = ExtResource( 8 )
+blackout_light = Color( 0.745098, 0.184314, 0.184314, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64021, -0.205675, 23.6898 )
@@ -360,6 +355,4 @@ propagation = 0.8
 interior = true
 data = SubResource( 24 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Blackout = SubResource( 22 )
-anims/DockingSequence = SubResource( 23 )
+[node name="Timer" type="Timer" parent="."]

@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://empress_of_xara/airlock/airlock.gd" type="Script" id=1]
 [ext_resource path="res://player/ray_target/RayTarget.tscn" type="PackedScene" id=2]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=3]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 0.3, 0.3, 0.3 )
 
 [node name="Airlock" type="Spatial"]
 script = ExtResource( 1 )
+chapter_list = ExtResource( 3 )
 
-[node name="CSGBox" type="CSGBox" parent="."]
-width = 0.6
-height = 0.550308
-depth = 0.452911
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
 
 [node name="RayTarget" parent="." instance=ExtResource( 2 )]
 display_name = "Exit"

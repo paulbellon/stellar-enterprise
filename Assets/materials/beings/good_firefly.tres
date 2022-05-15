@@ -155,5 +155,5 @@ nodes/fragment/connections = PoolIntArray( 3, 0, 0, 5, 2, 0, 3, 0, 4, 0, 3, 1, 6
 
 [resource]
 shader = SubResource( 6 )
-shader_param/Noise_Intensity = 0.2
+shader_param/Noise_Intensity = 0.0
 shader_param/Intensity = 1.0

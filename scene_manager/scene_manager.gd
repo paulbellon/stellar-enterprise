@@ -3,6 +3,7 @@ extends Node
 export (Resource) var sector_list
 export (PackedScene) var default_scene
 
+onready var chapter_manager = $ChapterManager
 onready var anim_player = $OverlayLayer/Transition/AnimationPlayer
 onready var timer = $OverlayLayer/Transition/Timer
 onready var transition_layer = $OverlayLayer/Transition/ColorRect
@@ -20,11 +21,12 @@ func _ready():
 	sector_list.current_sector = sector_list.sectors[0]
 # warning-ignore:return_value_discarded
 	connect("start_dream", dream_scene, "dreaming")
+	connect("scene_loaded", chapter_manager, "change_chapter")
 	
 	$MainScene.add_child(default_scene.instance())
+	emit_signal("scene_loaded")
 	anim_player.play_backwards("SceneTransition")
 	yield(anim_player, "animation_finished")
-	emit_signal("scene_loaded")
 	transition_layer.hide()
 	
 func _input(_event):

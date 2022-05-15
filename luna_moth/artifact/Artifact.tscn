@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/materials/luna_moth/artifact/Artifact_Stabilizer.material" type="Material" id=1]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=2]
 [ext_resource path="res://assets/materials/luna_moth/artifact/crystal.material" type="Material" id=3]
 [ext_resource path="res://luna_moth/artifact/artifact.gd" type="Script" id=4]
 [ext_resource path="res://player/ray_target/RayTarget.tscn" type="PackedScene" id=5]
@@ -99,7 +100,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 1.0, 10.0 ]
+"values": [ 1.0, 15.0 ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -141,7 +142,7 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = PoolRealArray( 0, 1, -0.373611, 0.000113964, 1.90735e-06, 0, 0, 0, 1, 1, 1, 1, 0.0666667, 1, -0.373712, 0.000113964, 1.90735e-06, 0, 0, 0, 1, 1, 1, 1, 0.133333, 1, -0.373983, 0.000113964, 1.90735e-06, 0, 0, 0, 1, 1, 1, 1, 0.2, 1, -0.374437, 0.000113964, 1.90735e-06, 0, 0, 0, 1, 1, 1, 1, 0.266667, 1, -0.375068, 0.000113964, 1.90735e-06, 0, 0, 0, 1, 1, 1, 1, 0.333333, 1, -0.375862, 0.000113964, 1.90735e-06, 0, 0, 0, 1, 1, 1, 1, 7.5, 1, -0.765112, 0.000113964, 1.90735e-06, 0, 0, 0, 1, 1, 1, 1 )
 tracks/3/type = "value"
-tracks/3/path = NodePath("Cylinder010/Sphere006:material/0:emission_energy")
+tracks/3/path = NodePath("Crystal/Sphere006:material/0:emission_energy")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -150,10 +151,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 7.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 8.0, 16.0 ]
+"values": [ 8.0, 32.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Cylinder010/OmniLight:light_energy")
+tracks/4/path = NodePath("Crystal/OmniLight:light_energy")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -162,10 +163,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 7.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 2.0, 16.0 ]
+"values": [ 2.0, 24.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Cylinder010/Sphere006:scale")
+tracks/5/path = NodePath("Crystal/Sphere006:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -245,7 +246,7 @@ tracks/2/keys = {
 "values": [ 8.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Cylinder010/Sphere006:material/0:emission_energy")
+tracks/3/path = NodePath("Crystal/Sphere006:material/0:emission_energy")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -257,7 +258,7 @@ tracks/3/keys = {
 "values": [ 8.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Cylinder010/OmniLight:light_energy")
+tracks/4/path = NodePath("Crystal/OmniLight:light_energy")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -269,7 +270,7 @@ tracks/4/keys = {
 "values": [ 2.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Cylinder010/Sphere006:scale")
+tracks/5/path = NodePath("Crystal/Sphere006:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -313,7 +314,7 @@ animation = "CrystalSpin"
 [sub_resource type="AnimationNodeTimeScale" id=22]
 
 [sub_resource type="AnimationNodeBlendTree" id=17]
-graph_offset = Vector2( -1000.44, -58.8 )
+graph_offset = Vector2( -899, 26 )
 nodes/Acceleration/node = SubResource( 20 )
 nodes/Acceleration/position = Vector2( -220, 20 )
 nodes/Activation/node = SubResource( 16 )
@@ -326,30 +327,29 @@ nodes/Animation/position = Vector2( -700, -20 )
 "nodes/Animation 3/position" = Vector2( -477.44, 128.2 )
 nodes/TimeScale/node = SubResource( 22 )
 nodes/TimeScale/position = Vector2( -440, -20 )
-node_connections = [ "output", 0, "Activation", "Activation", 0, "Acceleration", "Activation", 1, "Animation 2", "TimeScale", 0, "Animation", "Acceleration", 0, "TimeScale", "Acceleration", 1, "Animation 3" ]
+node_connections = [ "output", 0, "Activation", "Acceleration", 0, "TimeScale", "Acceleration", 1, "Animation 3", "Activation", 0, "Acceleration", "Activation", 1, "Animation 2", "TimeScale", 0, "Animation" ]
 
 [node name="Artifact" type="Spatial"]
 script = ExtResource( 4 )
+chapter_list = ExtResource( 2 )
 
-[node name="Spatial" type="Spatial" parent="."]
-
-[node name="Cylinder010" type="MeshInstance" parent="."]
+[node name="Crystal" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
 
-[node name="Sphere006" type="MeshInstance" parent="Cylinder010"]
+[node name="Sphere006" type="MeshInstance" parent="Crystal"]
 transform = Transform( 0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 8 )
 
-[node name="OmniLight" type="OmniLight" parent="Cylinder010"]
+[node name="OmniLight" type="OmniLight" parent="Crystal"]
 light_color = Color( 0.270588, 0.580392, 1, 1 )
 light_energy = 2.0
 light_bake_mode = 0
 omni_range = 4.0
 
 [node name="Empty" type="Spatial" parent="."]
-transform = Transform( -0.81321, 0, 0.58197, 0, 1, 0, -0.58197, 0, -0.81321, 0, 0, 0 )
+transform = Transform( 0.963841, 0, 0.266478, 0, 1, 0, -0.266478, 0, 0.963841, 0, 0, 0 )
 
 [node name="Cube037" type="MeshInstance" parent="Empty"]
 transform = Transform( -0.473678, 0, 0.880698, 0, 1, 0, -0.880698, 0, -0.473678, 0.146354, 0.000113964, 0.334609 )
@@ -390,6 +390,8 @@ light_energy = 8.0
 spot_range = 2.0
 spot_angle = 25.0
 
+[node name="RayTarget" parent="." instance=ExtResource( 5 )]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/CrystalAcceleration = SubResource( 19 )
 anims/CrystalActivation = SubResource( 6 )
@@ -403,7 +405,5 @@ active = true
 parameters/Acceleration/active = false
 parameters/Activation/active = false
 parameters/TimeScale/scale = 1.0
-
-[node name="RayTarget" parent="." instance=ExtResource( 5 )]
 
 [connection signal="ray_click" from="RayTarget" to="." method="crystal_acceleration"]

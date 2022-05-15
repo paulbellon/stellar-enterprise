@@ -1,9 +1,15 @@
 extends Spatial
 
+export (Resource) var chapter_list
+
 onready var player = Global.player_node
 onready var anim_player = $AnimationPlayer
 
 signal dream_ended
+
+func _ready():
+	chapter_list.connect("passed_out", self, "dreaming")
+	connect("dream_ended", chapter_list, "awake")
 	
 func dreaming():
 	owner.dream_viewport.show()

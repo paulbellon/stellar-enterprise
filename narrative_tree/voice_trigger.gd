@@ -15,7 +15,6 @@ func _ready():
 func _on_body_entered(body):
 	if current_chapter.events.size() == 0: return
 	if current_chapter.events[0].interactible != "Trigger": return
-	
 	if body.name == "Player":
 		$CollisionShape.disabled = true
 		var dialogue_to_play = current_chapter.events.front()

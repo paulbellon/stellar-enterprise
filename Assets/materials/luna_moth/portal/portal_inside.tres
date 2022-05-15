@@ -232,7 +232,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -700.08, -289.77 )
+graph_offset = Vector2( -503.987, 24.4596 )
 flags/ambient_light_disabled = true
 flags/shadows_disabled = true
 flags/unshaded = true

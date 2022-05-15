@@ -7,4 +7,4 @@
 [resource]
 script = ExtResource( 1 )
 lines = [ ExtResource( 2 ), ExtResource( 3 ) ]
-progress_step = 1
+interactible = "Trigger"

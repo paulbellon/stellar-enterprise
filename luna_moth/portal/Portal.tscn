@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
+[ext_resource path="res://luna_moth/portal/portal.gd" type="Script" id=1]
 [ext_resource path="res://assets/materials/luna_moth/portal/ring_effect.tres" type="Material" id=2]
 [ext_resource path="res://assets/materials/luna_moth/portal/air_effect_2.tres" type="Material" id=3]
 [ext_resource path="res://assets/materials/luna_moth/portal/air_effect.tres" type="Material" id=4]
@@ -11,6 +12,9 @@ size = Vector2( 2.5, 2.5 )
 
 [sub_resource type="QuadMesh" id=6]
 size = Vector2( 3, 3 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 1.20571, 1.21805, 0.307412 )
 
 [sub_resource type="Animation" id=7]
 resource_name = "PortalOpen"
@@ -46,7 +50,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2, 6 ),
+"times": PoolRealArray( 0, 1.5, 6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0.1, 0.1, 0.1 ), Vector3( 1.5, 1.5, 1.5 ), Vector3( 2, 2, 2 ) ]
@@ -58,10 +62,22 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2, 6 ),
+"times": PoolRealArray( 0, 1.5, 6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0.1, 0.1, 0.1 ), Vector3( 2, 2, 2 ), Vector3( 2.5, 2.5, 2.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("OmniLight:light_energy")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.0 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -116,9 +132,12 @@ tracks/3/keys = {
 }
 
 [node name="Portal" type="Spatial"]
+script = ExtResource( 1 )
+vacuum_force = 0.4
 
 [node name="Ring" type="Spatial" parent="."]
 transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0 )
+visible = false
 
 [node name="Hole" type="MeshInstance" parent="Ring"]
 material_override = ExtResource( 5 )
@@ -133,6 +152,7 @@ mesh = SubResource( 6 )
 material/0 = null
 
 [node name="Effects" type="Spatial" parent="."]
+visible = false
 
 [node name="air" type="MeshInstance" parent="Effects"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
@@ -141,10 +161,23 @@ mesh = ExtResource( 6 )
 material/0 = null
 
 [node name="air2" type="MeshInstance" parent="Effects"]
-transform = Transform( -0.0639157, 0.879725, 2.33923, -2.49918, -0.0224983, -0.0598251, -3.88827e-07, -2.34, 0.880013, 0, 0, 0 )
+transform = Transform( -0.0639159, 0.879722, 2.33923, -2.49918, -0.0224983, -0.0598253, -3.65544e-07, -2.34, 0.880009, 0, 0, 0 )
 material_override = ExtResource( 3 )
 mesh = ExtResource( 6 )
 material/0 = null
+
+[node name="Area" type="Area" parent="."]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 9 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+light_color = Color( 0.780392, 0.658824, 1, 1 )
+light_energy = 0.0
+light_bake_mode = 0
+omni_attenuation = 2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/PortalOpen = SubResource( 7 )
