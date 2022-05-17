@@ -2,10 +2,10 @@ extends Spatial
 
 export (Resource) var chapter_list
 
-var main_sector_data : SectorList = load("res://navigation_table/sectors/main_sector_list.tres")
+var sector_list = load("res://navigation_table/sectors/main_sector_list.tres")
 var timer = Timer.new()
+var current_chapter
 
-onready var current_chapter = chapter_list.current_chapter
 onready var active_object = $Pan/Model
 
 signal has_event
@@ -25,6 +25,7 @@ func _ready():
 			t.connect("ray_click", self, "select_sector", [child.sector_data])
 
 func check_events():
+	current_chapter = chapter_list.current_chapter
 	var is_event: bool
 	if current_chapter.events.size() == 0:
 		is_event = false
@@ -38,17 +39,17 @@ func check_events():
 		return is_event
 
 func select_sector(sector_data):
-	if main_sector_data.current_sector == sector_data :
+	if sector_list.current_sector == sector_data :
 		return
 	if check_events() == true:
 		add_child(timer)
 		timer.start(1.0)
 		yield(timer, "timeout")
 		current_chapter.events.remove(0)
-		main_sector_data.set_auto_pilot()
+		sector_list.set_auto_pilot()
 		emit_signal("finished_event")
 		active_object.set_material_override(null)
-		main_sector_data.change_sector(sector_data)
+		sector_list.change_sector(sector_data)
 	else:
 		return
 	

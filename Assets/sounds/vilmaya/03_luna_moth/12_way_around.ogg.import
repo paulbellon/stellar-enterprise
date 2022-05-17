@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/12_way_around.ogg-82c49260b8c0606ede3393a05c68123d.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/03_luna_moth/12_way_around.ogg"
+dest_files=[ "res://.import/12_way_around.ogg-82c49260b8c0606ede3393a05c68123d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -47,11 +47,11 @@ func blackout():
 	timer.start(5.0)
 	yield(timer, "timeout")
 	player.camera.shake_camera(0.75)
-	timer.start(2.0)
+	timer.start(1.0)
 	yield(timer, "timeout")
+	current_chapter.events.remove(0)
+	emit_signal("event_finished")
 	for light in $Lights.get_children():
 		light.set_color(blackout_light)
 		light.spot_range = 5.0
 		light.spot_angle = 35.0
-	current_chapter.events.remove(0)
-	emit_signal("event_finished")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/10_not_welcoming_reception.ogg-a647d7a7dcb7199b90a8012122c14f8e.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/03_luna_moth/10_not_welcoming_reception.ogg"
+dest_files=[ "res://.import/10_not_welcoming_reception.ogg-a647d7a7dcb7199b90a8012122c14f8e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

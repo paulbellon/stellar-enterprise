@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://assets/sounds/vilmaya/01_introduction/03_chrome_rats.ogg" type="AudioStream" id=1]
+[ext_resource path="res://narrative_tree/dialogue_system/models/line_model.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+audio = ExtResource( 1 )
+text = "Could be a trap set by those Chrome Rats guys again. They've been quite active over the last few days in the sector. I'd better get the hell out of here."
+speakerName = "Vilmaya"
+state = ""
+quietTime = 0.0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/18_get_out_of_here.ogg-53ced897bd56a6dcf0e82f3f69a59959.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/03_luna_moth/18_get_out_of_here.ogg"
+dest_files=[ "res://.import/18_get_out_of_here.ogg-53ced897bd56a6dcf0e82f3f69a59959.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

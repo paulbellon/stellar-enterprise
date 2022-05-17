@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/08_hit_something.ogg-e6c6bc4a5f8206c0cac7a24db2c6a450.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/02_pan_sector/08_hit_something.ogg"
+dest_files=[ "res://.import/08_hit_something.ogg-e6c6bc4a5f8206c0cac7a24db2c6a450.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

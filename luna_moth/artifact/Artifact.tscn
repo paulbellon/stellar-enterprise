@@ -327,7 +327,7 @@ nodes/Animation/position = Vector2( -700, -20 )
 "nodes/Animation 3/position" = Vector2( -477.44, 128.2 )
 nodes/TimeScale/node = SubResource( 22 )
 nodes/TimeScale/position = Vector2( -440, -20 )
-node_connections = [ "output", 0, "Activation", "Acceleration", 0, "TimeScale", "Acceleration", 1, "Animation 3", "Activation", 0, "Acceleration", "Activation", 1, "Animation 2", "TimeScale", 0, "Animation" ]
+node_connections = [ "output", 0, "Activation", "Activation", 0, "Acceleration", "Activation", 1, "Animation 2", "Acceleration", 0, "TimeScale", "Acceleration", 1, "Animation 3", "TimeScale", 0, "Animation" ]
 
 [node name="Artifact" type="Spatial"]
 script = ExtResource( 4 )
@@ -349,7 +349,7 @@ light_bake_mode = 0
 omni_range = 4.0
 
 [node name="Empty" type="Spatial" parent="."]
-transform = Transform( 0.963841, 0, 0.266478, 0, 1, 0, -0.266478, 0, 0.963841, 0, 0, 0 )
+transform = Transform( 0.33995, 0, -0.940443, 0, 1, 0, 0.940443, 0, 0.33995, 0, 0, 0 )
 
 [node name="Cube037" type="MeshInstance" parent="Empty"]
 transform = Transform( -0.473678, 0, 0.880698, 0, 1, 0, -0.880698, 0, -0.473678, 0.146354, 0.000113964, 0.334609 )

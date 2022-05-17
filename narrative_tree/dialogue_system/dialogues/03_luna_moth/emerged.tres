@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://narrative_tree/dialogue_system/models/dialogue_model.gd" type="Script" id=1]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/03_luna_moth/lines/emerged/18_get_out_of_here.tres" type="Resource" id=2]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/03_luna_moth/lines/emerged/17_im_alive.tres" type="Resource" id=3]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/03_luna_moth/lines/emerged/16_that_dream_again.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+lines = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]
+interactible = "Vilmaya"

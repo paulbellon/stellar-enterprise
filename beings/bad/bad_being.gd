@@ -20,6 +20,7 @@ var chase_force = 1.2
 var path_force = 0.8
 
 onready var player = Global.player_node
+onready var area = $Area
 
 signal caught_player
 
@@ -82,8 +83,6 @@ func chase_player():
 func catch_player(body):
 	if body.name == "Player":
 		emit_signal("caught_player")
-		for firefly in fireflies:
-			firefly.queue_free()
 			
 func process_path(target_path):
 	var vector = Vector3()

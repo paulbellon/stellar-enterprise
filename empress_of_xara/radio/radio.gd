@@ -26,14 +26,11 @@ func _ready():
 	check_events()
 
 func check_events():
-	print("checking")
 	current_chapter = chapter_list.current_chapter
 	# checks if next event is for Radio
 	var is_event: bool
 	if current_chapter.events.size() == 0:
 		is_event = false
-		print("nothing")
-		print(current_chapter.events.size())
 		return is_event
 	if current_chapter.events[0].interactible == "Radio":
 		$NotificationAudio.stream = notification_sound
@@ -43,7 +40,6 @@ func check_events():
 		return is_event
 	else: 
 		is_event = false
-		print("idk")
 		return is_event
 
 func respond():

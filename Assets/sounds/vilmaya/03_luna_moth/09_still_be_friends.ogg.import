@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/09_still_be_friends.ogg-73f7c25c4b5c4ef9be098b110f9e6352.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/03_luna_moth/09_still_be_friends.ogg"
+dest_files=[ "res://.import/09_still_be_friends.ogg-73f7c25c4b5c4ef9be098b110f9e6352.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

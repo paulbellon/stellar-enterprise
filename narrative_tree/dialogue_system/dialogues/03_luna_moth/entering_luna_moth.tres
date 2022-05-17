@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://narrative_tree/dialogue_system/models/dialogue_model.gd" type="Script" id=1]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/03_luna_moth/lines/entering_luna_moth/03_hello.tres" type="Resource" id=2]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/03_luna_moth/lines/entering_luna_moth/02_boarded_your_ship.tres" type="Resource" id=3]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/03_luna_moth/lines/entering_luna_moth/01_anybody_here.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+lines = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]
+interactible = "Vilmaya"

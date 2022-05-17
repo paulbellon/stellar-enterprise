@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/04_saturn_inner_sector.ogg-f52bd2eaf82b498ec22707c782547037.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/01_introduction/04_saturn_inner_sector.ogg"
+dest_files=[ "res://.import/04_saturn_inner_sector.ogg-f52bd2eaf82b498ec22707c782547037.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

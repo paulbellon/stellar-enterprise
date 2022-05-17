@@ -26,5 +26,5 @@ func talk(data):
 		speaker.play()
 		yield(speaker, "finished")
 		step += 1
-	emit_signal("end_dialogue")
 	step = 0
+	emit_signal("end_dialogue")

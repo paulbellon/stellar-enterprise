@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://assets/sounds/vilmaya/03_luna_moth/18_get_out_of_here.ogg" type="AudioStream" id=1]
+[ext_resource path="res://narrative_tree/dialogue_system/models/line_model.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+audio = ExtResource( 1 )
+text = ""
+speakerName = "Vilmaya"
+state = ""
+quietTime = 1.0

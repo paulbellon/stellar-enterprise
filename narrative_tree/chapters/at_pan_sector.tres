@@ -1,11 +1,14 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://narrative_tree/chapters/models/chapter_model.gd" type="Script" id=1]
-[ext_resource path="res://narrative_tree/dialogue_system/dialogues/introduction/distress_dialog.tres" type="Resource" id=2]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/trying_radio_contact.tres" type="Resource" id=2]
 [ext_resource path="res://narrative_tree/narrative_event/blackout.tres" type="Resource" id=3]
-[ext_resource path="res://narrative_tree/dialogue_system/dialogues/introduction/go_to_pan.tres" type="Resource" id=4]
+[ext_resource path="res://narrative_tree/narrative_event/luna_moth_docking.tres" type="Resource" id=4]
 [ext_resource path="res://narrative_tree/narrative_event/airlock.tres" type="Resource" id=5]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/waking_up.tres" type="Resource" id=6]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/fed_up.tres" type="Resource" id=7]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/shock.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 1 )
-events = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ]
+events = [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 5 ) ]

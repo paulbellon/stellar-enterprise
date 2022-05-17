@@ -13,6 +13,7 @@ signal crystal_activated
 func _ready():
 # warning-ignore:return_value_discarded
 	connect("crystal_activated", player.hud, "dazzle")
+# warning-ignore:return_value_discarded
 	connect("crystal_activated", chapter_list, "next_event")
 
 func crystal_acceleration():

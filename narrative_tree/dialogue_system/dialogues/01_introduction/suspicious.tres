@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/01_introduction/lines/suspicious/03_chrome_rats.tres" type="Resource" id=1]
+[ext_resource path="res://narrative_tree/dialogue_system/models/dialogue_model.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+lines = [ ExtResource( 1 ) ]
+interactible = "Trigger"

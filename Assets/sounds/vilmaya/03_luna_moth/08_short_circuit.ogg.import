@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/08_short_circuit.ogg-2fb322746acdf308543323b199170c24.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/03_luna_moth/08_short_circuit.ogg"
+dest_files=[ "res://.import/08_short_circuit.ogg-2fb322746acdf308543323b199170c24.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

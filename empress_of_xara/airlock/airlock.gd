@@ -3,8 +3,8 @@ extends Spatial
 export (Resource) var chapter_list
 
 var main_sector_data : SectorList = load("res://navigation_table/sectors/main_sector_list.tres")
+var current_chapter
 
-onready var current_chapter = chapter_list.current_chapter
 onready var active_object = $MeshInstance
 
 signal has_event
@@ -18,6 +18,7 @@ func _ready():
 	chapter_list.connect("event_change", self, "check_events")
 
 func check_events():
+	current_chapter = chapter_list.current_chapter
 	var is_event: bool
 	if current_chapter.events.size() == 0:
 		is_event = false

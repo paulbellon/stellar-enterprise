@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/16_that_dream_again.ogg-8fb2a8d26ca3dcb8e4a68d909ec752ce.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/03_luna_moth/16_that_dream_again.ogg"
+dest_files=[ "res://.import/16_that_dream_again.ogg-8fb2a8d26ca3dcb8e4a68d909ec752ce.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

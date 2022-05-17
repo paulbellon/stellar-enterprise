@@ -29,7 +29,6 @@ func collapse():
 	emit_signal("collapsed")
 	
 func emerge():
-	print("emerging")
 	owner.timer.start(3.0)
 	yield(owner.timer, "timeout")
 	anim_player.play_backwards("collapse")

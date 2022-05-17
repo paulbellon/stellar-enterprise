@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/shock/09_still_have_power.tres" type="Resource" id=1]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/shock/10_contact_aboard.tres" type="Resource" id=2]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/shock/08_hit_something.tres" type="Resource" id=3]
+[ext_resource path="res://narrative_tree/dialogue_system/models/dialogue_model.gd" type="Script" id=4]
+
+[resource]
+script = ExtResource( 4 )
+lines = [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ) ]
+interactible = "Vilmaya"

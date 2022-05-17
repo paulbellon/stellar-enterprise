@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://narrative_tree/dialogue_system/models/dialogue_model.gd" type="Script" id=1]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/03_luna_moth/lines/flashlight/13_give_up_on_me.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+lines = [ ExtResource( 2 ) ]
+interactible = "Trigger"

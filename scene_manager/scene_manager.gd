@@ -21,6 +21,7 @@ func _ready():
 	sector_list.current_sector = sector_list.sectors[0]
 # warning-ignore:return_value_discarded
 	connect("start_dream", dream_scene, "dreaming")
+# warning-ignore:return_value_discarded
 	connect("scene_loaded", chapter_manager, "change_chapter")
 	
 	$MainScene.add_child(default_scene.instance())

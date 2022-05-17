@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/15_get_off_me.ogg-d4f729fb2afc0ff49dccf3b9a2eff72f.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/03_luna_moth/15_get_off_me.ogg"
+dest_files=[ "res://.import/15_get_off_me.ogg-d4f729fb2afc0ff49dccf3b9a2eff72f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://luna_moth/portal/portal.gd" type="Script" id=1]
 [ext_resource path="res://assets/materials/luna_moth/portal/ring_effect.tres" type="Material" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/materials/luna_moth/portal/air_effect.tres" type="Material" id=4]
 [ext_resource path="res://assets/materials/luna_moth/portal/portal_inside.tres" type="Material" id=5]
 [ext_resource path="res://assets/meshes/luna_moth/portal/air.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=7]
 
 [sub_resource type="QuadMesh" id=5]
 size = Vector2( 2.5, 2.5 )
@@ -14,7 +15,7 @@ size = Vector2( 2.5, 2.5 )
 size = Vector2( 3, 3 )
 
 [sub_resource type="BoxShape" id=9]
-extents = Vector3( 1.20571, 1.21805, 0.307412 )
+extents = Vector3( 1.20571, 1.21805, 0.547244 )
 
 [sub_resource type="Animation" id=7]
 resource_name = "PortalOpen"
@@ -133,11 +134,11 @@ tracks/3/keys = {
 
 [node name="Portal" type="Spatial"]
 script = ExtResource( 1 )
-vacuum_force = 0.4
+chapter_list = ExtResource( 7 )
+vacuum_force = 0.1
 
 [node name="Ring" type="Spatial" parent="."]
 transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0 )
-visible = false
 
 [node name="Hole" type="MeshInstance" parent="Ring"]
 material_override = ExtResource( 5 )
@@ -152,7 +153,6 @@ mesh = SubResource( 6 )
 material/0 = null
 
 [node name="Effects" type="Spatial" parent="."]
-visible = false
 
 [node name="air" type="MeshInstance" parent="Effects"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
@@ -161,14 +161,14 @@ mesh = ExtResource( 6 )
 material/0 = null
 
 [node name="air2" type="MeshInstance" parent="Effects"]
-transform = Transform( -0.0639159, 0.879722, 2.33923, -2.49918, -0.0224983, -0.0598253, -3.65544e-07, -2.34, 0.880009, 0, 0, 0 )
+transform = Transform( -0.0639164, 0.879717, 2.33923, -2.49918, -0.0224983, -0.0598258, -4.30737e-07, -2.34, 0.880005, 0, 0, 0 )
 material_override = ExtResource( 3 )
 mesh = ExtResource( 6 )
 material/0 = null
 
 [node name="Area" type="Area" parent="."]
-visible = false
 collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 9 )
@@ -182,3 +182,5 @@ omni_attenuation = 2.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/PortalOpen = SubResource( 7 )
 anims/RESET = SubResource( 8 )
+
+[connection signal="body_entered" from="Area" to="." method="absorbed"]

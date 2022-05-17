@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/03_chrome_rats.ogg-6b6d5ae0c68374c2359632c7b068cff3.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/01_introduction/03_chrome_rats.ogg"
+dest_files=[ "res://.import/03_chrome_rats.ogg-6b6d5ae0c68374c2359632c7b068cff3.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

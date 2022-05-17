@@ -1,9 +1,0 @@
-[gd_resource type="Resource" load_steps=3 format=2]
-
-[ext_resource path="res://narrative_tree/dialogue_system/models/dialogue_model.gd" type="Script" id=1]
-[ext_resource path="res://narrative_tree/dialogue_system/dialogues/introduction/lines/go_to_pan/get_a_closer_look.tres" type="Resource" id=2]
-
-[resource]
-script = ExtResource( 1 )
-lines = [ ExtResource( 2 ) ]
-interactible = "Vilmaya"

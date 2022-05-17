@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/05_contacting_new_babylon.ogg-b896c991130f05c3217e91674c9d9a1c.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/02_pan_sector/05_contacting_new_babylon.ogg"
+dest_files=[ "res://.import/05_contacting_new_babylon.ogg-b896c991130f05c3217e91674c9d9a1c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

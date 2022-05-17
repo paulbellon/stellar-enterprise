@@ -23,6 +23,7 @@ script = ExtResource( 2 )
 chapter_list = ExtResource( 3 )
 
 [node name="Area" type="Area" parent="."]
+input_ray_pickable = false
 monitorable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]

@@ -9,6 +9,7 @@ signal dream_ended
 
 func _ready():
 	chapter_list.connect("passed_out", self, "dreaming")
+# warning-ignore:return_value_discarded
 	connect("dream_ended", chapter_list, "awake")
 	
 func dreaming():

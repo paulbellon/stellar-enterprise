@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://navigation_table/locations/location_selector.gd" type="Script" id=1]
 [ext_resource path="res://navigation_table/locations/select_location.gd" type="Script" id=2]
 [ext_resource path="res://navigation_table/spin_effect.gd" type="Script" id=3]
 [ext_resource path="res://navigation_table/locations/luna_moth_location.tres" type="Resource" id=4]
 [ext_resource path="res://assets/materials/hologram/hologram_mat.tres" type="Material" id=5]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=6]
 
 [node name="Map" type="Spatial"]
 script = ExtResource( 1 )
+chapter_list = ExtResource( 6 )
 
 [node name="Asteroids" type="Spatial" parent="."]
 

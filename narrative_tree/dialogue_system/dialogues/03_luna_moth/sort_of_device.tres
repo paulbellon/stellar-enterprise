@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://narrative_tree/dialogue_system/models/dialogue_model.gd" type="Script" id=1]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/03_luna_moth/lines/sort_of_device/22_electromagnetic_radiation.tres" type="Resource" id=2]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/03_luna_moth/lines/sort_of_device/21_sort_of_device.tres" type="Resource" id=3]
+
+[resource]
+script = ExtResource( 1 )
+lines = [ ExtResource( 3 ), ExtResource( 2 ) ]
+interactible = "Trigger"

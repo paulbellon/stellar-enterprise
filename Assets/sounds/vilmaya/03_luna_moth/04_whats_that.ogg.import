@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/04_whats_that.ogg-6cb7a88c1af42f8dd8cc88bc0f1ca902.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/03_luna_moth/04_whats_that.ogg"
+dest_files=[ "res://.import/04_whats_that.ogg-6cb7a88c1af42f8dd8cc88bc0f1ca902.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
