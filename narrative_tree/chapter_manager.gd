@@ -2,11 +2,16 @@ extends Node
 
 export (Resource) var chapter_list
 
+signal chapter_change
+
 func _ready():
-	chapter_list.current_chapter = chapter_list.chapters.pop_front()
+# warning-ignore:return_value_discarded
+	connect("chapter_change", chapter_list, "next_event")
+	change_chapter()
 
 func change_chapter():
-	if chapter_list.current_chapter.events.size() != 0: return
+	if chapter_list.current_chapter == null:
+		chapter_list.current_chapter = chapter_list.chapters.pop_front()
 	else:
 		chapter_list.current_chapter = chapter_list.chapters.pop_front()
-		chapter_list.next_event()
+		emit_signal("chapter_change")

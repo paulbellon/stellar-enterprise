@@ -14,9 +14,8 @@ transform = Transform( -0.105431, -0.684996, -0.720878, 0, -0.724918, 0.688835, 
 light_color = Color( 1, 0.976471, 0.882353, 1 )
 light_bake_mode = 0
 shadow_enabled = true
-directional_shadow_blend_splits = true
 script = ExtResource( 1 )
-rotation_speed = 0.05
+rotation_speed = 0.02
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 6 )

@@ -5,7 +5,7 @@ export (PackedScene) var default_scene
 
 onready var chapter_manager = $ChapterManager
 onready var anim_player = $OverlayLayer/Transition/AnimationPlayer
-onready var timer = $OverlayLayer/Transition/Timer
+onready var timer = $Timer
 onready var transition_layer = $OverlayLayer/Transition/ColorRect
 
 onready var dream_scene = $OverlayLayer/DreamViewport/ViewportContainer/Viewport/Dream
@@ -25,7 +25,6 @@ func _ready():
 	connect("scene_loaded", chapter_manager, "change_chapter")
 	
 	$MainScene.add_child(default_scene.instance())
-	emit_signal("scene_loaded")
 	anim_player.play_backwards("SceneTransition")
 	yield(anim_player, "animation_finished")
 	transition_layer.hide()
@@ -42,10 +41,8 @@ func change_sector():
 	for child in $MainScene.get_children():
 		child.queue_free()
 	# Instanciates next scene inside
-	timer.start()
-	yield(timer, "timeout")
 	emit_signal("start_dream")
-	yield(dream_scene, "dream_ended")
+	yield(dream_scene, "finished_event")
 	$MainScene.add_child(default_scene.instance())
 	emit_signal("scene_loaded")
 	anim_player.play_backwards("SceneTransition")

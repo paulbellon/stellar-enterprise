@@ -3,8 +3,11 @@ extends PlayerState
 func enter(_msg := {}) -> void:
 	player.ray.enabled = false
 	
-#func wake_up():
-#	player.timer.start(3.0)
-#	yield(player.timer, "timeout")
-#	player.hud.emerge()
-#	state_machine.transition_to("Helmet")
+func physics_update(_delta: float) -> void:
+	
+	if Input.is_action_just_pressed("use") && player.flashlight.light_energy == 1:
+		player.flashlight.light_energy = 0
+		player.flashlight.is_on = false
+	elif Input.is_action_just_pressed("use") && player.flashlight.light_energy == 0:
+		player.flashlight.light_energy = 1
+		player.flashlight.is_on = true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/data_reading_2.ogg-dc7e07896eb271b2997b2b9a8eb7b39d.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/empress_of_xara/deck/data_reading_2.ogg"
+dest_files=[ "res://.import/data_reading_2.ogg-dc7e07896eb271b2997b2b9a8eb7b39d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

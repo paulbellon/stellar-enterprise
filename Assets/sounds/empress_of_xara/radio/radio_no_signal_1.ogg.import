@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/radio_no_signal_1.ogg-bca97a2a25cba5012f4c791e5ea868a6.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/empress_of_xara/radio/radio_no_signal_1.ogg"
+dest_files=[ "res://.import/radio_no_signal_1.ogg-bca97a2a25cba5012f4c791e5ea868a6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -18,9 +18,9 @@ func _on_body_entered(body):
 	if current_chapter.events[0].interactible != "Door shut": return
 	if body.name == "Player":
 		$CollisionShape.disabled = true
+		current_chapter.events.remove(0)
 		anim_player.play("DoorShut")
 		yield(anim_player, "animation_finished")
-		current_chapter.events.remove(0)
 		chapter_list.door_is_shut = true
 		emit_signal("finished_event")
 		queue_free()

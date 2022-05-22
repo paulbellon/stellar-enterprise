@@ -8,5 +8,5 @@ script = ExtResource( 1 )
 audio = ExtResource( 2 )
 text = ""
 speakerName = "Vilmaya"
-state = ""
+freezing = true
 quietTime = 0.0

@@ -1,11 +1,13 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=7 format=2]
 
-[ext_resource path="res://narrative_tree/dialogue_system/dialogues/01_introduction/lines/distress_dialog/02_identify_yourself.tres" type="Resource" id=1]
-[ext_resource path="res://narrative_tree/dialogue_system/dialogues/01_introduction/lines/distress_dialog/01_first_contact.tres" type="Resource" id=2]
-[ext_resource path="res://narrative_tree/dialogue_system/dialogues/01_introduction/lines/distress_dialog/incoming_message.tres" type="Resource" id=3]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/01_introduction/lines/distress_dialog/04_identify_yourself.tres" type="Resource" id=1]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/01_introduction/lines/distress_dialog/02_first_contact.tres" type="Resource" id=2]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/01_introduction/lines/distress_dialog/01_require_assistance.tres" type="Resource" id=3]
 [ext_resource path="res://narrative_tree/dialogue_system/models/dialogue_model.gd" type="Script" id=4]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/01_introduction/lines/distress_dialog/03_something_happened.tres" type="Resource" id=5]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/01_introduction/lines/distress_dialog/05_no_signal.tres" type="Resource" id=6]
 
 [resource]
 script = ExtResource( 4 )
-lines = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ]
+lines = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 6 ) ]
 interactible = "Radio"

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/batteries_discharged.ogg-dcddd961b10c1b039b81adb0056f537d.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/empress_of_xara/computer/batteries_discharged.ogg"
+dest_files=[ "res://.import/batteries_discharged.ogg-dcddd961b10c1b039b81adb0056f537d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

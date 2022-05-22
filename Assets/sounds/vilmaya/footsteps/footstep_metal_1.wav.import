@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/footstep_metal_1.wav-44c4bd8501437144c4c5581cfecb65b6.sample"
+
+[deps]
+
+source_file="res://assets/sounds/vilmaya/footsteps/footstep_metal_1.wav"
+dest_files=[ "res://.import/footstep_metal_1.wav-44c4bd8501437144c4c5581cfecb65b6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

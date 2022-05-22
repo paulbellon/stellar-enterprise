@@ -7,9 +7,7 @@ var current_state
 
 onready var state: State = get_node(default_state)
 onready var no_helmet_state = $NoHelmet
-onready var helmet_state = $Helmet
 onready var freeze_state = $Freeze
-onready var death_state = $Death
 
 signal transitioned(state_name)
 

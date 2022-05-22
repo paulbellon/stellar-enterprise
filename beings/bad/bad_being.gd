@@ -84,6 +84,7 @@ func catch_player(body):
 	if body.name == "Player":
 		emit_signal("caught_player")
 			
+# warning-ignore:shadowed_variable
 func process_path(target_path):
 	var vector = Vector3()
 	var being_pos = global_transform.origin

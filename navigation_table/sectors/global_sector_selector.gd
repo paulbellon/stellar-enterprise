@@ -49,6 +49,8 @@ func select_sector(sector_data):
 		sector_list.set_auto_pilot()
 		emit_signal("finished_event")
 		active_object.set_material_override(null)
+		timer.start(9.0)
+		yield(timer, "timeout")
 		sector_list.change_sector(sector_data)
 	else:
 		return

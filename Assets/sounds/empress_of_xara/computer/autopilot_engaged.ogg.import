@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/autopilot_engaged.ogg-13858a55fc9b16a69081e605f3d06d12.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/empress_of_xara/computer/autopilot_engaged.ogg"
+dest_files=[ "res://.import/autopilot_engaged.ogg-13858a55fc9b16a69081e605f3d06d12.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

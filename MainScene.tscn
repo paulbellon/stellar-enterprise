@@ -25,6 +25,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
@@ -92,7 +104,7 @@ __meta__ = {
 }
 
 [node name="Viewport" type="Viewport" parent="OverlayLayer/DreamViewport/ViewportContainer"]
-size = Vector2( 1024, 600 )
+size = Vector2( 1920, 1080 )
 own_world = true
 handle_input_locally = false
 render_target_update_mode = 0
@@ -114,9 +126,6 @@ color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Timer" type="Timer" parent="OverlayLayer/Transition"]
-wait_time = 2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="OverlayLayer/Transition"]
 anims/SceneTransition = SubResource( 6 )
@@ -202,6 +211,11 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="OverlayLayer/LocationNotifier"]
 anims/Appear = SubResource( 4 )
 anims/RESET = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 
 [node name="MainScene" type="Spatial" parent="."]
 

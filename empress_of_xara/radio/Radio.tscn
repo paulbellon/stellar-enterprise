@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://empress_of_xara/radio/radio.gd" type="Script" id=1]
-[ext_resource path="res://assets/sounds/serious-strike-533.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/sounds/empress_of_xara/radio/notification.wav" type="AudioStream" id=2]
 [ext_resource path="res://player/ray_target/RayTarget.tscn" type="PackedScene" id=3]
 [ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=4]
 [ext_resource path="res://narrative_tree/dialogue_system/dialogue_system_data.tres" type="Resource" id=5]
@@ -65,9 +65,11 @@ mesh = SubResource( 4 )
 material/0 = null
 
 [node name="Message" type="AudioStreamPlayer3D" parent="."]
+unit_size = 3.0
 
 [node name="NotificationAudio" type="AudioStreamPlayer3D" parent="."]
-max_distance = 10.0
+unit_size = 4.0
+max_distance = 20.0
 
 [node name="Timer" type="Timer" parent="."]
 

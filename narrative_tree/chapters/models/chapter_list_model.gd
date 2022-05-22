@@ -4,10 +4,9 @@ extends Resource
 export (Array, Resource) var chapters
 export (Material) var active_material
 
-var door_is_unlocked = false
 var door_is_shut = false
 
-onready var current_chapter = null
+var current_chapter = null
 
 signal event_change
 signal passed_out

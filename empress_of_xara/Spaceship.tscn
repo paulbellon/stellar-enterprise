@@ -1,14 +1,25 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=36 format=2]
 
-[ext_resource path="res://narrative_tree/VoiceTrigger.tscn" type="PackedScene" id=1]
+[ext_resource path="res://narrative_tree/voice_trigger/VoiceTrigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://empress_of_xara/radio/Radio.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sounds/empress_of_xara/shock_sound.ogg" type="AudioStream" id=3]
 [ext_resource path="res://navigation_table/NavigationTable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sounds/background_sound.mp3" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/empress_of_xara/deck_ambient.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/meshes/empress_of_xara/corridor.obj" type="ArrayMesh" id=7]
 [ext_resource path="res://empress_of_xara/spaceship.gd" type="Script" id=8]
 [ext_resource path="res://assets/meshes/empress_of_xara/deck.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://empress_of_xara/airlock/Airlock.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/sounds/empress_of_xara/power_off.ogg" type="AudioStream" id=11]
+[ext_resource path="res://empress_of_xara/deck_sound.gd" type="Script" id=12]
+[ext_resource path="res://assets/sounds/empress_of_xara/deck/data_reading_2.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/empress_of_xara/deck/data_reading_1.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/empress_of_xara/deck/data_reading_3.ogg" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/empress_of_xara/computer/docking_sequence.ogg" type="AudioStream" id=16]
+[ext_resource path="res://assets/sounds/empress_of_xara/computer/autopilot_engaged.ogg" type="AudioStream" id=17]
+[ext_resource path="res://assets/sounds/empress_of_xara/computer/batteries_discharged.ogg" type="AudioStream" id=18]
+[ext_resource path="res://assets/sounds/empress_of_xara/motor_humming.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/sounds/empress_of_xara/hull_creaking.ogg" type="AudioStream" id=20]
 
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 8.85067, 0.2, 20 )
@@ -60,7 +71,7 @@ dynamic_data = PoolIntArray( 0, 8, 64, 32, 128, 19857, 15559, 7, 8, 9, 10, 11, 1
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
-propagation = 0.8
+propagation = 0.5
 interior = true
 
 [node name="Spaceship" type="Spatial"]
@@ -313,24 +324,81 @@ shape = SubResource( 10 )
 [node name="VoiceTriggers" type="Spatial" parent="."]
 
 [node name="VoiceTrigger" parent="VoiceTriggers" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.280465, 0.0835159, 3.44114 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.280465, 0.0835159, 3.77239 )
 
 [node name="Sounds" type="Spatial" parent="."]
+script = ExtResource( 12 )
+deck_machines = [ NodePath("DeckMachine1"), NodePath("DeckMachine2"), NodePath("DeckMachine3") ]
+computer_reactions = {
+"Autopilot": ExtResource( 17 ),
+"Batteries": ExtResource( 18 ),
+"Docking": ExtResource( 16 )
+}
 
 [node name="DeckAmbient" type="AudioStreamPlayer3D" parent="Sounds"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42123, 0.315141 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42123, 3.51366 )
 stream = ExtResource( 6 )
-unit_db = -10.0
+unit_db = -12.0
+unit_size = 6.0
 autoplay = true
+max_distance = 30.0
+area_mask = 4
+
+[node name="DeckMachine1" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01724, 1.42123, 4.79876 )
+stream = ExtResource( 14 )
+unit_db = -8.0
+unit_size = 6.0
+max_distance = 10.0
+area_mask = 4
+
+[node name="DeckMachine2" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60228, 1.42123, 5.8237 )
+stream = ExtResource( 13 )
+unit_db = -15.0
+unit_size = 6.0
+max_db = -3.0
+max_distance = 10.0
+area_mask = 4
+
+[node name="DeckMachine3" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51238, 1.54335, 0.554679 )
+stream = ExtResource( 15 )
+unit_db = -15.0
+unit_size = 6.0
+max_db = -3.0
+max_distance = 10.0
+area_mask = 4
 
 [node name="HallwayAmbient1" type="AudioStreamPlayer3D" parent="Sounds"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66613, 36.4678 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66613, 24.895 )
+stream = ExtResource( 19 )
+unit_db = -10.0
+unit_size = 10.0
+autoplay = true
 
 [node name="HallwayAmbient2" type="AudioStreamPlayer3D" parent="Sounds"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66613, 21.2532 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66613, 24.895 )
+stream = ExtResource( 20 )
+unit_size = 20.0
+
+[node name="Crash" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66613, 24.0287 )
+stream = ExtResource( 3 )
+unit_size = 50.0
+pitch_scale = 0.95
+
+[node name="PowerOff" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66246, 21.4469 )
+stream = ExtResource( 11 )
+unit_size = 50.0
+pitch_scale = 0.95
 
 [node name="ComputerVoice" type="AudioStreamPlayer3D" parent="Sounds"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35806, -0.440591 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35806, -0.0837593 )
+unit_size = 6.0
+
+[node name="Timer" type="Timer" parent="Sounds"]
 
 [node name="Lights" type="Spatial" parent="."]
 
@@ -348,10 +416,17 @@ light_bake_mode = 0
 spot_range = 8.0
 spot_angle = 85.0
 
+[node name="SpotLight3" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.65358, 38.4094 )
+light_color = Color( 1, 0.894118, 0.72549, 1 )
+light_bake_mode = 0
+spot_range = 8.0
+spot_angle = 85.0
+
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67009, 22.5457 )
 extents = Vector3( 7.842, 4.19372, 24.8779 )
-propagation = 0.8
+propagation = 0.5
 interior = true
 data = SubResource( 24 )
 

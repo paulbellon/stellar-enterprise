@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/docking_sequence.ogg-74a49fd40ef7eecabfbe3b380e62c378.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/empress_of_xara/computer/docking_sequence.ogg"
+dest_files=[ "res://.import/docking_sequence.ogg-74a49fd40ef7eecabfbe3b380e62c378.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

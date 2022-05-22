@@ -37,7 +37,6 @@ func short_circuit(body):
 		anim_player.current_animation = "DoorOpen"
 		is_open = true
 		current_chapter.events.remove(0)
-		chapter_list.door_is_unlocked = true
 		emit_signal("finished_event")
 		active_object.set_material_override(null)
 	else:

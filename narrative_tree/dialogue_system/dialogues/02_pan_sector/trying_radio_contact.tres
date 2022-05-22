@@ -1,13 +1,16 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" load_steps=10 format=2]
 
 [ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/02_read_me.tres" type="Resource" id=1]
-[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/03_come_on.tres" type="Resource" id=2]
-[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/05_contacting_babylon.tres" type="Resource" id=3]
-[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/04_what_emergency.tres" type="Resource" id=4]
-[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/06_read_me_babylon.tres" type="Resource" id=5]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/07_contacting_babylon.tres" type="Resource" id=2]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/08_read_me_babylon.tres" type="Resource" id=3]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/05_what_emergency.tres" type="Resource" id=4]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/04_come_on.tres" type="Resource" id=5]
 [ext_resource path="res://narrative_tree/dialogue_system/models/dialogue_model.gd" type="Script" id=6]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/06_no_signal.tres" type="Resource" id=7]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/03_no_signal.tres" type="Resource" id=8]
+[ext_resource path="res://narrative_tree/dialogue_system/dialogues/02_pan_sector/lines/trying_radio_contact/09_no_signal.tres" type="Resource" id=9]
 
 [resource]
 script = ExtResource( 6 )
-lines = [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ]
+lines = [ ExtResource( 1 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 9 ) ]
 interactible = "Radio"

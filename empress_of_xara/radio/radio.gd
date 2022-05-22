@@ -3,7 +3,7 @@ extends Spatial
 export (Resource) var chapter_list
 export (Resource) var dialogue_system_data
 
-export (AudioStreamMP3) var notification_sound
+export (AudioStreamSample) var notification_sound
 
 var current_chapter
 
@@ -49,11 +49,9 @@ func respond():
 		# takes next dialogue event to play
 		var dialogue_to_play = current_chapter.events.front()
 		dialogue_system_data.talk(dialogue_to_play)
-		player.state_machine.transition_to("Freeze")
 		yield(dialogue_system_data, "end_dialogue")
 		# removes this event from list at the end
 		current_chapter.events.remove(0)
 		emit_signal("finished_event")
-		player.state_machine.transition_to("NoHelmet")
 	else:
 		return

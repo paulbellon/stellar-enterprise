@@ -23,13 +23,10 @@ func crystal_acceleration():
 	anim_tree.set("parameters/Acceleration/active", true)
 	
 func crystal_activation():
+	current_chapter.events.remove(0)
+	emit_signal("crystal_activated")
 	anim_tree.set("parameters/Activation/active", true)
 	
 func activated():
-	current_chapter.events.remove(0)
-	emit_signal("crystal_activated")
-	add_child(timer)
-	timer.start(1.4)
-	yield(timer, "timeout")
 	queue_free()
 	

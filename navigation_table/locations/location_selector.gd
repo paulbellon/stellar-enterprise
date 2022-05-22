@@ -40,13 +40,12 @@ func check_events():
 
 func select_location():
 	if check_events() == true:
+		active_object.set_material_override(null)
+		sector_list.docking()
 		add_child(timer)
-		timer.start(1.0)
+		timer.start(4.0)
 		yield(timer, "timeout")
 		current_chapter.events.remove(0)
-		sector_list.docking()
 		emit_signal("finished_event")
-		active_object.set_material_override(null)
 	else:
-		print("can't dock")
 		return

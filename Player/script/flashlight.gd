@@ -1,9 +1,24 @@
 extends SpotLight
 
-onready var focus_point = $FocusPoint
+export (Array, AudioStreamSample) var sounds
 
-var is_on: bool = true
+onready var focus_point = $FocusPoint
+onready var sfx = $AudioStreamPlayer
+
+var is_on: bool = false
 var is_lit: bool
+
+func light_switch():
+	if is_on == false:
+		sfx.stream = sounds[0]
+		sfx.play()
+		light_energy = 1
+		is_on = true
+	else:
+		sfx.stream = sounds[1]
+		sfx.play()
+		light_energy = 0
+		is_on = false
 
 func light_detection():
 	var light_pos = global_transform.origin
