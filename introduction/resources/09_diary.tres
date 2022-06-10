@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://introduction/resources/models/diary_text.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "Day 407. It's been a few days now that I'm having trouble sleeping. One dream is constantly waking me up. It's like I'm drifting inside an asteroïd field and something is glowing in the distance. I can't catch my breath and wake up in torpor."

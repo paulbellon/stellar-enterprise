@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/sounds/empress_of_xara/shock_sound.ogg" type="AudioStream" id=3]
 [ext_resource path="res://navigation_table/NavigationTable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sounds/empress_of_xara/deck_ambient.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/empress_of_xara/deck/deck_ambient.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/meshes/empress_of_xara/corridor.obj" type="ArrayMesh" id=7]
 [ext_resource path="res://empress_of_xara/spaceship.gd" type="Script" id=8]
 [ext_resource path="res://assets/meshes/empress_of_xara/deck.obj" type="ArrayMesh" id=9]
@@ -355,9 +355,9 @@ area_mask = 4
 [node name="DeckMachine2" type="AudioStreamPlayer3D" parent="Sounds"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60228, 1.42123, 5.8237 )
 stream = ExtResource( 13 )
-unit_db = -15.0
+unit_db = -18.0
 unit_size = 6.0
-max_db = -3.0
+max_db = -5.0
 max_distance = 10.0
 area_mask = 4
 

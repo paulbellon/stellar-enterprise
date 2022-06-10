@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://introduction/resources/models/diary_text.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "Day 418. I have been picking up a lot of interference noise on the radio since I'm in the Saturn sector. I hope it will be back to normal soon. I feel so sleepy."

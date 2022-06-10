@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scene_manager/scene_manager.gd" type="Script" id=1]
 [ext_resource path="res://navigation_table/sectors/main_sector_list.tres" type="Resource" id=2]
@@ -9,6 +9,30 @@
 [ext_resource path="res://player/user_interface/location_notifier.gd" type="Script" id=7]
 [ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=8]
 [ext_resource path="res://narrative_tree/chapter_manager.gd" type="Script" id=9]
+[ext_resource path="res://introduction/resources/01_diary.tres" type="Resource" id=10]
+[ext_resource path="res://introduction/Diary.tscn" type="PackedScene" id=11]
+[ext_resource path="res://introduction/cutscenes/SaturnDrift.tscn" type="PackedScene" id=12]
+[ext_resource path="res://introduction/resources/02_diary.tres" type="Resource" id=13]
+[ext_resource path="res://introduction/cutscenes/Corridor.tscn" type="PackedScene" id=14]
+[ext_resource path="res://introduction/cutscenes/Warehouse.tscn" type="PackedScene" id=15]
+[ext_resource path="res://introduction/cutscenes/HoloMap.tscn" type="PackedScene" id=16]
+[ext_resource path="res://introduction/cutscenes/NeptuneDrift.tscn" type="PackedScene" id=17]
+[ext_resource path="res://introduction/cutscenes/Cockpit.tscn" type="PackedScene" id=18]
+[ext_resource path="res://introduction/cutscenes/PortholeJupiter.tscn" type="PackedScene" id=19]
+[ext_resource path="res://introduction/cutscenes/AsteroidField.tscn" type="PackedScene" id=20]
+[ext_resource path="res://introduction/cutscenes/Computer.tscn" type="PackedScene" id=21]
+[ext_resource path="res://introduction/cutscenes/PortholeCharon.tscn" type="PackedScene" id=22]
+[ext_resource path="res://introduction/resources/05_diary.tres" type="Resource" id=23]
+[ext_resource path="res://introduction/resources/07_diary.tres" type="Resource" id=24]
+[ext_resource path="res://introduction/resources/09_diary.tres" type="Resource" id=25]
+[ext_resource path="res://introduction/resources/11_diary.tres" type="Resource" id=26]
+[ext_resource path="res://introduction/resources/12_diary.tres" type="Resource" id=27]
+[ext_resource path="res://introduction/resources/13_diary.tres" type="Resource" id=28]
+[ext_resource path="res://introduction/resources/03_diary.tres" type="Resource" id=29]
+[ext_resource path="res://introduction/resources/06_diary.tres" type="Resource" id=30]
+[ext_resource path="res://introduction/resources/08_diary.tres" type="Resource" id=31]
+[ext_resource path="res://introduction/resources/10_diary.tres" type="Resource" id=32]
+[ext_resource path="res://introduction/resources/04_diary.tres" type="Resource" id=33]
 
 [sub_resource type="Animation" id=6]
 resource_name = "SceneTransition"
@@ -23,19 +47,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../../AudioStreamPlayer:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -80.0 ]
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
 [sub_resource type="StyleBoxFlat" id=3]
@@ -79,6 +91,8 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 sector_list = ExtResource( 2 )
 default_scene = ExtResource( 3 )
+diary_scene = ExtResource( 11 )
+intro_sequences = [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 18 ), ExtResource( 29 ), ExtResource( 22 ), ExtResource( 33 ), ExtResource( 15 ), ExtResource( 23 ), ExtResource( 17 ), ExtResource( 30 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 31 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 32 ), ExtResource( 19 ), ExtResource( 26 ), ExtResource( 20 ), ExtResource( 27 ), ExtResource( 14 ), ExtResource( 28 ), ExtResource( 21 ) ]
 
 [node name="ChapterManager" type="Node" parent="."]
 script = ExtResource( 9 )
@@ -122,7 +136,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="OverlayLayer/Transition"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -211,8 +225,6 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="OverlayLayer/LocationNotifier"]
 anims/Appear = SubResource( 4 )
 anims/RESET = SubResource( 5 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

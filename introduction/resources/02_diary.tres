@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://introduction/resources/models/diary_text.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "When I started my career at the corporation, I was a young woman with an overflowing appetite for adventure. Transporter is a tough job, you spent most of your time  alone with your thoughts. It's not meant for everyone."

@@ -1,0 +1,47 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://assets/textures/dirty_glass.jpg" type="Texture" id=1]
+
+[sub_resource type="Shader" id=6]
+code = "shader_type canvas_item;
+
+uniform vec2 r_displacement = vec2(3.0, 0.0);
+uniform vec2 g_displacement = vec2(0.0, 0.0);
+uniform vec2 b_displacement = vec2(-3.0, 0.0);
+uniform float blur_amount = 0.5;
+
+uniform sampler2D glass_texture;
+
+float luma(vec3 color) {
+  return dot(color, vec3(0.299, 0.587, 0.114));
+}
+
+float fblendScreen(float base, float blend) {
+    return 1.0-((1.0-base)*(1.0-blend));
+}
+
+vec3 vblendScreen(vec3 base, vec3 blend) {
+    return vec3(fblendScreen(base.r,blend.r),fblendScreen(base.g,blend.g),fblendScreen(base.b,blend.b));
+}
+
+void fragment()
+{
+    float dist = distance(UV, vec2(.5, .5));
+    float blur = dist * blur_amount;
+    float r = textureLod(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*r_displacement * dist), blur).r;
+    float g = textureLod(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*g_displacement * dist), blur).g;
+    float b = textureLod(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*b_displacement * dist), blur).b;
+    vec3 glass = texture(glass_texture, UV).rgb;
+    vec3 c = vec3(r, g, b);
+    float l = smoothstep(luma(c), 0.0, 0.2);
+    vec3 final = vblendScreen(c, glass);
+    COLOR = vec4(mix(c, final, l * .5), 1.0);
+}"
+
+[resource]
+shader = SubResource( 6 )
+shader_param/r_displacement = Vector2( 3, 0 )
+shader_param/g_displacement = Vector2( 0, 0 )
+shader_param/b_displacement = Vector2( -3, 0 )
+shader_param/blur_amount = 0.5
+shader_param/glass_texture = ExtResource( 1 )

@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://introduction/cutscene.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/introduction/spaceship_corridor_red.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/introduction/spaceship_corridor.png" type="Texture" id=3]
+[ext_resource path="res://introduction/cutscenes/animations/SoundFadeOut.anim" type="Animation" id=4]
+[ext_resource path="res://introduction/cutscenes/animations/SoundFadeIn.anim" type="Animation" id=5]
+[ext_resource path="res://assets/sounds/introduction/corridor.ogg" type="AudioStream" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "sequence_ended" ],
+"method": "emit_signal"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Illustration/RedLight:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.1, 1.2, 1.25, 1.4, 1.8, 1.9, 2, 2.05, 2.2, 2.25, 2.6, 3.4, 3.5, 3.6, 3.65, 3.8, 4.2, 4.3, 4.4, 4.45, 4.6, 4.65, 5, 7, 7.1, 7.2, 7.25, 7.4, 7.8, 7.9, 8, 8.05, 8.2, 8.25, 8.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.756863 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.756863 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.215686 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.756863 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.756863 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.215686 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.756863 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.756863 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.215686 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("AudioStreamPlayer/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "SoundFadeOut" ),
+"times": PoolRealArray( 8 )
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Illustration" type="Control" parent="."]
+anchor_left = 0.109375
+anchor_top = 0.125
+anchor_right = 0.890625
+anchor_bottom = 0.875
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="WhiteLight" type="TextureRect" parent="Illustration"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RedLight" type="TextureRect" parent="Illustration"]
+modulate = Color( 1, 1, 1, 0.756863 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -80.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer"]
+autoplay = "SoundFadeIn"
+anims/SoundFadeIn = ExtResource( 5 )
+anims/SoundFadeOut = ExtResource( 4 )

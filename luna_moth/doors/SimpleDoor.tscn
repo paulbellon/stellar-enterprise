@@ -150,5 +150,6 @@ anims/LeverAction = SubResource( 6 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 7 )
+unit_size = 2.0
 
 [connection signal="ray_click" from="LP Simple Lever002/RayTarget" to="." method="pull_lever"]

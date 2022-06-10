@@ -5,7 +5,6 @@ export (Array, Resource) var chapters
 export (Material) var active_material
 
 var door_is_shut = false
-
 var current_chapter = null
 
 signal event_change

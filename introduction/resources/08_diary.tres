@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://introduction/resources/models/diary_text.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "Day 401. One of the company's transporter, Sony Cotte, has been reported missing for two weeks in Saturn's vicinity. The executives stated that it may be due to solar interference but it's a pretty busy place. I don't think they tell us everything they know."

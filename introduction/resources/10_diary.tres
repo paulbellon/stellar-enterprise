@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://introduction/resources/models/diary_text.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "Day 411. I'm starting to worry this extended work schedule is driving me a bit nuts. On top of the sleeping problems, I'm having regular headaches and my eyes are itchy. I can't wait any longer to see you Mila. Two months left."

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://introduction/resources/models/diary_text.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "Day 378. 378 days ago was the last time I saw the blue surface of Earth.  The soothing moments of observing its white cotton clouds are long gone. Now, what remains is only the dark landscape of space around me."

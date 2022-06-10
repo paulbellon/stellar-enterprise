@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://player/state_machine/no_helmet.gd" type="Script" id=1]
 [ext_resource path="res://player/script/vision_check.gd" type="Script" id=2]
+[ext_resource path="res://assets/materials/dirty_lens.tres" type="Material" id=3]
 [ext_resource path="res://player/state_machine/freeze.gd" type="Script" id=4]
 [ext_resource path="res://player/state_machine/models/state_machine.gd" type="Script" id=5]
 [ext_resource path="res://player/user_interface/user_interface.gd" type="Script" id=6]
@@ -11,8 +12,7 @@
 [ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=12]
 [ext_resource path="res://narrative_tree/dialogue_system/dialogue_system_data.tres" type="Resource" id=13]
 [ext_resource path="res://player/script/camera_shake.gd" type="Script" id=14]
-[ext_resource path="res://assets/textures/dirty_glass.jpg" type="Texture" id=15]
-[ext_resource path="res://player/footsteps.gd" type="Script" id=16]
+[ext_resource path="res://player/script/footsteps.gd" type="Script" id=16]
 [ext_resource path="res://assets/sounds/vilmaya/footsteps/footstep_metal_3.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/sounds/vilmaya/footsteps/footstep_metal_1.wav" type="AudioStream" id=18]
 [ext_resource path="res://assets/sounds/vilmaya/footsteps/footstep_metal_2.wav" type="AudioStream" id=19]
@@ -23,50 +23,6 @@ radius = 0.373724
 height = 1.05264
 
 [sub_resource type="OpenSimplexNoise" id=5]
-
-[sub_resource type="Shader" id=6]
-code = "shader_type canvas_item;
-
-uniform vec2 r_displacement = vec2(3.0, 0.0);
-uniform vec2 g_displacement = vec2(0.0, 0.0);
-uniform vec2 b_displacement = vec2(-3.0, 0.0);
-uniform float blur_amount = 0.5;
-
-uniform sampler2D glass_texture;
-
-float luma(vec3 color) {
-  return dot(color, vec3(0.299, 0.587, 0.114));
-}
-
-float fblendScreen(float base, float blend) {
-    return 1.0-((1.0-base)*(1.0-blend));
-}
-
-vec3 vblendScreen(vec3 base, vec3 blend) {
-    return vec3(fblendScreen(base.r,blend.r),fblendScreen(base.g,blend.g),fblendScreen(base.b,blend.b));
-}
-
-void fragment()
-{
-    float dist = distance(UV, vec2(.5, .5));
-    float blur = dist * blur_amount;
-    float r = textureLod(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*r_displacement * dist), blur).r;
-    float g = textureLod(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*g_displacement * dist), blur).g;
-    float b = textureLod(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*b_displacement * dist), blur).b;
-    vec3 glass = texture(glass_texture, UV).rgb;
-    vec3 c = vec3(r, g, b);
-    float l = smoothstep(luma(c), 0.0, 0.2);
-    vec3 final = vblendScreen(c, glass);
-    COLOR = vec4(mix(c, final, l * .5), 1.0);
-}"
-
-[sub_resource type="ShaderMaterial" id=7]
-shader = SubResource( 6 )
-shader_param/r_displacement = Vector2( 3, 0 )
-shader_param/g_displacement = Vector2( 0, 0 )
-shader_param/b_displacement = Vector2( -3, 0 )
-shader_param/blur_amount = 0.5
-shader_param/glass_texture = ExtResource( 15 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "collapse"
@@ -111,7 +67,6 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 2 )
 
 [node name="Speaker" type="AudioStreamPlayer" parent="."]
-volume_db = -8.0
 autoplay = true
 
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
@@ -167,7 +122,7 @@ __meta__ = {
 
 [node name="LensTexture" type="ColorRect" parent="Head/Camera/HUDLayer/HUD"]
 visible = false
-material = SubResource( 7 )
+material = ExtResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {

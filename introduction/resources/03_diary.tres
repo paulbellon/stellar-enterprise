@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://introduction/resources/models/diary_text.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "I was mostly a lonely soul growing up so that job seemed like a perfect opportunity. I wanted to explore the borders of our world and see for myself what few people would have the opportunity to spectate."

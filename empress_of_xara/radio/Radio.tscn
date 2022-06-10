@@ -65,6 +65,7 @@ mesh = SubResource( 4 )
 material/0 = null
 
 [node name="Message" type="AudioStreamPlayer3D" parent="."]
+unit_db = 3.0
 unit_size = 3.0
 
 [node name="NotificationAudio" type="AudioStreamPlayer3D" parent="."]

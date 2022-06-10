@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/asteroids/asteroid_1/Asteroid_1.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/asteroids/asteroid_1/asteroid_1.tres" type="Material" id=2]
@@ -7,9 +7,37 @@
 [ext_resource path="res://assets/asteroids/asteroid_3/Asteroids.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://assets/asteroids/asteroid_2/asteroid_2.tres" type="Material" id=6]
 [ext_resource path="res://assets/asteroids/asteroid_4/asteroid_4.tres" type="Material" id=7]
+[ext_resource path="res://assets/textures/drawings/hands/left_hand_1.png" type="Texture" id=8]
 [ext_resource path="res://assets/asteroids/asteroid_4/Asteroids.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://assets/sounds/electromagnetic_wave.wav" type="AudioStream" id=10]
 [ext_resource path="res://dream/dream.gd" type="Script" id=11]
+[ext_resource path="res://assets/textures/drawings/hands/left_hand_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/textures/drawings/hands/left_hand_3.png" type="Texture" id=13]
+[ext_resource path="res://assets/textures/drawings/hands/left_hand_4.png" type="Texture" id=14]
+[ext_resource path="res://assets/textures/drawings/hands/left_hand_5.png" type="Texture" id=15]
+[ext_resource path="res://assets/textures/drawings/hands/left_hand_6.png" type="Texture" id=16]
+[ext_resource path="res://assets/textures/drawings/hands/right_hand_4.png" type="Texture" id=17]
+[ext_resource path="res://assets/textures/drawings/hands/right_hand_5.png" type="Texture" id=18]
+[ext_resource path="res://assets/textures/drawings/hands/right_hand_1.png" type="Texture" id=19]
+[ext_resource path="res://assets/textures/drawings/hands/right_hand_2.png" type="Texture" id=20]
+[ext_resource path="res://assets/textures/drawings/hands/right_hand_3.png" type="Texture" id=21]
+[ext_resource path="res://assets/textures/drawings/hands/right_hand_6.png" type="Texture" id=22]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="Environment" id=2]
 background_mode = 1
@@ -72,7 +100,7 @@ tracks/3/keys = {
 "values": [ 0.3, 0.4 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("ColorRect:color")
+tracks/4/path = NodePath("Control/ColorRect:color")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -105,13 +133,32 @@ script = ExtResource( 11 )
 [node name="Camera" type="Camera" parent="."]
 current = true
 
-[node name="ColorRect" type="ColorRect" parent="Camera"]
+[node name="Control" type="Control" parent="Camera"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Camera/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="LeftHand" type="AnimatedSprite" parent="Camera/Control"]
+position = Vector2( 476, 780 )
+frames = SubResource( 5 )
+frame = 5
+playing = true
+
+[node name="RightHand" type="AnimatedSprite" parent="Camera/Control"]
+position = Vector2( 1413, 749 )
+frames = SubResource( 6 )
+frame = 9
+playing = true
 
 [node name="Asteroids" type="Spatial" parent="."]
 

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://introduction/resources/models/diary_text.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "Day 392. I can't stand those white-collars anymore. Recession my ass. I was supposed to be out by now yet they pushed me for another three months in the outer system. I'm so fed up about this company."

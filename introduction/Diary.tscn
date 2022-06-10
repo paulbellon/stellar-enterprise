@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/fonts/noto_theme.tres" type="Theme" id=1]
+[ext_resource path="res://introduction/diary.gd" type="Script" id=2]
+[ext_resource path="res://assets/sounds/introduction/keyboard/keyboard_02.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/introduction/keyboard/keyboard_03.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/introduction/keyboard/keyboard_01.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/introduction/keyboard/keyboard_04.mp3" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/introduction/diary_ambient.ogg" type="AudioStream" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "SoundFadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ambiance:volume_db")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -60.0, -35.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label/TypingSound:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -60.0, -35.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "SoundFadeOut"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ambiance:volume_db")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -35.0, -60.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label/TypingSound:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -35.0, -60.0 ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+key_types = [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ) ]
+
+[node name="Background" type="ColorRect" parent="."]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.271615
+anchor_top = 0.45
+anchor_right = 0.728385
+anchor_bottom = 0.55
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+autowrap = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Timer" type="Timer" parent="Label"]
+wait_time = 0.08
+autostart = true
+
+[node name="TypingSound" type="AudioStreamPlayer" parent="Label"]
+volume_db = -35.0
+
+[node name="Ambiance" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -35.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ambiance"]
+root_node = NodePath("../..")
+autoplay = "SoundFadeIn"
+anims/SoundFadeIn = SubResource( 1 )
+anims/SoundFadeOut = SubResource( 2 )

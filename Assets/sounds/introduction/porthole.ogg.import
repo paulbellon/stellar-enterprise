@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/porthole.ogg-c0ce911e06b1122b5a2b94b9535d8a6d.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/introduction/porthole.ogg"
+dest_files=[ "res://.import/porthole.ogg-c0ce911e06b1122b5a2b94b9535d8a6d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

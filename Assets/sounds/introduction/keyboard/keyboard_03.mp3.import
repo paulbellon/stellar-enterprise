@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/keyboard_03.mp3-a331d60677ddf9cade9c22a52b1118bf.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/introduction/keyboard/keyboard_03.mp3"
+dest_files=[ "res://.import/keyboard_03.mp3-a331d60677ddf9cade9c22a52b1118bf.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

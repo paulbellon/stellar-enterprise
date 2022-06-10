@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://introduction/resources/models/diary_text.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "Day 450. It's been more than four weeks since I last had a contact with someone. The only interactions I have are with those damned company robots, they monitor everything I do. What I would do for someone to speak with me..."

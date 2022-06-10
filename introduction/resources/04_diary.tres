@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://introduction/resources/models/diary_text.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "The endless hurricanes of Jupiter, the cold and quiet surface of Neptune or the hot and montainous valleys of Venus always left me speechless. I was part of mankind's first generation able to travel through the system."

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://introduction/resources/models/diary_text.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "But perhaps, I didn't thought that one day, I would have this special bond with someone. It's been almost two years Mila entered my life and I've never felt the same ever since. In less that one month now, we will be reunited."

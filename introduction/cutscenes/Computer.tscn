@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://introduction/cutscene.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/introduction/Computer.png" type="Texture" id=2]
+[ext_resource path="res://introduction/cutscenes/animations/SoundFadeOut.anim" type="Animation" id=3]
+[ext_resource path="res://introduction/cutscenes/animations/SoundFadeIn.anim" type="Animation" id=4]
+[ext_resource path="res://assets/sounds/introduction/computer.ogg" type="AudioStream" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+length = 12.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 10 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "sequence_ended" ],
+"method": "emit_signal"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Illustration/Cockpit:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.8, 2, 5, 8, 11, 14 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.588235 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.588235 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("AudioStreamPlayer/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "SoundFadeOut" ),
+"times": PoolRealArray( 10 )
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Illustration" type="Control" parent="."]
+anchor_left = 0.109375
+anchor_top = 0.125
+anchor_right = 0.890625
+anchor_bottom = 0.875
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Cockpit" type="TextureRect" parent="Illustration"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -60.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer"]
+autoplay = "SoundFadeIn"
+anims/SoundFadeIn = ExtResource( 4 )
+anims/SoundFadeOut = ExtResource( 3 )

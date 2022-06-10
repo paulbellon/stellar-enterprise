@@ -17,6 +17,7 @@ func dreaming():
 	yield(owner.timer, "timeout")
 	owner.dream_viewport.show()
 	owner.transition_layer.hide()
+	
 	anim_player.play("CameraPan")
 	$AudioStreamPlayer.play()
 	yield(anim_player, "animation_finished")
