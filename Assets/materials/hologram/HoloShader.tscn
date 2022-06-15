@@ -778,10 +778,10 @@ mesh = ExtResource( 1 )
 material/0 = ExtResource( 4 )
 
 [node name="Particles" type="Particles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725545, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6999, 0 )
 amount = 64
 lifetime = 8.0
-visibility_aabb = AABB( -2.044, -2.73732, -1.86661, 4.08801, 5.47464, 3.73322 )
+visibility_aabb = AABB( -1.01704, -1.34725, -1.07632, 2.03409, 2.69451, 2.15263 )
 process_material = SubResource( 84 )
 draw_pass_1 = SubResource( 86 )
 

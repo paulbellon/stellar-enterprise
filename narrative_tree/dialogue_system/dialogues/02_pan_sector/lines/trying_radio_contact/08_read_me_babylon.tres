@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource( 1 )
 audio = ExtResource( 2 )
-text = ""
+text = "This is the Empress of Xara speaking, mandated by the Taka-Kanoï Space Corporation. 
+Do you read me New Babylon ?"
 speakerName = "Vilmaya"
 freezing = true
 quietTime = 1.0

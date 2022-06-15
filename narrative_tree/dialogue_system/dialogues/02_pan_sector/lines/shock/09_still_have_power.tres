@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 audio = ExtResource( 2 )
-text = ""
+text = "*sigh* I still have power at least.."
 speakerName = "Vilmaya"
 freezing = false
 quietTime = 8.0

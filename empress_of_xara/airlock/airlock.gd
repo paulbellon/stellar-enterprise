@@ -5,7 +5,7 @@ export (Resource) var chapter_list
 var main_sector_data : SectorList = load("res://navigation_table/sectors/main_sector_list.tres")
 var current_chapter
 
-onready var active_object = $MeshInstance
+onready var active_object = $Cylinder067
 
 signal has_event
 signal finished_event

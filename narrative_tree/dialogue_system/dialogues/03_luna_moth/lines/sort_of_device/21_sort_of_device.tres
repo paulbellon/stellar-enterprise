@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 2 )
 audio = ExtResource( 1 )
-text = ""
+text = "What's that ? It looks like some sort of device.. but that technology seems odd. What does it do ?"
 speakerName = "Vilmaya"
 freezing = true
 quietTime = 0.0

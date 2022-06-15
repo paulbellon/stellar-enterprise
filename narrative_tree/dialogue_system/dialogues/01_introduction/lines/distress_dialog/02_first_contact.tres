@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource( 1 )
 audio = ExtResource( 2 )
-text = "This is Vilmaya Lova speaking, captain and only crew member of the Empress of Xara mandated by the Taka-Kanoï Space Corporation. Please decline your identity and the motive of your message. Over."
+text = "This is Vilmaya Lova speaking, captain of the Empress of Xara, authorized by the Taka-Kanoï 
+Space Corporation. Please state your identity and the motive of your message. Over."
 speakerName = "Vilmaya"
 freezing = true
 quietTime = 0.0

@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 2 )
 audio = ExtResource( 1 )
-text = ""
+text = "What are you ? Space fireflies or something ? I hope we can be friends.. *chuckle*"
 speakerName = "Vilmaya"
 freezing = false
 quietTime = 1.0

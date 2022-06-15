@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 audio = ExtResource( 2 )
-text = ""
+text = "Come on... What's this goddamn mess about ? No communication in a crowded sector ?"
 speakerName = "Vilmaya"
 freezing = true
 quietTime = 0.0

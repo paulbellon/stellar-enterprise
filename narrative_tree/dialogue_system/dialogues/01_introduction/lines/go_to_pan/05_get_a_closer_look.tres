@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource( 2 )
 audio = ExtResource( 1 )
-text = "I'm only a few hours away from them, I could deviate from my initial trajectory to get a closer look and initiate contact. Let's hope they can return in beer and Ganymede's caviar."
+text = "I'm only a few hours away from them, I could deviate from my initial trajectory 
+to get a closer look and initiate contact. Let's hope they can return in beer and Ganymede's caviar."
 speakerName = "Vilmaya"
 freezing = false
 quietTime = 1.0

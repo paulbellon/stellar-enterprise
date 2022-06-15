@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource( 2 )
 audio = ExtResource( 1 )
-text = ""
+text = "Let's see what the scanner says. Organic compound, traces of tholin 
+formed by cosmic rays.. but 95% of the matter is unknown."
 speakerName = "Vilmaya"
 freezing = false
 quietTime = 1.0

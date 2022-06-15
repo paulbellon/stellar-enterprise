@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 2 )
 audio = ExtResource( 1 )
-text = ""
+text = "*fighting* Hey ! Get off me ! *fainting*"
 speakerName = "Vilmaya"
 freezing = true
 quietTime = 8.0

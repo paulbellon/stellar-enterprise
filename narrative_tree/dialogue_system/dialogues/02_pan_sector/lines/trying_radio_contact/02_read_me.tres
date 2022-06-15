@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 audio = ExtResource( 2 )
-text = ""
+text = "This is Vilmaya Lova speaking, captain of the Empress of Xara. Do your read me ? Over."
 speakerName = "Vilmaya"
 freezing = true
 quietTime = 0.5

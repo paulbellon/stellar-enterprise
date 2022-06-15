@@ -404,6 +404,7 @@ unit_size = 6.0
 
 [node name="SpotLight" type="SpotLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.65358, 14.9087 )
+visible = false
 light_color = Color( 1, 0.894118, 0.72549, 1 )
 light_bake_mode = 0
 spot_range = 8.0
@@ -411,15 +412,14 @@ spot_angle = 85.0
 
 [node name="SpotLight2" type="SpotLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.65358, 27.0164 )
+visible = false
 light_color = Color( 1, 0.894118, 0.72549, 1 )
-light_bake_mode = 0
 spot_range = 8.0
 spot_angle = 85.0
 
 [node name="SpotLight3" type="SpotLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.65358, 38.4094 )
 light_color = Color( 1, 0.894118, 0.72549, 1 )
-light_bake_mode = 0
 spot_range = 8.0
 spot_angle = 85.0
 

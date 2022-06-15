@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/low_pipe_02b.obj-f997a1773469df7b8d679dea4bfa90ef.mesh"
+
+[deps]
+
+files=[ "res://.import/low_pipe_02b.obj-f997a1773469df7b8d679dea4bfa90ef.mesh" ]
+
+source_file="res://assets/meshes/empress_of_xara/low_pipe_02b.obj"
+dest_files=[ "res://.import/low_pipe_02b.obj-f997a1773469df7b8d679dea4bfa90ef.mesh", "res://.import/low_pipe_02b.obj-f997a1773469df7b8d679dea4bfa90ef.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

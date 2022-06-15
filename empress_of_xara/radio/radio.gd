@@ -8,7 +8,7 @@ export (AudioStreamSample) var notification_sound
 var current_chapter
 
 onready var player = Global.player_node
-onready var active_object = $Mesh
+onready var active_object = $Console/Button
 
 signal incoming_message
 signal finished_event

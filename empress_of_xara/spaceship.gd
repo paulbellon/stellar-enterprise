@@ -36,10 +36,8 @@ func blackout():
 	timer.start(1.0)
 	yield(timer, "timeout")
 	$Sounds/PowerOff.play()
-	for light in $Lights.get_children():
-		light.set_color(blackout_light)
-		light.spot_range = 5.0
-		light.spot_angle = 35.0
+#	# change all lights and material to red
+	$Lights.backup_generator(blackout_light)
 	timer.start(4.0)
 	yield(timer, "timeout")
 	emit_signal("power_off")

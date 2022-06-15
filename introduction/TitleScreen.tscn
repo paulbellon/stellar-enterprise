@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/title.tres" type="Theme" id=1]
+[ext_resource path="res://assets/sounds/introduction/diary_ambient.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/materials/crt_shader.tres" type="Material" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "SoundFadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ambiance:volume_db")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -60.0, -20.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "SoundFadeOut"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ambiance:volume_db")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -35.0, -60.0 ]
+}
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.176471, 0.984314, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -438.499
+margin_top = -100.0
+margin_right = 438.499
+margin_bottom = 100.0
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "Astray"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+material = ExtResource( 8 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Ambiance" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -60.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ambiance"]
+root_node = NodePath("../..")
+autoplay = "SoundFadeIn"
+anims/SoundFadeIn = SubResource( 1 )
+anims/SoundFadeOut = SubResource( 2 )

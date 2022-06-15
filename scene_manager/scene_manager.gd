@@ -25,7 +25,8 @@ func _ready():
 # warning-ignore:return_value_discarded
 	connect("scene_loaded", chapter_manager, "change_chapter")
 	
-	introduction()
+#	introduction()
+	start()
 	
 func _input(_event):
 	if Input.is_action_just_pressed("ui_cancel"):

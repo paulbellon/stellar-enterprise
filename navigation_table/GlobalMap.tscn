@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/materials/hologram/hologram_mat.tres" type="Material" id=6]
 
 [node name="GlobalMap" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0 )
 script = ExtResource( 1 )
 chapter_list = ExtResource( 5 )
 

@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 2 )
 audio = ExtResource( 1 )
-text = ""
+text = "So you like my flashlight hun ? *chuckles*"
 speakerName = "Vilmaya"
 freezing = false
 quietTime = 1.0

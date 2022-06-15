@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 audio = ExtResource( 2 )
-text = ""
+text = "Fuck.. I had enough of this. Well, I'm here now.. Might as well see what's behind that distress signal."
 speakerName = "Vilmaya"
 freezing = true
 quietTime = 0.5

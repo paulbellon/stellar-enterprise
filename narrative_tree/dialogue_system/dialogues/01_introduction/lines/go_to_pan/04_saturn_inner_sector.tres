@@ -6,7 +6,9 @@
 [resource]
 script = ExtResource( 2 )
 audio = ExtResource( 1 )
-text = "Saturn's inner sector is well under control of Hasegawa and Omegacom. Why would a single vessel from their company need assistance here ? There's Epimetheus's mining facility and New Babylon space station nearby, they could easily offer help."
+text = "Saturn's inner sector is well under control of Hasegawa and Omegacom. Why would a single
+vessel from their company need assistance here ? There's Epimetheus's mining facility 
+and New Babylon space station nearby, they could easily offer help."
 speakerName = "Vilmaya"
 freezing = false
 quietTime = 2.0

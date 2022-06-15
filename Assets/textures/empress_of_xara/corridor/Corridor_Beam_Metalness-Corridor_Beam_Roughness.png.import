@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/Corridor_Beam_Metalness-Corridor_Beam_Roughness.png-7247932702fe1a4afc80afe07f6ebe6b.s3tc.stex"
+path.etc2="res://.import/Corridor_Beam_Metalness-Corridor_Beam_Roughness.png-7247932702fe1a4afc80afe07f6ebe6b.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/textures/empress_of_xara/corridor/Corridor_Beam_Metalness-Corridor_Beam_Roughness.png"
+dest_files=[ "res://.import/Corridor_Beam_Metalness-Corridor_Beam_Roughness.png-7247932702fe1a4afc80afe07f6ebe6b.s3tc.stex", "res://.import/Corridor_Beam_Metalness-Corridor_Beam_Roughness.png-7247932702fe1a4afc80afe07f6ebe6b.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

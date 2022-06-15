@@ -12,7 +12,7 @@ func typing():
 	while label.visible_characters != label.get_total_character_count():
 		yield(timer, "timeout")
 		keyboard_sound.stream = key_types[round(rand_range(0, key_types.size() - 1))]
-		keyboard_sound.volume_db = rand_range(-50, -35)
+		keyboard_sound.volume_db = rand_range(-30, -15)
 		keyboard_sound.play()
 		label.visible_characters += 1
 	timer.stop()

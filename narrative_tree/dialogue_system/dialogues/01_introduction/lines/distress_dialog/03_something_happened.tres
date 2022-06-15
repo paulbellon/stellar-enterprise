@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 audio = ExtResource( 2 )
-text = "My name is ... chief mechanic abord... Something happened ... extraction ... released it ... *scream*"
+text = "My name is ... chief mechanic abord... Something happened ... extraction ..."
 speakerName = "Radio"
 freezing = true
 quietTime = 2.0

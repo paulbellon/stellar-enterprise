@@ -16,7 +16,8 @@ transform = Transform( -0.748883, -0.267264, -0.60642, -0.643377, 0.512587, 0.56
 light_color = Color( 1, 0.976471, 0.882353, 1 )
 light_bake_mode = 0
 shadow_enabled = true
-directional_shadow_depth_range = 1
+directional_shadow_normal_bias = 0.2
+directional_shadow_max_distance = 30.0
 script = ExtResource( 8 )
 rotation_speed = 0.05
 

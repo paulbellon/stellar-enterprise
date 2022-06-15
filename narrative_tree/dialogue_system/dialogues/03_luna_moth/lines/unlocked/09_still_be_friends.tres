@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 2 )
 audio = ExtResource( 1 )
-text = ""
+text = "Huuu.. Didn't mean to harm you little buddies. I hope we can still be friends.."
 speakerName = "Vilmaya"
 freezing = true
 quietTime = 0.0

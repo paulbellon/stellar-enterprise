@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource( 1 )
 audio = ExtResource( 2 )
-text = ""
+text = "Empress of Xara speaking. Decline your identity. Your transponder is turned off 
+which is a violation of Interplanetary Transportation Code. Over."
 speakerName = "Vilmaya"
 freezing = true
 quietTime = 1.0

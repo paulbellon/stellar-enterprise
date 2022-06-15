@@ -98,6 +98,7 @@ noise = SubResource( 5 )
 [node name="RayCast" type="RayCast" parent="Head/Camera"]
 cast_to = Vector3( 0, 0, -2 )
 collide_with_areas = true
+collide_with_bodies = false
 script = ExtResource( 2 )
 
 [node name="HUDLayer" type="CanvasLayer" parent="Head/Camera"]

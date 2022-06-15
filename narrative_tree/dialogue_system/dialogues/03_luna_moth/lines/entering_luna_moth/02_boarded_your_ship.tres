@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 2 )
 audio = ExtResource( 1 )
-text = ""
+text = "Is anybody here ? I'm the captain of the Empress of Xara, I've boarded your ship because you needed assistance."
 speakerName = "Vilmaya"
 freezing = false
 quietTime = 2.0

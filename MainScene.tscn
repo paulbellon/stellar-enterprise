@@ -1,8 +1,8 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scene_manager/scene_manager.gd" type="Script" id=1]
 [ext_resource path="res://navigation_table/sectors/main_sector_list.tres" type="Resource" id=2]
-[ext_resource path="res://empress_of_xara/Spaceship.tscn" type="PackedScene" id=3]
+[ext_resource path="res://empress_of_xara/EmpressOfXara.tscn" type="PackedScene" id=3]
 [ext_resource path="res://dream/Dream.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/user_interface/dialogue_display.gd" type="Script" id=5]
 [ext_resource path="res://narrative_tree/dialogue_system/dialogue_system_data.tres" type="Resource" id=6]
@@ -33,6 +33,7 @@
 [ext_resource path="res://introduction/resources/08_diary.tres" type="Resource" id=31]
 [ext_resource path="res://introduction/resources/10_diary.tres" type="Resource" id=32]
 [ext_resource path="res://introduction/resources/04_diary.tres" type="Resource" id=33]
+[ext_resource path="res://assets/fonts/subtitles.tres" type="Theme" id=34]
 
 [sub_resource type="Animation" id=6]
 resource_name = "SceneTransition"
@@ -158,28 +159,33 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -75.5
-margin_top = -46.0
-margin_right = 75.5002
-margin_bottom = -32.0
+margin_left = -321.0
+margin_top = -140.0
+margin_right = 321.0
+margin_bottom = -113.0
 grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="OverlayLayer/DialogueDisplay/Container"]
-margin_right = 151.0
-margin_bottom = 14.0
+margin_right = 659.0
+margin_bottom = 27.0
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="OverlayLayer/DialogueDisplay/Container"]
-margin_right = 151.0
-margin_bottom = 14.0
+margin_right = 659.0
+margin_bottom = 27.0
 grow_horizontal = 2
-text = "Je suis une longue ligne"
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme = ExtResource( 34 )
+text = "Hello, this is Vilmaya speaking. I'm lost in space, it's not funny you guys hihi"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

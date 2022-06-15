@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource( 1 )
 audio = ExtResource( 2 )
-text = ""
+text = "*sigh* Dammit. I could activate my distress beacon now but it would drain 
+the battery even more. The other ship is already transmitting. I should try to contact someone else aboard."
 speakerName = "Vilmaya"
 freezing = false
 quietTime = 1.0
