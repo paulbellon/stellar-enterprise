@@ -165,7 +165,7 @@ mesh = ExtResource( 6 )
 material/0 = null
 
 [node name="air2" type="MeshInstance" parent="Effects"]
-transform = Transform( -0.0639166, 0.879717, 2.33923, -2.49918, -0.0224983, -0.059826, -4.77303e-07, -2.34, 0.880004, 0, 0, 0 )
+transform = Transform( -0.0639167, 0.879717, 2.33923, -2.49918, -0.0224983, -0.0598261, -5.16884e-07, -2.34, 0.880004, 0, 0, 0 )
 material_override = ExtResource( 3 )
 mesh = ExtResource( 6 )
 material/0 = null

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/diary_ambient_02.ogg-8e4516b5cf6d804253e696c02a7f129c.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/introduction/diary_ambient_02.ogg"
+dest_files=[ "res://.import/diary_ambient_02.ogg-8e4516b5cf6d804253e696c02a7f129c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

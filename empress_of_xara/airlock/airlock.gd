@@ -9,6 +9,7 @@ onready var active_object = $Cylinder067
 
 signal has_event
 signal finished_event
+signal finished_demo
 
 func _ready():
 # warning-ignore:return_value_discarded
@@ -16,6 +17,8 @@ func _ready():
 # warning-ignore:return_value_discarded
 	connect("finished_event", chapter_list, "next_event")
 	chapter_list.connect("event_change", self, "check_events")
+	
+	check_events()
 
 func check_events():
 	current_chapter = chapter_list.current_chapter
@@ -31,11 +34,18 @@ func check_events():
 		is_event = false
 		return is_event
 
-func exit_location():
+#func exit_location():
+#	if check_events() == true:
+#		current_chapter.events.remove(0)
+#		emit_signal("finished_event")
+#		active_object.set_material_override(null)
+#		main_sector_data.change_location(main_sector_data.current_sector.locations[0])
+#	else:
+#		return
+		
+func end_demo():
 	if check_events() == true:
-		current_chapter.events.remove(0)
-		emit_signal("finished_event")
 		active_object.set_material_override(null)
-		main_sector_data.change_location(main_sector_data.current_sector.locations[0])
+		Global.on_demo_ended()
 	else:
 		return

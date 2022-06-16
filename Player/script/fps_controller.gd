@@ -4,6 +4,7 @@ export (Resource) var chapter_list
 export (Resource) var dialogue_system_data
 
 var mouse_sensitivity = 0.06
+var joy_sensitivity = 90
 
 var speed = 2.5
 var direction = Vector3()
@@ -33,7 +34,7 @@ func _ready() -> void:
 	dialogue_system_data.connect("unfreezing", state_machine, "transition_to")
 	
 	chapter_list.connect("event_change", self, "speech")
-# warning-ignore:return_value_discarded
+	# warning-ignore:return_value_discarded
 	connect("finished_event", chapter_list, "next_event")
 	
 	speech()
@@ -43,7 +44,17 @@ func _input(event):
 		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
 		$Head.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
 		$Head.rotation.x = clamp($Head.rotation.x, deg2rad(-89), deg2rad(89))
-		
+		return
+	
+func _process(delta):
+	
+	var joy_dir_x = Input.get_joy_axis(0, 2)
+	var joy_dir_y = Input.get_joy_axis(0, 3)
+	if joy_dir_x == 0 && joy_dir_y == 0: return
+	rotate_y(deg2rad(-joy_dir_x * joy_sensitivity * delta))
+	$Head.rotate_x(deg2rad(-joy_dir_y * joy_sensitivity * delta))
+	$Head.rotation.x = clamp($Head.rotation.x, deg2rad(-89), deg2rad(89))
+	
 func speech():
 	current_chapter = chapter_list.current_chapter
 	if current_chapter.events.size() == 0: return

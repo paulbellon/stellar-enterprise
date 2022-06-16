@@ -186,36 +186,36 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Illustration"]
-position = Vector2( 204, 402 )
-rotation = 0.0418879
+position = Vector2( 228, 402 )
+rotation = 0.0314159
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="Illustration"]
-position = Vector2( 1088.4, 249 )
-rotation = -0.0279253
+position = Vector2( 1096.8, 249 )
+rotation = -0.020944
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 6 )
 
 [node name="Sprite3" type="Sprite" parent="Illustration"]
-position = Vector2( 720, 500 )
-rotation = 0.0244346
+position = Vector2( 735, 500 )
+rotation = 0.0139626
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 3 )
 
 [node name="Sprite4" type="Sprite" parent="Illustration"]
-position = Vector2( 1045, 471 )
+position = Vector2( 1050, 472 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 7 )
 
 [node name="Sprite5" type="Sprite" parent="Illustration"]
-position = Vector2( 1228, 628 )
-rotation = -0.0453786
+position = Vector2( 1256, 626 )
+rotation = -0.0383972
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 5 )
 
 [node name="Sprite6" type="Sprite" parent="Illustration"]
-position = Vector2( 460, 680.4 )
+position = Vector2( 465, 680.8 )
 scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 4 )
 
@@ -225,6 +225,7 @@ autoplay = "New Anim"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+volume_db = -80.0
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer"]

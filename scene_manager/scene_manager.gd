@@ -3,6 +3,8 @@ extends Node
 export (Resource) var sector_list
 export (PackedScene) var default_scene
 export (PackedScene) var diary_scene
+export (PackedScene) var title_scene
+export (PackedScene) var end_scene
 export (Array) var intro_sequences
 
 onready var chapter_manager = $ChapterManager
@@ -25,6 +27,9 @@ func _ready():
 # warning-ignore:return_value_discarded
 	connect("scene_loaded", chapter_manager, "change_chapter")
 	
+	Global.connect("demo_ended", self, "end")
+	
+#	title_screen()
 #	introduction()
 	start()
 	
@@ -39,6 +44,20 @@ func _input(_event):
 		img.flip_y()
 		img.save_png("user://stuff02.png")
 		
+func title_screen():
+	timer.start(2.0)
+	yield(timer, "timeout")
+	anim_player.play("SceneTransition")
+	var title = title_scene.instance()
+	add_child(title)
+	yield(title, "sequence_ended")
+	anim_player.play_backwards("SceneTransition")
+	yield(anim_player, "animation_finished")
+	title.queue_free()
+	timer.start(1.0)
+	yield(timer, "timeout")
+	introduction()
+	
 func introduction():
 	var step = 0
 	var sequence
@@ -75,6 +94,22 @@ func start():
 	anim_player.play("SceneTransition")
 	yield(anim_player, "animation_finished")
 	transition_layer.hide()
+	
+func end():
+	transition_layer.show()
+	anim_player.play_backwards("SceneTransition")
+	yield(anim_player, "animation_finished")
+	for child in $MainScene.get_children():
+		child.queue_free()
+	timer.start()
+	yield(timer, "timeout")
+	anim_player.play("SceneTransition")
+	var end_screen = end_scene.instance()
+	add_child(end_screen)
+	yield(end_screen, "sequence_ended")
+	anim_player.play_backwards("SceneTransition")
+	yield(anim_player, "animation_finished")
+	get_tree().quit()
 	
 func change_sector():
 	transition_layer.show()

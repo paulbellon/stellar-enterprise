@@ -53,4 +53,4 @@ material/0 = null
 [node name="RayTarget" parent="Cylinder067" instance=ExtResource( 2 )]
 display_name = "Airlock"
 
-[connection signal="ray_click" from="Cylinder067/RayTarget" to="." method="exit_location"]
+[connection signal="ray_click" from="Cylinder067/RayTarget" to="." method="end_demo"]
