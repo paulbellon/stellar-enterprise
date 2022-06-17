@@ -22,7 +22,9 @@ func player_movement():
 	var joy_dir_z = Input.get_joy_axis(0, 1)
 	var joy_direction = Vector3(joy_dir_x, 0, joy_dir_z)
 	
-	if key_direction.length() == 0 && joy_direction.length() == 0: return
+	if key_direction.length() == 0 && joy_direction.length() == 0:
+		player.footsteps.not_walking()
+		return
 	
 	var direction = key_direction
 	if joy_direction.length() > key_direction.length():
@@ -34,8 +36,7 @@ func player_movement():
 	player.velocity.z = player.direction.z * player.speed
 	player.velocity = player.move_and_slide_with_snap(player.velocity, player.snap_vec, Vector3.UP, true, 4, PI)
 	
-	# player.footsteps.walking()
-	# player.footsteps.not_walking()
+	player.footsteps.walking()
 	
 func on_Being_catch():
 	player.hud.collapse()

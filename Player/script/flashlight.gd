@@ -12,7 +12,7 @@ func light_switch():
 	if is_on == false:
 		sfx.stream = sounds[0]
 		sfx.play()
-		light_energy = 1
+		light_energy = 2.5
 		is_on = true
 	else:
 		sfx.stream = sounds[1]

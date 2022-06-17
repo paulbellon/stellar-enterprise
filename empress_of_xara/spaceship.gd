@@ -35,6 +35,8 @@ func blackout():
 	emit_signal("event_finished")
 	timer.start(1.0)
 	yield(timer, "timeout")
+	$Screens/Screen007.get_active_material(0).emission_enabled = false
+	$Radio/Radio/Screen.get_active_material(0).emission_enabled = false
 	$Sounds/PowerOff.play()
 #	# change all lights and material to red
 	$Lights.backup_generator(blackout_light)

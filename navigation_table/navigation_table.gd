@@ -2,7 +2,7 @@ extends Spatial
 
 export (Resource) var chapter_list
 export (Resource) var sector_data
-export(PackedScene) var global_hologram
+export (PackedScene) var global_hologram
 
 var is_local = true
 var sector_hologram = null
@@ -19,6 +19,8 @@ func _ready():
 # warning-ignore:return_value_discarded
 	connect("finished_event", chapter_list, "next_event")
 	chapter_list.connect("event_change", self, "check_events")
+# warning-ignore:return_value_discarded
+	owner.connect("event_finished", self, "no_power")
 	
 	sector_hologram = sector_data.current_sector.hologram.instance()
 	global_hologram = global_hologram.instance()
@@ -52,7 +54,12 @@ func update_display():
 	for child in $HologramHolder.get_children():
 		$HologramHolder.remove_child(child)
 	if is_local:
-		# Display Local
 		$HologramHolder.add_child(sector_hologram)
 	else:
 		$HologramHolder.add_child(global_hologram)
+		
+func no_power():
+	$HoloShader.hide()
+	$HologramHolder.hide()
+	$SpotLight.hide()
+	

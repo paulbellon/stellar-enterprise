@@ -2,6 +2,7 @@ extends PlayerState
 
 func enter(_msg := {}) -> void:
 	player.ray.enabled = false
+	player.footsteps.not_walking()
 	
 func physics_update(_delta: float) -> void:
 	

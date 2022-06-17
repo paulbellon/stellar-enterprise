@@ -8,7 +8,7 @@ var is_open: bool = false
 func open_door():
 	if is_open == false:
 		anim_player.play("DoorAction")
-#		sfx.play()
+		sfx.play()
 		is_open = true
 	else:
 		anim_player.play_backwards("DoorAction")

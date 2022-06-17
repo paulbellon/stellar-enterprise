@@ -8,12 +8,12 @@
 [ext_resource path="res://assets/materials/hologram/hologram_mat.tres" type="Material" id=6]
 
 [node name="GlobalMap" type="Spatial"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 script = ExtResource( 1 )
 chapter_list = ExtResource( 5 )
 
 [node name="Iapetus" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.398, -0.553148, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.10837, -0.706354, 0 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -25,7 +25,7 @@ radius = 0.1
 material = ExtResource( 6 )
 
 [node name="Titan" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77518, 0.757624, -1.31354 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.915976, 0.296401, -1.31354 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -53,7 +53,7 @@ ring_sides = 12
 material = ExtResource( 6 )
 
 [node name="Pan" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30911, 0.329627, 0.778747 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.345298, 0.552703, 0.861738 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -61,5 +61,5 @@ __meta__ = {
 sector_data = ExtResource( 3 )
 
 [node name="Model" type="CSGSphere" parent="Pan"]
-radius = 0.03
+radius = 0.15
 material = ExtResource( 6 )

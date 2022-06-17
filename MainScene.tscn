@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scene_manager/scene_manager.gd" type="Script" id=1]
 [ext_resource path="res://navigation_table/sectors/main_sector_list.tres" type="Resource" id=2]
@@ -18,21 +18,14 @@
 [ext_resource path="res://introduction/cutscenes/HoloMap.tscn" type="PackedScene" id=16]
 [ext_resource path="res://introduction/cutscenes/NeptuneDrift.tscn" type="PackedScene" id=17]
 [ext_resource path="res://introduction/cutscenes/Cockpit.tscn" type="PackedScene" id=18]
-[ext_resource path="res://introduction/cutscenes/PortholeJupiter.tscn" type="PackedScene" id=19]
 [ext_resource path="res://introduction/cutscenes/AsteroidField.tscn" type="PackedScene" id=20]
 [ext_resource path="res://introduction/cutscenes/Computer.tscn" type="PackedScene" id=21]
-[ext_resource path="res://introduction/cutscenes/PortholeCharon.tscn" type="PackedScene" id=22]
 [ext_resource path="res://introduction/resources/05_diary.tres" type="Resource" id=23]
-[ext_resource path="res://introduction/resources/07_diary.tres" type="Resource" id=24]
 [ext_resource path="res://introduction/resources/09_diary.tres" type="Resource" id=25]
-[ext_resource path="res://introduction/resources/11_diary.tres" type="Resource" id=26]
 [ext_resource path="res://introduction/resources/12_diary.tres" type="Resource" id=27]
 [ext_resource path="res://introduction/resources/13_diary.tres" type="Resource" id=28]
-[ext_resource path="res://introduction/resources/03_diary.tres" type="Resource" id=29]
 [ext_resource path="res://introduction/resources/06_diary.tres" type="Resource" id=30]
 [ext_resource path="res://introduction/resources/08_diary.tres" type="Resource" id=31]
-[ext_resource path="res://introduction/resources/10_diary.tres" type="Resource" id=32]
-[ext_resource path="res://introduction/resources/04_diary.tres" type="Resource" id=33]
 [ext_resource path="res://assets/fonts/subtitles.tres" type="Theme" id=34]
 [ext_resource path="res://introduction/TitleScreen.tscn" type="PackedScene" id=35]
 [ext_resource path="res://introduction/EndScreen.tscn" type="PackedScene" id=36]
@@ -97,7 +90,7 @@ default_scene = ExtResource( 3 )
 diary_scene = ExtResource( 11 )
 title_scene = ExtResource( 35 )
 end_scene = ExtResource( 36 )
-intro_sequences = [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 18 ), ExtResource( 29 ), ExtResource( 22 ), ExtResource( 33 ), ExtResource( 15 ), ExtResource( 23 ), ExtResource( 17 ), ExtResource( 30 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 31 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 32 ), ExtResource( 19 ), ExtResource( 26 ), ExtResource( 20 ), ExtResource( 27 ), ExtResource( 14 ), ExtResource( 28 ), ExtResource( 21 ) ]
+intro_sequences = [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 23 ), ExtResource( 17 ), ExtResource( 30 ), ExtResource( 18 ), ExtResource( 31 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 27 ), ExtResource( 14 ), ExtResource( 28 ), ExtResource( 21 ) ]
 
 [node name="ChapterManager" type="Node" parent="."]
 script = ExtResource( 9 )
@@ -175,6 +168,7 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="OverlayLayer/DialogueDisplay/Container"]
+visible = false
 margin_right = 659.0
 margin_bottom = 27.0
 custom_styles/panel = SubResource( 3 )

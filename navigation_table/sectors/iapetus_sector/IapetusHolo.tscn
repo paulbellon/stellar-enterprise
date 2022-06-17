@@ -3,9 +3,10 @@
 [ext_resource path="res://assets/materials/hologram/hologram_mat.tres" type="Material" id=1]
 
 [node name="Map" type="Spatial"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.9, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="Asteroids" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.593163, 0.286691 )
 
 [node name="Asteroid1" type="CSGBox" parent="Asteroids"]
 transform = Transform( 0.638644, 0.233394, -0.733253, -0.15329, 0.972382, 0.175998, 0.754079, 0, 0.656783, 1.20158, 0.159901, 0.512467 )
@@ -36,6 +37,7 @@ depth = 0.1
 material = ExtResource( 1 )
 
 [node name="Iapetus" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.562753, 0 )
 
 [node name="CSGSphere" type="CSGSphere" parent="Iapetus"]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.06061, -0.474371 )

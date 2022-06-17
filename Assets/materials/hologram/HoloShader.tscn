@@ -756,7 +756,6 @@ tracks/9/keys = {
 
 [node name="Glow" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.84172, 0 )
-use_in_baked_light = true
 mesh = SubResource( 133 )
 material/0 = ExtResource( 2 )
 
@@ -772,7 +771,7 @@ target_path = NodePath("../suzy")
 origin_path = NodePath("../Position")
 
 [node name="suzy" type="MeshInstance" parent="."]
-transform = Transform( 0.75, 0, 0, 0, 0.624807, 0.414869, 0, -0.414869, 0.624807, 0, 1.7627, 0 )
+transform = Transform( 0.45, 0, 0, 0, 0.374884, 0.248921, 0, -0.248921, 0.374884, 0, 2.28774, 0 )
 visible = false
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 4 )

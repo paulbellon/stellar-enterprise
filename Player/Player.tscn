@@ -71,6 +71,7 @@ autoplay = true
 
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.686115, 0 )
+unit_db = -7.0
 script = ExtResource( 16 )
 step_sounds = [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 20 ) ]
 
@@ -96,7 +97,7 @@ script = ExtResource( 14 )
 noise = SubResource( 5 )
 
 [node name="RayCast" type="RayCast" parent="Head/Camera"]
-cast_to = Vector3( 0, 0, -2 )
+cast_to = Vector3( 0, 0, -1.5 )
 collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource( 2 )
@@ -175,6 +176,5 @@ script = ExtResource( 1 )
 [node name="Freeze" type="Node" parent="StateMachine"]
 script = ExtResource( 4 )
 
-[connection signal="finished" from="Footsteps" to="Footsteps" method="_on_Footsteps_finished"]
 [connection signal="enter_target" from="Head/Camera/RayCast" to="Head/Camera/HUDLayer" method="_on_RayCast_enter_target"]
 [connection signal="exit_target" from="Head/Camera/RayCast" to="Head/Camera/HUDLayer" method="_on_RayCast_exit_target"]

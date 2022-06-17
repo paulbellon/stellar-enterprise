@@ -42,7 +42,7 @@ material/0 = null
 transform = Transform( 1, 2.84217e-14, 1.77294e-14, 0, 1, 0, -2.98023e-08, 0, 1, 2.02646, -1.35743, 1.19233 )
 
 [node name="HologramHolder" type="Spatial" parent="."]
-transform = Transform( 1, 2.84217e-14, 1.77294e-14, 0, 1, 0, -2.98023e-08, 0, 1, 2.02646, -0.744462, 1.19233 )
+transform = Transform( 1, 2.84217e-14, 1.77294e-14, 0, 1, 0, -2.98023e-08, 0, 1, 2.02646, 0.464163, 1.19233 )
 
 [node name="SwitchButton" type="Spatial" parent="."]
 transform = Transform( 1, 2.84217e-14, 1.77294e-14, 0, 1, 0, -2.98023e-08, 0, 1, 1.53674, -0.327754, 1.20444 )

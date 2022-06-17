@@ -9,7 +9,7 @@ onready var active_object = $Cylinder067
 
 signal has_event
 signal finished_event
-signal finished_demo
+#signal finished_demo
 
 func _ready():
 # warning-ignore:return_value_discarded
@@ -42,7 +42,7 @@ func check_events():
 #		main_sector_data.change_location(main_sector_data.current_sector.locations[0])
 #	else:
 #		return
-		
+
 func end_demo():
 	if check_events() == true:
 		active_object.set_material_override(null)

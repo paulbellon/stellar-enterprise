@@ -35,6 +35,9 @@ func check_events():
 	if current_chapter.events[0].interactible == "Radio":
 		$NotificationAudio.stream = notification_sound
 		$NotificationAudio.play()
+		$Radio/Screen.get_active_material(0).emission = Color("ff0f0f")
+		$Tween.interpolate_property($Radio/Screen, "material/0:emission_energy", 2.0, 1.5, 0.5)
+		$Tween.start()
 		emit_signal("incoming_message")
 		is_event = true
 		return is_event
@@ -46,6 +49,8 @@ func respond():
 	if check_events() == true:
 		active_object.set_material_override(null)
 		$NotificationAudio.stop()
+		$Radio/Screen.get_active_material(0).emission = Color("45a6f4")
+		$Tween.stop_all()
 		# takes next dialogue event to play
 		var dialogue_to_play = current_chapter.events.front()
 		dialogue_system_data.talk(dialogue_to_play)

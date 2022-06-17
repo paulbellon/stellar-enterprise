@@ -16,9 +16,11 @@ func walking():
 	play_step()
 
 func play_step():
-	var step = round(rand_range(0, step_sounds.size() - 1))
-	stream = step_sounds[step]
-	play()
+	while is_walking:
+		var step = round(rand_range(0, step_sounds.size() - 1))
+		stream = step_sounds[step]
+		play()
+		yield(self, "finished")
 
 func _on_Footsteps_finished():
 	play_step()

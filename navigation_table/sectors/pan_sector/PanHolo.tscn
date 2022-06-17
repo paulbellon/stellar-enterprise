@@ -12,6 +12,7 @@ script = ExtResource( 1 )
 chapter_list = ExtResource( 6 )
 
 [node name="Asteroids" type="Spatial" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -0.413422, 0.450444 )
 
 [node name="Asteroid1" type="CSGBox" parent="Asteroids"]
 transform = Transform( 0.638644, 0.233394, -0.733253, -0.15329, 0.972382, 0.175998, 0.754079, 0, 0.656783, 1.20158, 0.199626, -0.36494 )
@@ -71,7 +72,7 @@ material = ExtResource( 5 )
 script = ExtResource( 3 )
 
 [node name="ShipWreck" type="Spatial" parent="."]
-transform = Transform( 0.66414, 0.147736, 0.117569, 0, 0.520936, -0.333981, -0.221175, 0.443621, 0.353036, -0.0576091, 0.686424, -1.07849 )
+transform = Transform( 0.474386, 0.105526, 0.0705416, 0, 0.372097, -0.200389, -0.157982, 0.316872, 0.211821, -0.0576091, -0.00933355, -0.0678109 )
 script = ExtResource( 2 )
 location_data = ExtResource( 4 )
 

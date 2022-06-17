@@ -26,7 +26,7 @@ func _ready():
 	connect("start_dream", dream_scene, "dreaming")
 # warning-ignore:return_value_discarded
 	connect("scene_loaded", chapter_manager, "change_chapter")
-	
+# warning-ignore:return_value_discarded
 	Global.connect("demo_ended", self, "end")
 	
 #	title_screen()

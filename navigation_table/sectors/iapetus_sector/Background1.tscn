@@ -16,7 +16,7 @@ light_energy = 2.0
 light_bake_mode = 0
 shadow_enabled = true
 directional_shadow_normal_bias = 0.2
-directional_shadow_max_distance = 30.0
+directional_shadow_max_distance = 40.0
 script = ExtResource( 1 )
 rotation_speed = 0.02
 
