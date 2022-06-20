@@ -172,6 +172,8 @@ anims/DoorAction = SubResource( 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.520837, 0, 3.81007 )
 stream = ExtResource( 6 )
 unit_size = 4.0
+max_db = 0.0
+pitch_scale = 0.6
 
 [connection signal="ray_click" from="Cube004/RayTarget" to="." method="open_door"]
 [connection signal="ray_click" from="Cube018/RayTarget" to="." method="open_door"]

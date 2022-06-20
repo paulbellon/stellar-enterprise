@@ -1,8 +1,7 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://player/state_machine/no_helmet.gd" type="Script" id=1]
 [ext_resource path="res://player/script/vision_check.gd" type="Script" id=2]
-[ext_resource path="res://assets/materials/dirty_lens.tres" type="Material" id=3]
 [ext_resource path="res://player/state_machine/freeze.gd" type="Script" id=4]
 [ext_resource path="res://player/state_machine/models/state_machine.gd" type="Script" id=5]
 [ext_resource path="res://player/user_interface/user_interface.gd" type="Script" id=6]
@@ -24,38 +23,6 @@ height = 1.05264
 
 [sub_resource type="OpenSimplexNoise" id=5]
 
-[sub_resource type="Animation" id=3]
-resource_name = "collapse"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "dazzle"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
 script = ExtResource( 8 )
@@ -67,6 +34,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 2 )
 
 [node name="Speaker" type="AudioStreamPlayer" parent="."]
+pitch_scale = 8.0
 autoplay = true
 
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
@@ -112,28 +80,6 @@ anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="ColorRect" type="ColorRect" parent="Head/Camera/HUDLayer/HUD"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LensTexture" type="ColorRect" parent="Head/Camera/HUDLayer/HUD"]
-visible = false
-material = ExtResource( 3 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Camera/HUDLayer/HUD"]
-anims/collapse = SubResource( 3 )
-anims/dazzle = SubResource( 4 )
 
 [node name="Crosshair" type="TextureRect" parent="Head/Camera/HUDLayer/HUD"]
 anchor_left = 0.5

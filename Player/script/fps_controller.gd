@@ -47,9 +47,11 @@ func _input(event):
 		return
 	
 func _process(delta):
-	
 	var joy_dir_x = Input.get_joy_axis(0, 2)
 	var joy_dir_y = Input.get_joy_axis(0, 3)
+	
+	if Vector2(joy_dir_x, joy_dir_y).length() < 0.2: return
+	
 	if joy_dir_x == 0 && joy_dir_y == 0: return
 	rotate_y(deg2rad(-joy_dir_x * joy_sensitivity * delta))
 	$Head.rotate_x(deg2rad(-joy_dir_y * joy_sensitivity * delta))

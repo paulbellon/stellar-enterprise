@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=2]
+[gd_scene load_steps=116 format=2]
 
 [ext_resource path="res://assets/materials/empress_of_xara/corridor/Metal_Floor.material" type="Material" id=1]
 [ext_resource path="res://assets/materials/empress_of_xara/corridor/Airlock_Wall.material" type="Material" id=2]
@@ -805,6 +805,9 @@ extents = Vector3( 1.13343, 1.64574, 4.59398 )
 [sub_resource type="BoxShape" id=50]
 extents = Vector3( 0.762796, 1.49376, 2.71315 )
 
+[sub_resource type="BoxShape" id=61]
+extents = Vector3( 0.210058, 1.47425, 1 )
+
 [node name="EmpressOfXara" type="Spatial"]
 script = ExtResource( 49 )
 blackout_light = Color( 0.745098, 0.184314, 0.184314, 1 )
@@ -1000,7 +1003,7 @@ area_mask = 4
 [node name="DeckMachine1" type="AudioStreamPlayer3D" parent="Sounds"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0321, 0.170811, 2.08399 )
 stream = ExtResource( 39 )
-unit_db = -8.0
+unit_db = -10.0
 unit_size = 6.0
 max_distance = 10.0
 area_mask = 4
@@ -1025,8 +1028,9 @@ area_mask = 4
 [node name="HallwayAmbient1" type="AudioStreamPlayer3D" parent="Sounds"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435352, 1.48223, 12.1577 )
 stream = ExtResource( 45 )
-unit_db = -10.0
+unit_db = -15.0
 unit_size = 10.0
+max_db = 0.0
 autoplay = true
 
 [node name="HallwayAmbient2" type="AudioStreamPlayer3D" parent="Sounds"]
@@ -1053,6 +1057,7 @@ unit_size = 6.0
 [node name="Timer" type="Timer" parent="Sounds"]
 
 [node name="Probes" type="Spatial" parent="."]
+visible = false
 
 [node name="GIProbe" type="GIProbe" parent="Probes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.25784 )
@@ -1355,7 +1360,7 @@ mesh = ExtResource( 29 )
 material/0 = ExtResource( 27 )
 material/1 = ExtResource( 28 )
 material/2 = ExtResource( 26 )
-material/3 = null
+material/3 = ExtResource( 55 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="Meshes"]
 use_in_baked_light = true
@@ -1364,7 +1369,7 @@ skeleton = NodePath("../MeshInstance")
 material/0 = ExtResource( 27 )
 material/1 = ExtResource( 28 )
 material/2 = ExtResource( 26 )
-material/3 = null
+material/3 = ExtResource( 55 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="Meshes"]
 use_in_baked_light = true
@@ -1410,6 +1415,24 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02841, 0.220916, 17.4886 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Collisions/Corridor4"]
 shape = SubResource( 50 )
+
+[node name="LockedDoor1" type="StaticBody" parent="Collisions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42257, 0.242683, 10.0347 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/LockedDoor1"]
+shape = SubResource( 61 )
+
+[node name="LockedDoor2" type="StaticBody" parent="Collisions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45188, 0.242683, 13.8829 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/LockedDoor2"]
+shape = SubResource( 61 )
+
+[node name="LockedAirlock" type="StaticBody" parent="Collisions"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.421192, 0.242683, 19.7751 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/LockedAirlock"]
+shape = SubResource( 61 )
 
 [node name="Background" type="Spatial" parent="."]
 

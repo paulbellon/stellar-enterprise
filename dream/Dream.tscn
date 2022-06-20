@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/asteroids/asteroid_1/Asteroid_1.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/asteroids/asteroid_1/asteroid_1.tres" type="Material" id=2]
@@ -7,9 +7,17 @@
 [ext_resource path="res://assets/asteroids/asteroid_3/Asteroids.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://assets/asteroids/asteroid_2/asteroid_2.tres" type="Material" id=6]
 [ext_resource path="res://assets/asteroids/asteroid_4/asteroid_4.tres" type="Material" id=7]
+[ext_resource path="res://assets/images/dream/body/body_04.png" type="Texture" id=8]
 [ext_resource path="res://assets/asteroids/asteroid_4/Asteroids.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://assets/sounds/electromagnetic_wave.wav" type="AudioStream" id=10]
 [ext_resource path="res://dream/dream.gd" type="Script" id=11]
+[ext_resource path="res://assets/images/dream/body/body_02.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/dream/body/body_06.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/dream/body/body_01.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/dream/body/body_03.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/dream/body/body_05.png" type="Texture" id=16]
+[ext_resource path="res://narrative_tree/chapters/chapter_list.tres" type="Resource" id=17]
+[ext_resource path="res://assets/sounds/heartbeat.mp3" type="AudioStream" id=18]
 
 [sub_resource type="Environment" id=2]
 background_mode = 1
@@ -20,9 +28,17 @@ glow_blend_mode = 1
 glow_bicubic_upscale = true
 glow_high_quality = true
 
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="Animation" id=3]
 resource_name = "CameraPan"
-length = 12.0
+length = 30.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
 tracks/0/interp = 2
@@ -30,10 +46,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 10 ),
+"times": PoolRealArray( 0, 30 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -2 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../DirectionalLight:rotation_degrees")
@@ -42,10 +58,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 10 ),
+"times": PoolRealArray( 0, 30 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( -40.5633, 53.3354, 25.8309 ), Vector3( -40.563, 263, 25.831 ) ]
+"values": [ Vector3( -40.5633, 53.3354, 25.8309 ), Vector3( 0, 180, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../DirectionalLight2:rotation_degrees")
@@ -54,34 +70,72 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 10 ),
+"times": PoolRealArray( 0, 30 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 16.9206, -48.8635, 83.984 ), Vector3( 16.921, -230, 83.984 ) ]
+"values": [ Vector3( 16.9206, -48.8635, 83.984 ), Vector3( 0, -180, 83.984 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("../AudioStreamPlayer:pitch_scale")
+tracks/3/path = NodePath("../Electromagnetic:pitch_scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 10 ),
+"times": PoolRealArray( 0, 30 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.3, 0.4 ]
+"values": [ 0.3, 0.5 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../AudioStreamPlayer:volume_db")
+tracks/4/path = NodePath("../Electromagnetic:volume_db")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 8.5, 12 ),
+"times": PoolRealArray( 0, 3.5, 26.5, 30 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -60.0, 0.0, 0.0, -60.0 ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 28 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "finished_event" ],
+"method": "emit_signal"
+} ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../Heartbeat:volume_db")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 26.6, 30 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -30.0, -5.0, -60.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Heartbeat:pitch_scale")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 30 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -5.0, -50.0 ]
+"values": [ 1.0, 1.6 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -89,6 +143,7 @@ length = 0.001
 
 [node name="Dream" type="Spatial"]
 script = ExtResource( 11 )
+chapter_list = ExtResource( 17 )
 
 [node name="Camera" type="Camera" parent="."]
 current = true
@@ -96,13 +151,13 @@ current = true
 [node name="Asteroids" type="Spatial" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="Asteroids"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38511, 0, -6.28319 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41999, 0, -6.28319 )
 mesh = ExtResource( 1 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="Asteroids"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87716, 1.89093, -9.1685 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87716, 1.89093, -7.07477 )
 mesh = ExtResource( 4 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 6 )
@@ -114,28 +169,76 @@ skeleton = NodePath("../..")
 material/0 = ExtResource( 3 )
 
 [node name="MeshInstance4" type="MeshInstance" parent="Asteroids"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05852, 4.08588, -12.9457 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05852, 4.49717, -12.9457 )
 mesh = ExtResource( 9 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 7 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="Asteroids"]
+transform = Transform( 0.411634, -0.593422, 0.958336, 0.234202, 1.043, 0.545251, -1.10259, 3.57628e-08, 0.473596, 4.84275, 1.65507, -19.3065 )
+mesh = ExtResource( 5 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="Asteroids"]
+transform = Transform( 1.03053, 0.546695, -0.942943, -0.920357, 1.13165, -0.349742, 0.583916, 0.818842, 1.1129, -3.32811, 4.68027, -14.6319 )
+mesh = ExtResource( 9 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 7 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="Asteroids"]
+transform = Transform( 0.16014, -1.96428, 0.340531, -1.1486, 0.188318, 1.62642, -1.62944, -0.325795, -1.11301, -10.5884, -5.02098, -12.6949 )
+mesh = ExtResource( 5 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="Asteroids"]
+transform = Transform( -0.348197, 0.567088, -0.217187, 0.437392, 0.407879, 0.363763, 0.421245, 0.0452362, -0.557231, 0.197161, -6.32983, -25.3013 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="Asteroids"]
+transform = Transform( 0.0858849, -1.27505, 0.571736, 1.23629, 0.336324, 0.564333, -0.651314, 0.47026, 1.14658, 10.4683, -5.02744, -12.6949 )
+mesh = ExtResource( 5 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="Asteroids"]
+transform = Transform( -1.24357, -1.27294, -2.4152, -1.36107, 2.58968, -0.664097, 2.36665, 0.820468, -1.651, -3.07605, 0.444911, -27.7402 )
+mesh = ExtResource( 5 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 3 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.310186, -0.729685, 0.60938, 0.331009, 0.683783, 0.650288, -0.891189, -2.98023e-07, 0.453632, 0, 0, 0 )
+transform = Transform( 0.310186, -0.729685, 0.60938, 0.331009, 0.683783, 0.650288, -0.891189, -2.98023e-07, 0.453632, 2.45096, 0, 0 )
 light_color = Color( 0.270588, 0.580392, 1, 1 )
 
 [node name="DirectionalLight2" type="DirectionalLight" parent="."]
-transform = Transform( -0.149045, -0.677205, -0.72054, 0.95144, 0.100269, -0.291046, 0.269346, -0.72893, 0.629376, -3.14248, 0, 0 )
+transform = Transform( -0.149045, -0.677206, -0.72054, 0.95144, 0.100269, -0.291046, 0.269346, -0.72893, 0.629376, -3.14248, 0, 0 )
 light_color = Color( 1, 0.270588, 0.270588, 1 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Body" type="AnimatedSprite3D" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, -13.4325 )
+double_sided = false
+frames = SubResource( 5 )
+frame = 1
+playing = true
+
+[node name="Electromagnetic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -5.0
+volume_db = -60.0
 pitch_scale = 0.3
+
+[node name="Heartbeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -30.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Camera")
+autoplay = "CameraPan"
 anims/CameraPan = SubResource( 3 )
 anims/RESET = SubResource( 4 )

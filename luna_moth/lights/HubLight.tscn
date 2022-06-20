@@ -15,7 +15,6 @@ radius = 0.625153
 script = ExtResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-use_in_baked_light = true
 mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 

@@ -9,7 +9,6 @@ onready var active_object = $Cylinder067
 
 signal has_event
 signal finished_event
-#signal finished_demo
 
 func _ready():
 # warning-ignore:return_value_discarded

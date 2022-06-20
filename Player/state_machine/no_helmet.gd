@@ -8,7 +8,6 @@ func enter(_msg := {}) -> void:
 func physics_update(_delta: float) -> void:
 	player_movement()
 	player.ray.check_vision()
-	player.flashlight.light_detection()
 	
 	if Input.is_action_just_pressed("use"):
 		player.flashlight.light_switch()
@@ -21,6 +20,9 @@ func player_movement():
 	var joy_dir_x = Input.get_joy_axis(0, 0)
 	var joy_dir_z = Input.get_joy_axis(0, 1)
 	var joy_direction = Vector3(joy_dir_x, 0, joy_dir_z)
+	
+	if joy_direction.length() < 0.2:
+		joy_direction = Vector3.ZERO
 	
 	if key_direction.length() == 0 && joy_direction.length() == 0:
 		player.footsteps.not_walking()
@@ -37,6 +39,3 @@ func player_movement():
 	player.velocity = player.move_and_slide_with_snap(player.velocity, player.snap_vec, Vector3.UP, true, 4, PI)
 	
 	player.footsteps.walking()
-	
-func on_Being_catch():
-	player.hud.collapse()

@@ -119,8 +119,17 @@ func change_sector():
 	for child in $MainScene.get_children():
 		child.queue_free()
 	# Instanciates next scene inside
+	timer.start(3.0)
+	yield(timer, "timeout")
+	dream_viewport.show()
+	anim_player.play("SceneTransition")
 	emit_signal("start_dream")
 	yield(dream_scene, "finished_event")
+	anim_player.play_backwards("SceneTransition")
+	yield(anim_player, "animation_finished")
+	dream_viewport.hide()
+	timer.start(1.0)
+	yield(timer, "timeout")
 	$MainScene.add_child(default_scene.instance())
 	emit_signal("scene_loaded")
 	anim_player.play("SceneTransition")

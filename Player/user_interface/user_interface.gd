@@ -4,18 +4,6 @@ export (Resource) var chapter_list
 
 onready var ui_text = $HUD/Label
 onready var ui_crosshair = $HUD/Crosshair
-onready var anim_player = $HUD/AnimationPlayer
-
-signal dazzled
-signal collapsed
-signal finished_event
-
-func _ready():
-# warning-ignore:return_value_discarded
-	connect("collapsed", chapter_list, "pass_out")
-# warning-ignore:return_value_discarded
-	connect("finished_event", chapter_list, "next_event")
-	chapter_list.connect("awaken", self, "emerge")
 
 func _on_RayCast_enter_target(title):
 	if title == null: return
@@ -23,32 +11,3 @@ func _on_RayCast_enter_target(title):
 	
 func _on_RayCast_exit_target():
 	ui_text.text = ""
-
-func collapse():
-	owner.timer.start(3.0)
-	yield(owner.timer, "timeout")
-	$HUD/ColorRect.show()
-	ui_crosshair.hide()
-	anim_player.play("collapse")
-	yield(anim_player, "animation_finished")
-	emit_signal("collapsed")
-	
-func emerge():
-	owner.timer.start(3.0)
-	yield(owner.timer, "timeout")
-	chapter_list.current_chapter.events.remove(0)
-	emit_signal("finished_event")
-	anim_player.play_backwards("collapse")
-	yield(anim_player, "animation_finished")
-	ui_crosshair.show()
-	$HUD/ColorRect.hide()
-	
-func dazzle():
-	$HUD/ColorRect.show()
-	anim_player.play("dazzle")
-	yield(anim_player, "animation_finished")
-	emit_signal("dazzled")
-	anim_player.play_backwards("dazzle")
-	yield(anim_player, "animation_finished")
-	$HUD/ColorRect.hide()
-	
