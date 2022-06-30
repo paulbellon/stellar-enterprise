@@ -39,19 +39,18 @@ func check_events():
 		return is_event
 
 func select_sector(sector_data):
-	if sector_list.current_sector == sector_data :
+	if sector_list.current_sector == sector_data:
 		return
 	if check_events() == true:
 		add_child(timer)
-		timer.start(1.0)
-		yield(timer, "timeout")
+		emit_signal("finished_event")
 		current_chapter.events.remove(0)
 		sector_list.set_auto_pilot()
-		emit_signal("finished_event")
 		active_object.set_material_override(null)
 		timer.start(9.0)
 		yield(timer, "timeout")
 		sector_list.change_sector(sector_data)
+		timer.queue_free()
 	else:
 		return
 	

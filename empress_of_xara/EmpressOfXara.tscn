@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=2]
+[gd_scene load_steps=115 format=2]
 
 [ext_resource path="res://assets/materials/empress_of_xara/corridor/Metal_Floor.material" type="Material" id=1]
 [ext_resource path="res://assets/materials/empress_of_xara/corridor/Airlock_Wall.material" type="Material" id=2]
@@ -232,17 +232,6 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 304
 }
-
-[sub_resource type="GIProbeData" id=51]
-bounds = AABB( -7.49225, -4.26063, -14.6073, 14.9845, 8.52126, 29.2146 )
-cell_size = 0.228239
-to_cell_xform = Transform( 4.38137, 0, 0, 0, 4.38137, 0, 0, 0, 4.38137, 32.8263, 18.6674, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, 0, 0, 0, 0, 7, 0, 33, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
-dynamic_range = 4
-bias = 1.5
-normal_bias = 0.0
-propagation = 0.9
-interior = true
 
 [sub_resource type="ArrayMesh" id=52]
 surfaces/0 = {
@@ -1055,16 +1044,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384636, -2.23483 )
 unit_size = 6.0
 
 [node name="Timer" type="Timer" parent="Sounds"]
-
-[node name="Probes" type="Spatial" parent="."]
-visible = false
-
-[node name="GIProbe" type="GIProbe" parent="Probes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.25784 )
-extents = Vector3( 7.49225, 4.26063, 14.6073 )
-propagation = 0.9
-interior = true
-data = SubResource( 51 )
 
 [node name="VoiceTriggers" type="Spatial" parent="."]
 

@@ -29,20 +29,13 @@ func _ready():
 # warning-ignore:return_value_discarded
 	Global.connect("demo_ended", self, "end")
 	
-#	title_screen()
+	title_screen()
 #	introduction()
-	start()
+#	start()
 	
 func _input(_event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
-		
-	if Input.is_action_just_pressed("screenshot"):
-		var vpt: Viewport = get_viewport()
-		var tex: Texture = vpt.get_texture()
-		var img: Image = tex.get_data()
-		img.flip_y()
-		img.save_png("user://stuff02.png")
 		
 func title_screen():
 	timer.start(2.0)
